@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>2018 카카오 코딩 테스트 (프렌즈4블록) | Jason&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Javascript,Algorithm" />
+    
+    <meta name="description" content="이번 알고리즘 문제는 그림을 보면 풀고 싶게 만드는 게임 관련 문제입니다. 문제를 한번 살펴보겠습니다.  문제를 읽어보면 같은 모양의 2X2형태 블록이 붙어 있을 경우 지워지면서 위에 남아 있는 블록들은 빈공간으로 이동합니다. 카카오톡에서 이런 게임들은 다들 한번씩은 해보셨을거라 다른 문제보다 한번에 이해가 되셨을겁니다.ㅎㅎ  문제를 풀기 전에 주의해야할">
+<meta name="keywords" content="Javascript,Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018 카카오 코딩 테스트 (프렌즈4블록)">
+<meta property="og:url" content="http://jason0853.github.io/2018/03/24/2018-kakao-blind-recruitment-round-1-6/index.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="이번 알고리즘 문제는 그림을 보면 풀고 싶게 만드는 게임 관련 문제입니다. 문제를 한번 살펴보겠습니다.  문제를 읽어보면 같은 모양의 2X2형태 블록이 붙어 있을 경우 지워지면서 위에 남아 있는 블록들은 빈공간으로 이동합니다. 카카오톡에서 이런 게임들은 다들 한번씩은 해보셨을거라 다른 문제보다 한번에 이해가 되셨을겁니다.ㅎㅎ  문제를 풀기 전에 주의해야할">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://jason0853.github.io/images/algorithm/2018-kakao-blind-recruitment-logo.png">
+<meta property="og:updated_time" content="2019-05-18T06:10:55.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018 카카오 코딩 테스트 (프렌즈4블록)">
+<meta name="twitter:description" content="이번 알고리즘 문제는 그림을 보면 풀고 싶게 만드는 게임 관련 문제입니다. 문제를 한번 살펴보겠습니다.  문제를 읽어보면 같은 모양의 2X2형태 블록이 붙어 있을 경우 지워지면서 위에 남아 있는 블록들은 빈공간으로 이동합니다. 카카오톡에서 이런 게임들은 다들 한번씩은 해보셨을거라 다른 문제보다 한번에 이해가 되셨을겁니다.ㅎㅎ  문제를 풀기 전에 주의해야할">
+<meta name="twitter:image" content="http://jason0853.github.io/images/algorithm/2018-kakao-blind-recruitment-logo.png">
+    
+    <link rel="canonical" href="http://jason0853.github.io/2018/03/24/2018-kakao-blind-recruitment-round-1-6/"/>
+
+    
+        <link rel="alternate" href="/" title="Jason&#39;s blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106873845-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3546887837495101",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Tech blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/">Front-end</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Typescript/">Typescript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/">Ops</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Docker/">Docker</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Git/">Git</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Algorithm/">Algorithm</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-2018-kakao-blind-recruitment-round-1-6" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        2018 카카오 코딩 테스트 (프렌즈4블록)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-6/" class="article-date">
+            <time datetime="2018-03-24T13:55:37.000Z" itemprop="datePublished">2018-03-24</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Algorithm/">Algorithm</a>, <a class="tag-link" href="/tags/Javascript/">Javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-logo.png" alt=""></p>
+<p>이번 알고리즘 문제는 그림을 보면 풀고 싶게 만드는 게임 관련 문제입니다. 문제를 한번 살펴보겠습니다.</p>
+<p><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-round-1-6-01.png" alt=""><br><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-round-1-6-02.png" alt=""><br><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-round-1-6-03.png" alt=""><br><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-round-1-6-04.png" alt=""><br><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-round-1-6-05.png" alt=""></p>
+<p>문제를 읽어보면 같은 모양의 2X2형태 블록이 붙어 있을 경우 지워지면서 위에 남아 있는 블록들은 빈공간으로 이동합니다. 카카오톡에서 이런 게임들은 다들 한번씩은 해보셨을거라 다른 문제보다 한번에 이해가 되셨을겁니다.ㅎㅎ</p>
+<p><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-round-1-6-06.png" alt=""></p>
+<p>문제를 풀기 전에 주의해야할 점은 아래와 같은 경우를 고려하시면 되겠습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 삭제 전</span><br><span class="line">CCBDE</span><br><span class="line">AAADE</span><br><span class="line">AAABF</span><br><span class="line">CCBBF</span><br><span class="line"></span><br><span class="line">// 삭제 후</span><br><span class="line">CCBDE</span><br><span class="line">   DE</span><br><span class="line">   BF</span><br><span class="line">CCBBF</span><br></pre></td></tr></table></figure>
+<p>위의 경우처럼 2X3 형태로 A문자열이 연결되어 있을 경우 2X2 형태로 바로 삭제하면 안된다는 점입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> test = [</span><br><span class="line">  &#123; <span class="attr">m</span>: <span class="number">4</span>, <span class="attr">n</span>: <span class="number">5</span>, <span class="attr">board</span>: [<span class="string">"CCBDE"</span>, <span class="string">"AAADE"</span>, <span class="string">"AAABF"</span>, <span class="string">"CCBBF"</span>] &#125;,</span><br><span class="line">  &#123; <span class="attr">m</span>: <span class="number">6</span>, <span class="attr">n</span>: <span class="number">6</span>, <span class="attr">board</span>: [<span class="string">"TTTANT"</span>, <span class="string">"RRFACC"</span>, <span class="string">"RRRFCC"</span>, <span class="string">"TRRRAA"</span>, <span class="string">"TTMMMF"</span>, <span class="string">"TMMTTJ"</span>] &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">friends4Block</span>(<span class="params">m, n, board</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> arr = [];</span><br><span class="line">  <span class="keyword">let</span> removedBlockNum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 각 문자열 배열 만들기</span></span><br><span class="line">  board.forEach(<span class="function">(<span class="params">char</span>) =&gt;</span> arr = [...arr, char.split(<span class="string">''</span>)]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    prevBlockNum = removedBlockNum;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> arrIdx = [];  <span class="comment">// 좌표 배열</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 같은 블록 좌표 구하기</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m - <span class="number">1</span>; i++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; n - <span class="number">1</span>; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i][j] === arr[i][j+<span class="number">1</span>] </span><br><span class="line">          &amp;&amp; arr[i][j] === arr[i+<span class="number">1</span>][j] </span><br><span class="line">          &amp;&amp; arr[i][j] === arr[i+<span class="number">1</span>][j+<span class="number">1</span>]) &#123;</span><br><span class="line">          </span><br><span class="line">          arrIdx = [...arrIdx, [i, j], [i, j+<span class="number">1</span>], [i+<span class="number">1</span>, j], [i+<span class="number">1</span>, j+<span class="number">1</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> filteredStrings = <span class="keyword">new</span> <span class="built_in">Set</span>(arrIdx.map(<span class="function"><span class="params">arr</span> =&gt;</span> <span class="built_in">JSON</span>.stringify(arr)));  <span class="comment">// string 변경 및 필터링</span></span><br><span class="line">    <span class="keyword">const</span> toArrIdx = [...filteredStrings].map(<span class="function"><span class="params">str</span> =&gt;</span> <span class="built_in">JSON</span>.parse(str));  <span class="comment">// 배열로 다시 변경</span></span><br><span class="line"></span><br><span class="line">    toArrIdx.filter(<span class="function"><span class="params">x</span> =&gt;</span> arr[x[<span class="number">0</span>]][x[<span class="number">1</span>]] = <span class="string">' '</span>);  <span class="comment">// 블록 삭제</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> k = <span class="number">0</span>; k &lt; m; k++) &#123;  <span class="comment">// 위에 블록이 밑으로 이동 안했을 경우 대비해서 다시 한번씩 row만큼 스캔</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> temp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (arr[i][j] === <span class="string">' '</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!arr[i<span class="number">-1</span>]) <span class="keyword">continue</span>;  <span class="comment">// 에러 예외 처리</span></span><br><span class="line">            temp = arr[i<span class="number">-1</span>][j];</span><br><span class="line">            arr[i<span class="number">-1</span>][j] = arr[i][j];</span><br><span class="line">            arr[i][j] = temp;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    removedBlockNum = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    arr.forEach(<span class="function"><span class="params">x</span> =&gt;</span> removedBlockNum += x.filter(<span class="function"><span class="params">y</span> =&gt;</span> y === <span class="string">' '</span>).length);</span><br><span class="line"></span><br><span class="line">  &#125; <span class="keyword">while</span> (prevBlockNum != removedBlockNum); <span class="comment">// 이전 삭제 블록 갯수랑 다르면 계속 반복</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> removedBlockNum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> obj <span class="keyword">of</span> test) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(friends4Block(obj.m, obj.n, obj.board));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output: 14, 15</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>문자 하나씩을 비교해야하기 때문에 <code>board</code> 배열에 담긴 문자열을 쪼개줍니다. </li>
+<li>열(<code>m</code>)과 행(<code>m</code>)만큼 이중 반복문으로 돌리면서 문자열을 체크합니다. </li>
+<li>2X2 형태의 문자열이 연결되어 있을 경우 배열 좌표를 <code>arrIdx</code> 배열에 담습니다. 좌표 배열을 담을때 중복되는 좌표값은 <code>new Set()</code>을 사용하여 걸러내고 다시 배열로 변경합니다.</li>
+<li><code>filter</code> 메서드를 이용하여 각 좌표값의 블록을 삭제(공백 처리)해줍니다.</li>
+<li>3중 loop 같은 경우 위에 남아 있는 블록을 아래로 이동시키기 위함입니다. (성능상 좋은 방식은 아닌것 같습니다. ㅠㅠ)</li>
+<li><code>arr</code> 배열에서 공백처리된 부분의 갯수(length)값을 구하고 이전 블록 삭제 갯수랑 현재 블록 삭제된 갯수가 다르면 계속 처음부터 로직을 반복합니다.</li>
+<li>반복을 다 마치면 현재 블록 삭제갯수를 리턴시킵니다.</li>
+</ul>
+<p><img src="../../../../images/algorithm/2018-kakao-blind-recruitment-round-1-6-07.png" alt=""></p>
+<p>문제해설을 보니 이번 블라인드 채용 문제 중에 코드라인이 가장 길었던 것 같습니다. 아무래도 체크해야할 부분이 많아서 그랬던 것 같습니다. 생각해보니 지금까지 프로그래밍을 하면서 이렇게 많이 반복문을 많이 사용한 적은 처음인 것 같습니다.ㅋㅋ</p>
+<h3 id="Wrap-up"><a href="#Wrap-up" class="headerlink" title="Wrap-up"></a>Wrap-up</h3><p>결과적으로 문제는 해결했지만 포스팅에도 중간에 언급했듯이 성능상 안 좋은 코드들이 조금씩 보입니다. 다음 기회에 시간이 된다면 다른 방식으로 풀어서 성능을 개선시켜보겠습니다. 혹시 좀 더 나은 알고리즘으로 푸신 분들은 댓글로 공유부탁드립니다. </p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="http://tech.kakao.com/2017/09/27/kakao-blind-recruitment-round-1/" target="_blank" rel="noopener">카카오톡 문제 및 해설</a></p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jason0853.github.io/2018/03/24/2018-kakao-blind-recruitment-round-1-6/" data-id="cjvt7egwl000ogfuwzlqx7k4a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/js0853" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/js0853" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jason0853" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jason0853" data-width="100%" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2018 카카오 코딩 테스트 (추석 트래픽)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/03/11/2018-kakao-blind-recruitment-round-1-5/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">2018 카카오 코딩 테스트 (뉴스 클러스터링)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Javascript/">Javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/React/">React</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Typescript/">Typescript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/">Ops</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Git/">Git</a><span class="category-list-count">5</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 14px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Immer/" style="font-size: 10px;">Immer</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Spritesmith/" style="font-size: 10px;">Spritesmith</a> <a href="/tags/Typescript/" style="font-size: 14px;">Typescript</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/tsconfig/" style="font-size: 12px;">tsconfig</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/15/React-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/08/15/React-Basic/" class="title">React Basic</a></p>
+                            <p class="item-date"><time datetime="2018-08-15T05:51:56.000Z" itemprop="datePublished">2018-08-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="Config create-react-app with sass and spritesmith" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="title">Config create-react-app with sass and spritesmith</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T05:58:57.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/12/React-and-Redux-with-Typescript/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React and Redux with Typescript" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/12/React-and-Redux-with-Typescript/" class="title">React and Redux with Typescript</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T08:06:26.000Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/23/Docker-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/docker/docker-logo.png)" alt="Docker Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ops/">Ops</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ops/Docker/">Docker</a></p>
+                            <p class="item-title"><a href="/2018/04/23/Docker-Basic/" class="title">Docker Basic</a></p>
+                            <p class="item-date"><time datetime="2018-04-23T04:36:13.000Z" itemprop="datePublished">2018-04-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/algorithm/2018-kakao-blind-recruitment-logo.png)" alt="2018 카카오 코딩 테스트 (추석 트래픽)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="title">2018 카카오 코딩 테스트 (추석 트래픽)</a></p>
+                            <p class="item-date"><time datetime="2018-03-24T14:01:32.000Z" itemprop="datePublished">2018-03-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jason Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'jason0853';
+    
+    
+    var disqus_url = 'http://jason0853.github.io/2018/03/24/2018-kakao-blind-recruitment-round-1-6/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

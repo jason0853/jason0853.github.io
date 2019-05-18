@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Git basic | Jason&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="git" />
+    
+    <meta name="description" content="프로젝트를 시작하게 되면 여러 개발자들과 협업을 진행하게 됩니다. 특히 협업할 때 source 관리를 해야되는데 가장 많이 사용하는 git에 대해 한번 살펴보겠습니다. 이번 포스팅에서는 가장 빈번하게 사용되는 명령어와 git의 흐름 상황을 요약 정리해보겠습니다. Quick Start# Check version1$ git --version  git이 제대로">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git basic">
+<meta property="og:url" content="http://jason0853.github.io/2017/12/16/Git-basic/index.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="프로젝트를 시작하게 되면 여러 개발자들과 협업을 진행하게 됩니다. 특히 협업할 때 source 관리를 해야되는데 가장 많이 사용하는 git에 대해 한번 살펴보겠습니다. 이번 포스팅에서는 가장 빈번하게 사용되는 명령어와 git의 흐름 상황을 요약 정리해보겠습니다. Quick Start# Check version1$ git --version  git이 제대로">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://jason0853.github.io/images/git/git-logo.png">
+<meta property="og:updated_time" content="2019-05-18T06:10:55.386Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git basic">
+<meta name="twitter:description" content="프로젝트를 시작하게 되면 여러 개발자들과 협업을 진행하게 됩니다. 특히 협업할 때 source 관리를 해야되는데 가장 많이 사용하는 git에 대해 한번 살펴보겠습니다. 이번 포스팅에서는 가장 빈번하게 사용되는 명령어와 git의 흐름 상황을 요약 정리해보겠습니다. Quick Start# Check version1$ git --version  git이 제대로">
+<meta name="twitter:image" content="http://jason0853.github.io/images/git/git-logo.png">
+    
+    <link rel="canonical" href="http://jason0853.github.io/2017/12/16/git-basic/"/>
+
+    
+        <link rel="alternate" href="/" title="Jason&#39;s blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106873845-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3546887837495101",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Tech blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/">Front-end</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Typescript/">Typescript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/">Ops</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Docker/">Docker</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Git/">Git</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Ops/">Ops</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Ops/Git/">Git</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-Git-basic" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Git basic
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2017/12/16/Git-basic/" class="article-date">
+            <time datetime="2017-12-16T13:09:59.000Z" itemprop="datePublished">2017-12-16</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/git/">git</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="../../../../images/git/git-logo.png" alt=""></p>
+<p>프로젝트를 시작하게 되면 여러 개발자들과 협업을 진행하게 됩니다. 특히 협업할 때 source 관리를 해야되는데 가장 많이 사용하는 git에 대해 한번 살펴보겠습니다. 이번 포스팅에서는 가장 빈번하게 사용되는 명령어와 git의 흐름 상황을 요약 정리해보겠습니다.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Check-version"><a href="#Check-version" class="headerlink" title="# Check version"></a># Check version</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git --version</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>git이 제대로 설치되어 있는지 확인하려면 version 체크를 하시면 됩니다.</li>
+</ul>
+<h3 id="Set-config-values"><a href="#Set-config-values" class="headerlink" title="# Set config values"></a># Set config values</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.name <span class="string">'username'</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --global user.email <span class="string">'your email'</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git config --list</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>global</code> 옵션을 주어 git의 사용자와 이메일을 셋팅해 줄 수 있습니다.</li>
+<li><code>list</code> 옵션을 통하여 셋팅된 목록을 볼 수 있습니다.</li>
+<li>만약 global property를 삭제하고 싶은 경우는 <code>unset</code> 옵션을 추가하여 해당 property를 지우시면 됩니다.<br>ex)<code>git config –global –unset user.name</code></li>
+</ul>
+<h3 id="Initialize-a-repository"><a href="#Initialize-a-repository" class="headerlink" title="# Initialize a repository"></a># Initialize a repository</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>프로젝트 root 디렉토리에서 <code>init</code> 명령어를 통하여 초기화 시킨 이후 <em>.git</em>이라는 파일이 생성됩니다.</li>
+</ul>
+<h3 id="Create-a-gitignore-file"><a href="#Create-a-gitignore-file" class="headerlink" title="# Create a gitignore file"></a># Create a gitignore file</h3><script src="//gist.github.com/9f4a098f09452ac869722e1192f679bf.js"></script>
+<ul>
+<li>root 디렉토리에 <em>.gitignore</em> 파일을 만듭니다.</li>
+<li><em>.gitignore</em> 파일은 git을 통해 소스관리를 할 필요 없는 파일이나 폴더명을 써주시면 됩니다.</li>
+</ul>
+<h3 id="Common-workflow"><a href="#Common-workflow" class="headerlink" title="# Common workflow"></a># Common workflow</h3><div id="sequence-0"></div>
+
+<p>각각의 명령어를 실행하면 어떤 상태인지를 disagram으로 정리해보았습니다. 그럼 위에 나온 명령어들과 함께 간단한 실습을 한번 진행해보겠습니다.</p>
+<p><img src="../../../../images/git/git-basic-01.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>우선 <em>git-test</em> 라는 프로젝트 폴더 하나를 만들고 앞서 얘기했던 <code>git init</code> 작업과 <em>.gitignore</em> 파일을 생성하였습니다.</li>
+<li><code>git status</code>는 파일의 현재 상태를 알려줍니다. commit을 한번도 진행하지 않았기 때문에 새로 생성된 file은 <strong>Untracked files</strong>로 분류되어 있습니다.</li>
+</ul>
+<p><img src="../../../../images/git/git-basic-02.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git add -A</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">'your commit message'</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>현재는 <em>.gitignore</em> 파일 하나만 있어서 <code>git add .gitignore</code> 이런식으로 명령어를 입력해도 되지만 여러 파일들을 한번에 staging area로 옮기는 작업을 할려면 간단하게 <code>A</code> 옵션을 주면 됩니다.</li>
+<li>staging area에 잘 옮겨졌는지 체크해보려면 <code>git status</code> 명령어를 실행시킵니다. 아까와 다르게 녹색 컬러로 변경된 <em>.gitignore</em> 파일을 확인할 수 있습니다.</li>
+<li><code>commit</code> 명령어를 통하여 staging area에서 local repository로 옮기고 git 상태를 체크해봅니다. 터미널 캡쳐 마지막 부분을 보면은 <em>nothing to commit</em> 이라고 나옵니다. 더 이상 커밋 작업을 할게 없으므로 <code>push</code> 작업을 할 차례입니다.</li>
+</ul>
+<p><img src="../../../../images/git/git-basic-03.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin <span class="string">'your remote url'</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>push</code> 작업을 하기 위해서는 원격저장소를 추가해야합니다. 필자는 github를 사용하여 원격저장소를 만들었지만 Bitbucket, gitlab 등을 사용하셔도 됩니다.</li>
+<li>remote url을 추가한 뒤에 <code>v</code> 옵션을 통해 단축이름과 url을 함께 볼 수 있습니다.</li>
+<li><code>u</code> 옵션을 추가하면은 <code>push</code> 작업 및 <code>pull</code> 작업을 진행할때 <code>origin master</code>를 명령어와 함께 실행시키지 않아도 됩니다.<br>ex)<code>git push</code> / <code>git pull</code></li>
+</ul>
+<p><img src="../../../../images/git/git-basic-04.png" alt=""></p>
+<p>작업이 끝난 뒤 자신의 원격저장소에서 확인해보면 <code>.gitignore</code> 파일이 저장되어 있습니다.<br>하지만 보통 회사에서 일할 때는 master 브랜치에서 작업하는 경우는 거의 없습니다. 다수의 개발자들과 서로 협업을 해야하므로 각각 브랜치(branch)를 생성해서 이동(checkout)한 다음에 코딩작업을 진행합니다. 코딩작업이 끝난 이후에는 각 개발자들의 작업내역을 master 브랜치로 병합(merge)시킵니다.<br>그럼 이어서 한번 진행해보겠습니다.</p>
+<p><img src="../../../../images/git/git-basic-05.png" alt=""></p>
+<figure class="highlight asciidoc"><figcaption><span>.gitignore</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node<span class="emphasis">_modules</span></span><br><span class="line"><span class="emphasis">dist</span></span><br><span class="line"><span class="emphasis">.env</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch <span class="string">'new branch name'</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout <span class="string">'branch name'</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>필자는 test라는 새로운 브랜치를 하나 생성해서 작업을 진행을 했습니다.</li>
+<li>새로운 브랜치를 만들고 나서 제대로 생성되었는지 확인하려면 <code>git branch</code> 명령어를 실행시켜줍니다.</li>
+<li>test 브랜치로 이동하기 위해서 <code>git checkout test</code> 명령어를 실행시켜줍니다.<br><strong><em>이 때 기존 master(local) 브랜치에 있는 source가 test 브랜치로 복사됩니다.</em></strong></li>
+<li><code>git status</code>로 파일의 체크 상태를 체크해보면 .gitignore 파일은 <strong>Untracked files</strong>로 분류되어 있지 않습니다.<br><strong><em>그 이유는 이미 commit한 files들은 git에 의해 tracking이 되고 있기 때문입니다. 반대로 index.html은 새로 생성한 다음에 commit 작업을 한번도 진행하지 않았기 때문에 Untracked files로 분류되어 있는 것입니다.</em></strong></li>
+</ul>
+<p><img src="../../../../images/git/git-basic-06.png" alt=""><br><img src="../../../../images/git/git-basic-07.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch -a</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>add</code>, <code>commit</code>, <code>push</code> 작업을 순서대로 진행합니다.</li>
+<li>원격저장소에서 test 브랜치로 바꾼 다음 확인하면 위 그림과 같이 푸쉬한 파일들과 commit message들을 확인할 수 있습니다.</li>
+<li><code>a</code> 옵션과 함께 <code>git branch</code> 명령어를 실행시켜면 local 브랜치와 remote 브랜치 둘 다 확인할 수 있습니다.</li>
+<li>test 브랜치에서의 작업이 다 끝났으므로 <code>merge</code> 작업을 진행해보겠습니다.</li>
+</ul>
+<p><img src="../../../../images/git/git-basic-08.png" alt=""><br><img src="../../../../images/git/git-basic-09.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git pull</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch --no-merged</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge <span class="string">'branch name'</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>master 브랜치에서 test 브랜치를 병합시킬 것이기 때문에 <code>checkout</code>을 통해 master 브랜치로 이동했습니다.<br><strong><em>이미 만들어진 브랜치로 checkout 작업을 진행한 경우에는 source의 변경사항이 없습니다.</em></strong></li>
+<li>브랜치를 변경한 이후에 <code>pull</code> 작업을 하는 이유는 remote master 브랜치와 local master 브랜치의 source를 동기화시키기 위해서입니다.<br><strong><em>항상 브랜치를 checkout한 경우에는 conflict를 최소화하기 위해 원격 작업 내역을 병합한 다음 자신의 작업내역을 진행하는 습관을 들이는 것이 좋습니다. </em></strong></li>
+<li><code>no-merged</code> 옵션을 통하여 병합하지 않은 branch list를 확인합니다.</li>
+<li>test 브랜치를 master 브랜치로 병합시킵니다. 이때 <em>Fast-forward</em>라는 메세지가 나오면서 순식간에 병합이 일어납니다. 즉, merge 할 test 브랜치가 master 브랜치가 가리키는 것보다 앞으로 진행한 commit 이기 때문에 master 브랜치 포인터는 최신 커밋으로 이동하는 방식을 일컫는 말입니다.</li>
+<li>push 작업을 한 뒤 github에 master 브랜치 작업내역을 확인합니다.</li>
+</ul>
+<p><img src="../../../../images/git/git-basic-10.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch --merged</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -d <span class="string">'branch name'</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push origin --delete <span class="string">'remote branch name'</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>merged</code> 옵션을 통하여 merge한 브랜치 list를 보여줍니다.</li>
+<li>로컬 브랜치(master, test) 코드가 동일해졌으니 <code>d</code> 옵션을 주어 필요없는 test 브랜치를 삭제해줍니다.</li>
+<li>원격 브랜치(remotes/origin/master, remotes/origin/test) 코드도 동일해졌으니 원격 test 브랜치도 삭제시켜줍니다. <code>delete</code> 옵션을 통해 푸쉬합니다.</li>
+</ul>
+<p><img src="../../../../images/git/git-basic-11.png" alt=""></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --all --decorate --graph --oneline --<span class="built_in">stat</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>왼쪽 터미널은 test 브랜치를 삭제하고 나서 log를 확인한 것이며 오른쪽 터미널은 브랜치를 삭제하기 전의 log 캡쳐 사진입니다.</li>
+<li>commit history를 확인합니다.<ul>
+<li><code>all</code> - refs/의 모든 참조들의 log들을 출력시켜줍니다.</li>
+<li><code>decorate</code> - commit id 오른쪽에 현재 위치해있는 브랜치 name을 보여줍니다.</li>
+<li><code>graph</code> - commit id 왼쪽에 line을 생성하여 commit log를 좀 더 시각화 시켜줍니다. 브랜치들간의 차이를 좀 더 쉽게 파악할 수 있습니다.</li>
+<li><code>oneline</code> - 한줄로 요약해서 보여줍니다.</li>
+<li><code>stat</code> - 변경된 파일들의 목록을 보여줍니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Wrap-up"><a href="#Wrap-up" class="headerlink" title="Wrap-up"></a>Wrap-up</h3><p>지금까지 git의 기초와 일반적인 workflow에 대해 알아보았습니다. 실무에서는 이보다 훨씬 더 복잡한 구조로 되어 있기 때문에 기본 개념을 제대로 이해하셔야 conflict 났을 경우 대처하기가 쉽습니다. command line 이 익숙하지 않은 분들에게는 <a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">SourceTree</a>라는 GUI 툴을 추천합니다.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://git-scm.com/book/ko/v1/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EC%99%80-Merge%EC%9D%98-%EA%B8%B0%EC%B4%88" target="_blank" rel="noopener">Git documentation - 브랜치와 Merge의 기초</a></p>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">working directory->staging area: git add
+staging area->local repo: git commit
+local repo->remote repo: git push
+remote repo-->working directory: git pull
+local repo-->working directory: git checkout
+local repo-->working directory: git merge</textarea><textarea id="sequence-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script></p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jason0853.github.io/2017/12/16/Git-basic/" data-id="cjvt7egyq002qgfuwl5nurzvd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/js0853" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/js0853" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jason0853" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jason0853" data-width="100%" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/01/04/Fixing-common-mistakes/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Fixing common mistakes
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Javascript/">Javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/React/">React</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Typescript/">Typescript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/">Ops</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Git/">Git</a><span class="category-list-count">5</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 14px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Immer/" style="font-size: 10px;">Immer</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Spritesmith/" style="font-size: 10px;">Spritesmith</a> <a href="/tags/Typescript/" style="font-size: 14px;">Typescript</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/tsconfig/" style="font-size: 12px;">tsconfig</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/15/React-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/08/15/React-Basic/" class="title">React Basic</a></p>
+                            <p class="item-date"><time datetime="2018-08-15T05:51:56.000Z" itemprop="datePublished">2018-08-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="Config create-react-app with sass and spritesmith" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="title">Config create-react-app with sass and spritesmith</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T05:58:57.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/12/React-and-Redux-with-Typescript/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React and Redux with Typescript" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/12/React-and-Redux-with-Typescript/" class="title">React and Redux with Typescript</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T08:06:26.000Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/23/Docker-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/docker/docker-logo.png)" alt="Docker Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ops/">Ops</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ops/Docker/">Docker</a></p>
+                            <p class="item-title"><a href="/2018/04/23/Docker-Basic/" class="title">Docker Basic</a></p>
+                            <p class="item-date"><time datetime="2018-04-23T04:36:13.000Z" itemprop="datePublished">2018-04-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/algorithm/2018-kakao-blind-recruitment-logo.png)" alt="2018 카카오 코딩 테스트 (추석 트래픽)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="title">2018 카카오 코딩 테스트 (추석 트래픽)</a></p>
+                            <p class="item-date"><time datetime="2018-03-24T14:01:32.000Z" itemprop="datePublished">2018-03-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jason Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'jason0853';
+    
+    
+    var disqus_url = 'http://jason0853.github.io/2017/12/16/Git-basic/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

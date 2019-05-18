@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>ES6 Features | Jason&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Javascript,ES6" />
+    
+    <meta name="description" content="자바스크립트 관련 포스팅을 하면서 ES6 문법을 간혹 쓴 경우가 있었는데 이번 기회에 ES6 문법 기능을 한번 정리해보겠습니다. 물론 기존 Vanilla Javascript(ES5)도 우수하지만 ES6 문법을 혼용해서 쓰면 좀 더 간결하게 코드를 작성할 수 있고 다른 언어에서 지원되는 클래스(물론 무늬만)나 상수도 지원받을 수 있습니다. # var, le">
+<meta name="keywords" content="Javascript,ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6 Features">
+<meta property="og:url" content="http://jason0853.github.io/2018/02/20/ES6-Features/index.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="자바스크립트 관련 포스팅을 하면서 ES6 문법을 간혹 쓴 경우가 있었는데 이번 기회에 ES6 문법 기능을 한번 정리해보겠습니다. 물론 기존 Vanilla Javascript(ES5)도 우수하지만 ES6 문법을 혼용해서 쓰면 좀 더 간결하게 코드를 작성할 수 있고 다른 언어에서 지원되는 클래스(물론 무늬만)나 상수도 지원받을 수 있습니다. # var, le">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://jason0853.github.io/images/javascript/javascript-logo.png">
+<meta property="og:updated_time" content="2019-05-18T06:10:55.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6 Features">
+<meta name="twitter:description" content="자바스크립트 관련 포스팅을 하면서 ES6 문법을 간혹 쓴 경우가 있었는데 이번 기회에 ES6 문법 기능을 한번 정리해보겠습니다. 물론 기존 Vanilla Javascript(ES5)도 우수하지만 ES6 문법을 혼용해서 쓰면 좀 더 간결하게 코드를 작성할 수 있고 다른 언어에서 지원되는 클래스(물론 무늬만)나 상수도 지원받을 수 있습니다. # var, le">
+<meta name="twitter:image" content="http://jason0853.github.io/images/javascript/javascript-logo.png">
+    
+    <link rel="canonical" href="http://jason0853.github.io/2018/02/20/es6-features/"/>
+
+    
+        <link rel="alternate" href="/" title="Jason&#39;s blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106873845-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3546887837495101",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Tech blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/">Front-end</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Typescript/">Typescript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/">Ops</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Docker/">Docker</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Git/">Git</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Front-end/Javascript/">Javascript</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-ES6-Features" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        ES6 Features
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/02/20/ES6-Features/" class="article-date">
+            <time datetime="2018-02-20T08:57:20.000Z" itemprop="datePublished">2018-02-20</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/ES6/">ES6</a>, <a class="tag-link" href="/tags/Javascript/">Javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="../../../../images/javascript/javascript-logo.png" alt=""></p>
+<p>자바스크립트 관련 포스팅을 하면서 <strong>ES6</strong> 문법을 간혹 쓴 경우가 있었는데 이번 기회에 <strong>ES6</strong> 문법 기능을 한번 정리해보겠습니다. 물론 기존 Vanilla Javascript(ES5)도 우수하지만 <strong>ES6</strong> 문법을 혼용해서 쓰면 좀 더 간결하게 코드를 작성할 수 있고 다른 언어에서 지원되는 클래스(물론 무늬만)나 상수도 지원받을 수 있습니다.</p>
+<h3 id="var-let-const"><a href="#var-let-const" class="headerlink" title="# var, let, const"></a># var, let, const</h3><p>기본적으로 <code>var</code>는 <strong>function-scope</strong>이고 <code>let</code>, <code>const</code>는 <strong>block-scope</strong>입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1000</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// var i 호이스팅(hoisting) </span></span><br><span class="line">  <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);  <span class="comment">// 0, 1, 2</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> i;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'after loop'</span>, i);  <span class="comment">// after loop 1000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1000</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);  <span class="comment">// 0, 1, 2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'after loop'</span>, i);  <span class="comment">// after loop 1000</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>ES5 문법을 보면 함수 안에 <code>var i;</code>는 나중에 선언되었지만 에러가 나지 않고 <strong>호이스팅(hoisting)</strong>이 일어나면서 함수 최상단으로 끌어올려집니다. 위에서 언급한대로 <code>var</code>는 함수 스코프 단위로 범위가 정해져있기 때문에 loop가 끝나고 나서는 <code>console.log(‘after loop’, i);</code>는 함수 바깥에 선언된 변수 <code>i</code>에 접근하게 됩니다.</li>
+<li>ES6 문법에서는 ES5와 달리 블록 단위로 변수 범위가 정해져있습니다. ES5처럼 굳이 함수를 만들지 않아도 위와 똑같은 결과물이 나옵니다. 하지만 <code>var</code>처럼 변수를 나중에 선언하게 되면은 호이스팅은 되지만 <code>Uncaught ReferenceError: i is not defined</code> 에러가 발생할 것입니다.. 그 이유는 <code>let</code>은 <strong>항상 선언이 된 뒤에 값이 할당되어야 한다는 전제 조건</strong>이 있기 때문입니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name;</span><br><span class="line">name = <span class="string">'Jaesung'</span>;</span><br><span class="line">name = <span class="string">'Jason'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> age;  <span class="comment">// Uncaught SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>let</code>는 <strong>선언은 먼저 하고 값은 나중에 할당</strong>해도 상관없습니다.</li>
+<li><code>const</code>는 <strong>항상 선언과 값을 함께 할당</strong>해야 에러가 발생하지 않습니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="number">33</span>;</span><br><span class="line">age = <span class="number">34</span>;  <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>const</code>는 <strong>재할당 불가</strong>입니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">'Jaesung'</span>,</span><br><span class="line">  age: <span class="number">33</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">person.name = <span class="string">'Jason'</span>;</span><br><span class="line">person.job = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">person = &#123;  <span class="comment">// Uncaught TypeError: Assignment to constant variable.</span></span><br><span class="line">  job: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>const</code>는 <strong>객체의 property 값을 변경 및 새로운 property 값을 추가할 수 있지만 재할당 불가</strong>입니다.</li>
+</ul>
+<p>프로그래밍을 할 때 변경 가능한 상태(mutable state)를 최소화하는 습관을 들이는 것이 중요합니다. 왜냐하면 에러가 예상치 못한 곳에서 발생하기 때문에 디버깅하기가 너무 어렵기 때문입니다. 최근 자바스크립트에서는 <code>var</code>를 지양하고 <code>let</code>과 <code>const</code>를 지향하라고 권장합니다. </p>
+<h3 id="Destructuring-Template-Literals-Spread-Operator"><a href="#Destructuring-Template-Literals-Spread-Operator" class="headerlink" title="# Destructuring / Template Literals / Spread Operator"></a># Destructuring / Template Literals / Spread Operator</h3><p><strong>Destructuring</strong>은 비구조화 할당이라고 하며 객체와 배열을 변수로 변환해주는 기능입니다.<br><strong>Template Literals</strong>은 <code><code>${}</code></code> 문법을 제공하여 좀 더 편리하게 문자열을 처리할 수 있는 기능입니다.<br><strong>Spread Operator</strong>은 전개 연산자라 하며 2개 이상의 인자, 요소, 변수들을 확장시키는 기능입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> movie = &#123;</span><br><span class="line">  title: <span class="string">'Friends with Benefits'</span>,</span><br><span class="line">  genre: <span class="string">'Romance'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="attr">title</span>: tit, <span class="attr">genre</span>: gen, rating = <span class="string">'R'</span> &#125; = movie;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(tit);  <span class="comment">// Friends with Benefits</span></span><br><span class="line"><span class="built_in">console</span>.log(gen);  <span class="comment">// Romance</span></span><br><span class="line"><span class="built_in">console</span>.log(rating);  <span class="comment">// R</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>위 코드 6번째 줄을 보면 객체의 속성을 별개의 변수로 추출하여 새로운 변수(<code>title: tit</code>, <code>genre: gen</code>) 및 default 값(<code>rating = ‘R’</code>)을 제공할 수 있습니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">showMovie(&#123;</span><br><span class="line">  title: <span class="string">'Jason Bourne'</span>,</span><br><span class="line">  genre: <span class="string">'Action'</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMovie</span>(<span class="params">opt</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> tit = opt.title,</span><br><span class="line">      genre = opt.genre,</span><br><span class="line">      rating = opt.rating || <span class="string">'R'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'title: '</span> + opt.title + <span class="string">', genre: '</span> + opt.genre + <span class="string">', rating: '</span> + rating);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showMovie</span>(<span class="params">&#123; title: tit, genre, rating = <span class="string">'R'</span> &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`title: <span class="subst">$&#123;tit&#125;</span>, genre: <span class="subst">$&#123;genre&#125;</span>, rating: <span class="subst">$&#123;rating&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Output</span></span><br><span class="line"><span class="comment">// title: Jason Bourne, genre: Action, rating: R</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>ES6 문법을 적용하니 확실히 코드량이 줄어들었습니다. 특히 <strong>Template Literals</strong> 문법을 사용하니 ES5보다 문자열 처리가 간결해졌습니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> [first, ...rest] = numbers;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(first);  <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(...rest);  <span class="comment">// 2 3 4 5</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Person = <span class="function"><span class="keyword">function</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.age = age;</span><br><span class="line">  <span class="keyword">this</span>.job = job;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Person.prototype.log = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`name: <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>, age: <span class="subst">$&#123;<span class="keyword">this</span>.age&#125;</span>, job: <span class="subst">$&#123;<span class="keyword">this</span>.job&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> subInfo = [<span class="number">33</span>, <span class="string">'Front-end Engineer'</span>];</span><br><span class="line"><span class="keyword">const</span> info = [<span class="string">'jason'</span>, ...subInfo];</span><br><span class="line"><span class="comment">// info.push(...subInfo);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p1 = <span class="keyword">new</span> Person(...info);</span><br><span class="line">p1.log();  <span class="comment">// name: Jason, age: 33, job: Front-end Engineer</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>…</code> <strong>전개 연산자</strong> 문법입니다.</li>
+<li><strong>전개 연산자</strong>를 이용했기 때문에 굳이 <code>push()</code> 함수 및 파라미터 전달을 하나하나 할 필요가 없어졌습니다.</li>
+</ul>
+<p>이렇게 3가지 새로운 문법에 대해서 간략히 살펴보았는데 코드량이 상당히 줄어들어 가독성이 향상되는 장점이 있는 것 같습니다.</p>
+<h3 id="Arrow-Function"><a href="#Arrow-Function" class="headerlink" title="# Arrow Function"></a># Arrow Function</h3><p><strong>Arrow Function(화살표 함수)</strong>는 간결하고 <strong>this</strong>가 기존의 ES5와 다르게 작동합니다. 또한 생성자 함수로는 적합하지 않습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Movie</span>(<span class="params">title</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.title = title;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ES5</span></span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.title);  <span class="comment">// Jason Bourne</span></span><br><span class="line">  &#125;.bind(<span class="keyword">this</span>), <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ES6</span></span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.title);  <span class="comment">// Jason Bourne</span></span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> m1 = <span class="keyword">new</span> Movie(<span class="string">'Jason Bourne'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ES5 문법에서 <code>bind(this)</code>를 하지 않으면 <code>this</code>는 window 객체를 가리킵니다.</li>
+<li>ES6 문법에서는 <code>this</code>가 새로운 target으로 바인딩되지 않고 <code>Movie</code> 객체를 정확히 참조합니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> playerInfo = [</span><br><span class="line">  &#123; <span class="attr">position</span>: <span class="string">'PG'</span>, <span class="attr">name</span>: <span class="string">'Kyrie Irving'</span>, <span class="attr">score</span>: <span class="number">20</span>, <span class="attr">retired</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">position</span>: <span class="string">'SG'</span>, <span class="attr">name</span>: <span class="string">'Kobe Bryant'</span>, <span class="attr">score</span>: <span class="number">30</span>, <span class="attr">retired</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">position</span>: <span class="string">'SG'</span>, <span class="attr">name</span>: <span class="string">'Tracy Mcgrady'</span>, <span class="attr">score</span>: <span class="number">25</span>, <span class="attr">retired</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">position</span>: <span class="string">'PF'</span>, <span class="attr">name</span>: <span class="string">'Aaron Gordon'</span>, <span class="attr">score</span>: <span class="number">20</span>, <span class="attr">retired</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">position</span>: <span class="string">'PF'</span>, <span class="attr">name</span>: <span class="string">'Tim Duncan'</span>, <span class="attr">score</span>: <span class="number">23</span>, <span class="attr">retired</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">const</span> sgTotalScore = playerInfo</span><br><span class="line">  .filter(<span class="function"><span class="keyword">function</span>(<span class="params">info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> info.retired === <span class="literal">true</span>;</span><br><span class="line">  &#125;)</span><br><span class="line">  .filter(<span class="function"><span class="keyword">function</span>(<span class="params">info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> info.position === <span class="string">'SG'</span>;</span><br><span class="line">  &#125;)</span><br><span class="line">  .map(<span class="function"><span class="keyword">function</span>(<span class="params">info</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> info.score;</span><br><span class="line">  &#125;)</span><br><span class="line">  .reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev, score</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> prev + score;</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> sgTotalScore = playerInfo</span><br><span class="line">  .filter(<span class="function"><span class="params">info</span> =&gt;</span> info.retired === <span class="literal">true</span>)</span><br><span class="line">  .filter(<span class="function"><span class="params">info</span> =&gt;</span> info.position === <span class="string">'SG'</span>)</span><br><span class="line">  .map(<span class="function"><span class="params">info</span> =&gt;</span> info.score)</span><br><span class="line">  .reduce(<span class="function">(<span class="params">prev, score</span>) =&gt;</span> (prev || <span class="number">0</span>) + score);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sgTotalScore1);  <span class="comment">// 55</span></span><br><span class="line"><span class="built_in">console</span>.log(sgTotalScore2);  <span class="comment">// 55</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>화살표 함수</strong> 또한 ES5로 작성한 코드보다 코드량이 확실히 줄어들었습니다. </li>
+<li>parameter가 한 개이면 <code>()</code>안에 매개변수를 넣을 필요가 없습니다.</li>
+<li>brackets <code>{}</code>이 없으면 <code>return</code>한 것과 같은 문법입니다.</li>
+</ul>
+<h3 id="class-keyword"><a href="#class-keyword" class="headerlink" title="# class keyword"></a># class keyword</h3><p><a href="https://jason0853.github.io/2018/01/09/Object-creation/">이전 포스팅</a>에 <strong>class</strong>에 대해 다룬 포스팅이 있으니 참고바랍니다.</p>
+<h3 id="Generator"><a href="#Generator" class="headerlink" title="# Generator"></a># Generator</h3><p><strong>Generator</strong>는 비동기코드를 동기적으로 프로그매밍 할 수 있도록 도와주는 편한 기능입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Jason'</span>, </span><br><span class="line">    profile: &#123;</span><br><span class="line">      age: <span class="number">33</span>, </span><br><span class="line">      gender: <span class="string">'Male'</span> </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Jane'</span>, </span><br><span class="line">    profile: &#123;</span><br><span class="line">      age: <span class="number">29</span>, </span><br><span class="line">      gender: <span class="string">'Female'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<div id="sequence-0"></div>
+
+<p>위와 같은 데이터 구조(<code>data</code>)를 참조하여 다이어그램 순서대로 처리해서 결과값(gender)를 도출해야된다고 가정해봅시다.<br><strong>제너레이터</strong>를 좀 더 쉽게 사용하기 위해 <a href="https://www.npmjs.com/package/co" target="_blank" rel="noopener">co 라이브러리</a>를 사용해서 실습해보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> co = <span class="built_in">require</span>(<span class="string">'co'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> data.filter(<span class="function">(<span class="params">e</span>) =&gt;</span> e.name === name );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getProfile</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> name.map(<span class="function">(<span class="params">e</span>) =&gt;</span> e.profile);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGender</span>(<span class="params">profile</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> gender = profile[<span class="number">0</span>].gender;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(gender);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">co(<span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> name = <span class="keyword">yield</span> getName(<span class="string">'Jason'</span>);</span><br><span class="line">  <span class="keyword">const</span> profile = <span class="keyword">yield</span> getProfile(name);</span><br><span class="line">  <span class="keyword">const</span> gender = <span class="keyword">yield</span> getGender(profile);</span><br><span class="line">  <span class="keyword">return</span> gender;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(result);  <span class="comment">// Male</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>yeild</code> 표현을 통해 함수의 return 값을 반환합니다.</li>
+<li>만약 콜백으로 처리했다면 코드는 스파게티 코드처럼 더럽혀져 있었을겁니다.</li>
+</ul>
+<p>이번에는 co 라이브러리를 사용하지 않고 16 - 23번째 줄을 <strong>async/await</strong> 문법으로 바꿔 똑같은 결과물을 도출해보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (중략)</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">showGender</span>(<span class="params">personName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> name = <span class="keyword">await</span> getName(personName);</span><br><span class="line">  <span class="keyword">const</span> profile = <span class="keyword">await</span> getProfile(name);</span><br><span class="line">  <span class="keyword">const</span> gender = <span class="keyword">await</span> getGender(profile);</span><br><span class="line">  <span class="keyword">return</span> gender;</span><br><span class="line">&#125;</span><br><span class="line">showGender(<span class="string">'Jason'</span>).then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res));  <span class="comment">// Male</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>function*</code> -&gt; <code>async function</code>, <code>yield</code> -&gt; <code>await</code> 두 개의 키워드만 바뀌었고 Promise로 반환하는 것까지 똑같습니다. </li>
+<li>라이브러리의 도움없이 사용할 수 있는 장점이 있지만 아직 브라우저의 표준 스펙은 아닙니다.</li>
+</ul>
+<h3 id="Wrap-up"><a href="#Wrap-up" class="headerlink" title="Wrap-up"></a>Wrap-up</h3><p>이전 회사에서 ES6로 자바스크립트 개발을 해본 경험이 있었지만 개념을 제대로 익히지 않고 개발을 진행하다보니 ES6 문법 및 기능을 최대한 활용하지 못했던 것 같습니다. 역시 기본이 중요하다는 것을 깨닫는 좋은 시간이었습니다.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="noopener">비구조화 할당</a><br><a href="http://meetup.toast.com/posts/73" target="_blank" rel="noopener">ES6의 제너레이터를 사용한 비동기 프로그래밍</a><script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.27/webfontloader.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script><textarea id="sequence-0-code" style="display: none">Get name->Get profile: name
+Get profile->Get gender: profile
+Note right of Get gender: gender</textarea><textarea id="sequence-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12,"theme":"simple"}</textarea><script>  var code = document.getElementById("sequence-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("sequence-0-options").value));  var diagram = Diagram.parse(code);  diagram.drawSVG("sequence-0", options);</script></p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jason0853.github.io/2018/02/20/ES6-Features/" data-id="cjvt7egz1002ygfuwsr95xdlq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/js0853" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/js0853" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jason0853" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jason0853" data-width="100%" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/02/27/Typescript-Basic-and-Configuration/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Typescript Basic and Configuration
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/02/19/Creating-a-modal-plugin-with-jQuery/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Creating a modal plugin with jQuery</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Javascript/">Javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/React/">React</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Typescript/">Typescript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/">Ops</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Git/">Git</a><span class="category-list-count">5</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 14px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Immer/" style="font-size: 10px;">Immer</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Spritesmith/" style="font-size: 10px;">Spritesmith</a> <a href="/tags/Typescript/" style="font-size: 14px;">Typescript</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/tsconfig/" style="font-size: 12px;">tsconfig</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/15/React-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/08/15/React-Basic/" class="title">React Basic</a></p>
+                            <p class="item-date"><time datetime="2018-08-15T05:51:56.000Z" itemprop="datePublished">2018-08-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="Config create-react-app with sass and spritesmith" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="title">Config create-react-app with sass and spritesmith</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T05:58:57.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/12/React-and-Redux-with-Typescript/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React and Redux with Typescript" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/12/React-and-Redux-with-Typescript/" class="title">React and Redux with Typescript</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T08:06:26.000Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/23/Docker-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/docker/docker-logo.png)" alt="Docker Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ops/">Ops</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ops/Docker/">Docker</a></p>
+                            <p class="item-title"><a href="/2018/04/23/Docker-Basic/" class="title">Docker Basic</a></p>
+                            <p class="item-date"><time datetime="2018-04-23T04:36:13.000Z" itemprop="datePublished">2018-04-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/algorithm/2018-kakao-blind-recruitment-logo.png)" alt="2018 카카오 코딩 테스트 (추석 트래픽)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="title">2018 카카오 코딩 테스트 (추석 트래픽)</a></p>
+                            <p class="item-date"><time datetime="2018-03-24T14:01:32.000Z" itemprop="datePublished">2018-03-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jason Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'jason0853';
+    
+    
+    var disqus_url = 'http://jason0853.github.io/2018/02/20/ES6-Features/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

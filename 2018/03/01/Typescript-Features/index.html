@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Typescript Features | Jason&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Typescript,tsconfig" />
+    
+    <meta name="description" content="지난 포스팅에 타입스크립트를 하기 위한 환경을 구축했었습니다. 그럼 본격적으로 타입스크립트의 특징에 대해서 하나하나 실습해보겠습니다. # Checking Type자바스크립트는 동적타입 언어이기 때문에 기존 타입에 다른 타입을 대입해도 에러가 나지 않았습니다. 하지만 타입스크립트는 다른 언어(Java)처럼 타입을 시스템을 도입하여 Type 선언을 엄격하게">
+<meta name="keywords" content="Typescript,tsconfig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Typescript Features">
+<meta property="og:url" content="http://jason0853.github.io/2018/03/01/Typescript-Features/index.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="지난 포스팅에 타입스크립트를 하기 위한 환경을 구축했었습니다. 그럼 본격적으로 타입스크립트의 특징에 대해서 하나하나 실습해보겠습니다. # Checking Type자바스크립트는 동적타입 언어이기 때문에 기존 타입에 다른 타입을 대입해도 에러가 나지 않았습니다. 하지만 타입스크립트는 다른 언어(Java)처럼 타입을 시스템을 도입하여 Type 선언을 엄격하게">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://jason0853.github.io/images/typescript/typescript-logo.png">
+<meta property="og:updated_time" content="2019-05-18T06:10:55.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Typescript Features">
+<meta name="twitter:description" content="지난 포스팅에 타입스크립트를 하기 위한 환경을 구축했었습니다. 그럼 본격적으로 타입스크립트의 특징에 대해서 하나하나 실습해보겠습니다. # Checking Type자바스크립트는 동적타입 언어이기 때문에 기존 타입에 다른 타입을 대입해도 에러가 나지 않았습니다. 하지만 타입스크립트는 다른 언어(Java)처럼 타입을 시스템을 도입하여 Type 선언을 엄격하게">
+<meta name="twitter:image" content="http://jason0853.github.io/images/typescript/typescript-logo.png">
+    
+    <link rel="canonical" href="http://jason0853.github.io/2018/03/01/typescript-features/"/>
+
+    
+        <link rel="alternate" href="/" title="Jason&#39;s blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106873845-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3546887837495101",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Tech blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/">Front-end</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Typescript/">Typescript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/">Ops</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Docker/">Docker</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Git/">Git</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Front-end/Typescript/">Typescript</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-Typescript-Features" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Typescript Features
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/03/01/Typescript-Features/" class="article-date">
+            <time datetime="2018-02-28T19:34:04.000Z" itemprop="datePublished">2018-03-01</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Typescript/">Typescript</a>, <a class="tag-link" href="/tags/tsconfig/">tsconfig</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="../../../../images/typescript/typescript-logo.png" alt=""></p>
+<p>지난 <a href="https://jason0853.github.io/2018/02/27/Typescript-Basic-and-Configuration/">포스팅</a>에 타입스크립트를 하기 위한 환경을 구축했었습니다. 그럼 본격적으로 <strong>타입스크립트</strong>의 특징에 대해서 하나하나 실습해보겠습니다.</p>
+<h3 id="Checking-Type"><a href="#Checking-Type" class="headerlink" title="# Checking Type"></a># Checking Type</h3><p>자바스크립트는 동적타입 언어이기 때문에 기존 타입에 다른 타입을 대입해도 에러가 나지 않았습니다. 하지만 타입스크립트는 다른 언어(Java)처럼 타입을 시스템을 도입하여 Type 선언을 엄격하게 합니다.<br>만약 string 타입 변수에 number를 넣으면 아래처럼 에러가 발생합니다.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test1: <span class="built_in">string</span> = <span class="string">'Test'</span>;</span><br><span class="line">test1 = <span class="number">3</span>;  <span class="comment">// [ts] Type '3' is not assignable to type 'string'.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> test2;</span><br><span class="line">test2 = <span class="string">'Jaesung'</span>;</span><br><span class="line">test2 = <span class="number">33</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> test3 = <span class="string">'Jaesung Lee'</span>;</span><br><span class="line">test3 = <span class="literal">false</span>;  <span class="comment">// [ts] Type 'false' is not assignable to type 'string'.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>let test1: string</code> 코드를 보면 콜론(:) 뒤에 string이라고 타입을 명시해주었습니다. 즉, string 타입 이외에 다른 타입의 값이 할당되면은 에러를 발생하게 됩니다.</li>
+<li><code>test2</code> 변수는 선언할 때 값을 할당하지 않았습니다. 이런 경우는 <code>let test2: any;</code> 타입으로 명시해준거랑 같습니다.</li>
+<li><code>test3</code> 변수는 타입이 선언되지 않았지만 초기값이 string 타입으로 값이 할당되었기 때문에 할당 과정에서 타입이 string으로 결정됩니다. 그렇기 때문에 다른 타입의 값이 재할당되면 에러가 발생하게 됩니다.</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// string, number, boolean</span></span><br><span class="line"><span class="keyword">let</span> pName: <span class="built_in">string</span> = <span class="string">'Jason'</span>;</span><br><span class="line"><span class="keyword">let</span> pAge: <span class="built_in">number</span> = <span class="number">33</span>;</span><br><span class="line"><span class="keyword">let</span> isJob: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">let</span> profile: <span class="built_in">string</span> = <span class="string">`Name: <span class="subst">$&#123;pName&#125;</span>, Age: <span class="subst">$&#123;pAge&#125;</span>, Job: <span class="subst">$&#123;isJob&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// any</span></span><br><span class="line"><span class="keyword">let</span> val: <span class="built_in">any</span> = <span class="string">'test'</span>;</span><br><span class="line">val = <span class="number">33</span>;</span><br><span class="line">val = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// object</span></span><br><span class="line"><span class="keyword">const</span> person: object = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// array</span></span><br><span class="line"><span class="keyword">let</span> info: <span class="built_in">any</span>[] = [<span class="string">'Jason Lee'</span>, <span class="number">33</span>, <span class="literal">true</span>];</span><br><span class="line"><span class="keyword">let</span> friends: <span class="built_in">Array</span>&lt;<span class="built_in">string</span>&gt; = [<span class="string">'Jason'</span>, <span class="string">'Jane'</span>, <span class="string">'Lilly'</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Tuple</span></span><br><span class="line"><span class="keyword">let</span> player: [<span class="built_in">string</span>, <span class="built_in">number</span>];</span><br><span class="line">player = [<span class="string">'Kobe'</span>, <span class="number">8</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Enum</span></span><br><span class="line"><span class="keyword">enum</span> Player &#123;Kobe = <span class="number">8</span>, Tmac = <span class="number">1</span>, Kyrie = <span class="number">11</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> p: Player = Player.Kyrie;</span><br><span class="line"><span class="keyword">let</span> playerName: <span class="built_in">string</span> = Player[<span class="number">8</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p);  <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(playerName);  <span class="comment">// Kobe</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'test'</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>any</code> 타입은 어떠한 타입의 값도 들어올 수 있습니다. 하지만 실무에서는 any 타입을 지양하는 것을 권고합니다.</li>
+<li>array 타입을 지정할 때는 두 가지 방식이 있습니다. 두번째 방식을 generic array type이라고 합니다.</li>
+<li><strong>Tuple</strong>이란 array type의 고정된 수의 유형이면서 동일한 타입의 배열이 아닐 때 사용할 수 있습니다.</li>
+<li><strong>Enum</strong>이란 C#과 같은 언어에서처럼 열거형은 숫자값 집합에 더 친숙한 이름을 지정하는 방법입니다.</li>
+<li>함수에 <code>void</code>가 선언되어 있을 경우 리턴값이 없어야합니다.</li>
+</ul>
+<h3 id="function-type"><a href="#function-type" class="headerlink" title="# function type"></a># function type</h3><p>함수에 타입을 명시함으로써 argument나 return 타입이 어떤 형태인지 쉽게 알 수 있습니다.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a: <span class="built_in">number</span>, b: <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>): <span class="title">string</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Calculate'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myCal: <span class="function">(<span class="params">x: <span class="built_in">number</span>, y: <span class="built_in">number</span></span>) =&gt;</span> <span class="built_in">number</span>;</span><br><span class="line">myCal = sum;</span><br><span class="line"><span class="built_in">console</span>.log(myCal(<span class="number">1</span>, <span class="number">2</span>));  <span class="comment">// 3</span></span><br><span class="line">myCal = show;  <span class="comment">// [ts] Type '() =&gt; string' is not assignable to type '(x: number, y: number) =&gt; number'. Type 'string' is not assignable to type 'number'.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>myCal = show</code> 코드에서 에러가 난 이유는 서로 타입이 다르기 때문입니다. <code>myCal</code>은 인자와 return 타입이 함께 지정되어 있으며 <code>show</code>는 return을 string으로 받는 함수 타입입니다.</li>
+</ul>
+<h3 id="Object-type"><a href="#Object-type" class="headerlink" title="# Object type"></a># Object type</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> info: &#123; name: <span class="built_in">string</span>; age: <span class="built_in">number</span>; job: <span class="built_in">boolean</span>; &#125;;</span><br><span class="line">info = &#123; name: <span class="string">'Jaesung'</span>, age: <span class="number">34</span>, job: <span class="literal">true</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// custom type</span></span><br><span class="line"><span class="keyword">type</span> profile = &#123; name: <span class="built_in">string</span>; age: <span class="built_in">number</span>; job: <span class="built_in">boolean</span>; &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> p1: profile = &#123; name: <span class="string">'Jaesung'</span>, age: <span class="number">34</span>, job: <span class="literal">true</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> p2: profile = &#123; name: <span class="string">'Jimmy'</span>, age: <span class="number">19</span>, job: <span class="literal">false</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> p3: profile = &#123; name: <span class="string">'Dennis'</span>, age: <span class="number">22</span>, job: <span class="literal">true</span> &#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>p1</code>, <code>p2</code>, <code>p3</code>는 동일한 타입이지만 변수 <code>info</code>처럼 개별적으로 타입을 선언해주는 것은 좀 별로인것 같습니다. 이때 <code>type</code>과 함께 <strong>custom type</strong>을 명시해줍니다.</li>
+</ul>
+<h3 id="Union-Type"><a href="#Union-Type" class="headerlink" title="# Union Type"></a># Union Type</h3><p>하나 이상의 어떤 타입을 지정하는 방식을 <strong>Union Type</strong>이라고 합니다.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> players: <span class="built_in">string</span>[] | <span class="built_in">number</span>[] | <span class="built_in">boolean</span>[] = [<span class="string">'Kobe Bryant'</span>, <span class="string">'Tracy Mcgrady'</span>];</span><br><span class="line"></span><br><span class="line">players = [<span class="number">8</span>, <span class="number">1</span>];</span><br><span class="line">players = [<span class="literal">true</span>, <span class="literal">false</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>any</code>타입을 쓰면 간단하지만 <strong>Union Type</strong>(<code>string[] | number[] | boolean[]</code>)을 쓰는 것을 권장합니다.</li>
+</ul>
+<h3 id="class"><a href="#class" class="headerlink" title="# class"></a># class</h3><p>Typesciprt의 클래스는 ES6의 class와 사용법이 다르니 한번 자세히 다뤄보겠습니다.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person &#123;</span><br><span class="line">  <span class="keyword">public</span> readonly name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">private</span> age: <span class="built_in">number</span>;</span><br><span class="line">  <span class="keyword">protected</span> job: <span class="built_in">boolean</span>;</span><br><span class="line">  <span class="keyword">static</span> hobby: <span class="built_in">string</span>[] = [<span class="string">'Basketball'</span>, <span class="string">'Swimming'</span>, <span class="string">'Jit Jitsu'</span>];</span><br><span class="line">  <span class="keyword">static</span> word: <span class="built_in">string</span> = <span class="string">'Hi, How are you?'</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span>, job: <span class="built_in">boolean</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  setAge(newAge: <span class="built_in">number</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.age = newAge;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getAge(): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  move(text: <span class="built_in">string</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(text);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> greet(): <span class="built_in">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.word;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Student <span class="keyword">extends</span> Person &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span>, age: <span class="built_in">number</span>, job: <span class="built_in">boolean</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name, age, job );</span><br><span class="line">    <span class="keyword">super</span>.move(<span class="string">'I can walk.'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  change(isJob: <span class="built_in">boolean</span>): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.job = isJob;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  isJob(): <span class="built_in">boolean</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.job;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p1:Person = <span class="keyword">new</span> Person(<span class="string">'Jason'</span>, <span class="number">33</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="keyword">const</span> p2:Student = <span class="keyword">new</span> Student(<span class="string">'Jane'</span>, <span class="number">18</span>, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// p1.name = 'Jason Lee'  // [ts] Cannot assign to 'name' because it is a constant or a read-only property.</span></span><br><span class="line"><span class="built_in">console</span>.log(p1.name);  <span class="comment">// Jason</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// p2.setAge(19);</span></span><br><span class="line"><span class="comment">// console.log(p2.getAge());  // 19</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p2.isJob());  <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Person.greet());  <span class="comment">// Hi, How are you?</span></span><br><span class="line"><span class="built_in">console</span>.log(Person.hobby);  <span class="comment">// ["Basketball", "Swimming", "Jit Jitsu"]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>public</code> - 클래스, 서브클래스, 인스턴스 어디에서도 접근 가능.</li>
+<li><code>private</code> - 클래스 내부 이외의 서브클래스나 인스턴스에서는 접근 불가능.</li>
+<li><code>protected</code> - 클래스 내부와 서브클래스 내부에서만 접근 가능. 인스턴스 접근 불가능.</li>
+<li><code>readonly</code> - 읽기 전용 propery.</li>
+<li><code>static</code> - 클래스의 인스턴스로 호출하지 않고 접근할 수 있음. 인스턴스 접근 불가능.<br><strong><em><code>static greet()</code>메서드 안에 있는 this는 인스턴스가 아닌 클래스 <code>person</code>을 가르킵니다.</em></strong></li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Car &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"><span class="keyword">public</span> name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">abstract</span> brand(): <span class="built_in">string</span>;</span><br><span class="line"></span><br><span class="line">  move(): <span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'test car'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Genesis <span class="keyword">extends</span> Car &#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(<span class="string">'Genesis'</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  brand() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hyundai'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> g = <span class="keyword">new</span> Genesis();</span><br><span class="line"></span><br><span class="line">g.move();  <span class="comment">// test car</span></span><br><span class="line"><span class="built_in">console</span>.log(g.name);  <span class="comment">// Genesis</span></span><br><span class="line"><span class="built_in">console</span>.log(g.brand());  <span class="comment">// Hyundai</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>추상클래스(abstract class)</strong>는 오직 상속만 가능하며 추상 메소드는 상속하는 클래스에 반드시 구현이 되어 있어야합니다.</li>
+</ul>
+<h3 id="interface"><a href="#interface" class="headerlink" title="# interface"></a># interface</h3><p><strong>인터페이스(interface)</strong>는 custom type과 거의 비슷하지만 몇 가지 효율적인 면이 있습니다. 클래스와 상속에서 유용하게 사용할 수 있습니다.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Human &#123;</span><br><span class="line">  readonly id: <span class="built_in">number</span>;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  alive: <span class="built_in">boolean</span>;</span><br><span class="line">  age?: <span class="built_in">number</span>;</span><br><span class="line">  say: <span class="function">(<span class="params">arg: <span class="built_in">string</span></span>) =&gt;</span> <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person: Human;</span><br><span class="line"></span><br><span class="line">person = &#123;id: <span class="number">111</span>, name: <span class="string">'Jason'</span>, alive: <span class="literal">true</span>, say: <span class="function">(<span class="params">lang: <span class="built_in">string</span></span>) =&gt;</span> lang&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params">info: Human</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(info.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getName(person);  <span class="comment">// Jason</span></span><br><span class="line"><span class="built_in">console</span>.log(person.say(<span class="string">'Korean'</span>));  <span class="comment">// Korean</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> Student <span class="keyword">implements</span> Human &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">public</span> id: <span class="built_in">number</span>,</span></span><br><span class="line"><span class="params">    <span class="keyword">public</span> name: <span class="built_in">string</span>,</span></span><br><span class="line"><span class="params">    <span class="keyword">public</span> alive: <span class="built_in">boolean</span></span></span><br><span class="line"><span class="params">  </span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  say(lang: <span class="built_in">string</span>): <span class="built_in">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> lang</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Student(<span class="number">123</span>, <span class="string">'18'</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.say(<span class="string">'English'</span>));  <span class="comment">// English</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Gender &#123;</span><br><span class="line">  gender: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Foreigner <span class="keyword">extends</span> Human, Gender &#123;</span><br><span class="line">  nation: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> engineer: Foreigner = &#123;id: <span class="number">111</span>, name: <span class="string">'Jason'</span>, alive: <span class="literal">true</span>, say: <span class="function">(<span class="params">lang: <span class="built_in">string</span></span>) =&gt;</span> lang, nation: <span class="string">'Korea'</span>, gender: <span class="string">'M'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 빈 걕체 초기화</span></span><br><span class="line"><span class="comment">// let engineer = &lt;Foreigner&gt;&#123;&#125;;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>?</code> <strong>Optional Property</strong>입니다. 인터페이스에 기술한 프로퍼티와 메소드가 반드시 구현되어야 합니다. 하지만 선택적 프로퍼티(?)를 붙이면 생략해도 무방합니다.</li>
+<li>클래스랑 같이 쓸때 메소드 내부를 반드시 구현해야합니다.</li>
+<li>여러 인터페이스 상속이 가능합니다.</li>
+<li><code>engineer</code> 변수를 초기화하지 않고 비어있는 객체로 설정하고 싶다면 <strong>Generic</strong> 문법을 사용하여 빈 객체로 둔 상태에서 property를 추가해줄수 있습니다.</li>
+</ul>
+<h3 id="type-alias-VS-interface"><a href="#type-alias-VS-interface" class="headerlink" title="# type alias VS interface"></a># type alias VS interface</h3><p>앞에 살짝 다뤘던 type alias와 interface까지 공부해보았습니다. 그런데 여기서 궁금한 점이 하나 생겼습니다. <strong>interface</strong>와 <strong>type alias</strong>의 차이는 무엇일까요?</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Profile &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Profile &#123;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Info <span class="keyword">extends</span> Profile &#123;</span><br><span class="line">  isJob: <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person: Info = &#123;</span><br><span class="line">  name: <span class="string">'Jason'</span>,</span><br><span class="line">  age: <span class="number">33</span>,</span><br><span class="line">  isJob: <span class="literal">true</span>,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>인터페이스는 같은 인터페이스에 property를 추가해줄 수 있고 <code>extends</code> 키워드를 통하여 확장할 수 있습니다.</li>
+<li><code>implements</code> 키워드를 통하여 인터페이스를 구현할 수도 있습니다.</li>
+</ul>
+<p>반면에 type alias는 어떨까요?</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Job = <span class="built_in">string</span> | <span class="built_in">boolean</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Profile = &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Work = &#123;</span><br><span class="line">  job: Job</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Info = (Profile &amp; Work) | <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person: Info = &#123;</span><br><span class="line">  name: <span class="string">'Jason'</span>,</span><br><span class="line">  age: <span class="number">33</span>,</span><br><span class="line">  job: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>type alias</strong>는 인터페이스와 달리 <strong>Union Type</strong>을 지정할 수도 있고 다른 type alias랑 결합해서 다른 이름을 지정할 수 있습니다.</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Profile &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> Work &#123;</span><br><span class="line">  job: <span class="built_in">string</span> | <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> Info = (Profile &amp; Work) | <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> person: Info = &#123;</span><br><span class="line">  name: <span class="string">'Jason'</span>,</span><br><span class="line">  age: <span class="number">33</span>,</span><br><span class="line">  job: <span class="string">'true'</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>위와 같이 <strong>interface</strong>와 <strong>type alias</strong>를 혼용해서 사용할 수도 있습니다.</li>
+</ul>
+<h3 id="Generic"><a href="#Generic" class="headerlink" title="# Generic"></a># Generic</h3><p><strong>제네릭(Generic)</strong>은 위에서 배운 타입 선언과 달리 미리 선언을 명시하지 않고 생성한 뒤에 타입이 정해집니다. 또한 타입도 여러가지 타입이 올 수 있습니다.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// function test1(arg: number): number &#123;</span></span><br><span class="line"><span class="comment">//   return arg;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// function test2(arg: string): string &#123;</span></span><br><span class="line"><span class="comment">//   return arg;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// function test3(arg: boolean): boolean &#123;</span></span><br><span class="line"><span class="comment">//   return arg;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>&lt;<span class="title">T</span>&gt;(<span class="params">arg: T</span>): <span class="title">T</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> arg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> answer = test&lt;<span class="built_in">string</span>&gt;(<span class="string">'Generic'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(answer);  <span class="comment">// Generic</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myAnswer: &lt;T&gt;<span class="function">(<span class="params">arg: T</span>) =&gt;</span> T = test;</span><br><span class="line"><span class="comment">// let myAnswer2: &#123; &lt;T&gt;(arg: T): T &#125; = test;  // 변수 myAnswer와 같음</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(myAnswer(<span class="string">'Generic'</span>));  <span class="comment">// Generic</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>주석친 부분을 보시면 같은 함수인데 타입만 다를뿐 안에 구현되는 내용은 같습니다. 이럴때 좀 더 간편하게 쓸 수 있는 것이 <strong>Generic</strong>입니다. 선언 시점에 타입을 명시하는 것이 아니라 생성 시점, 즉 <code>test</code>함수가 실행되면서 타입이 string으로 정해집니다.</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Person&lt;T, U&gt; &#123;</span><br><span class="line">  name: T;</span><br><span class="line">  age: U;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: T, age: U</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getName(): T &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  getAge(): U &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.age;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> Person&lt;<span class="built_in">string</span>, <span class="built_in">number</span>&gt;(<span class="string">'Jaesung'</span>, <span class="number">33</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>Generic Class</strong> 같은 경우 기본 구조는 위와 같습니다.</li>
+</ul>
+<h3 id="Wrap-up"><a href="#Wrap-up" class="headerlink" title="Wrap-up"></a>Wrap-up</h3><p>지금까지 간략하게 <strong>타입스크립트</strong>의 특징에 대해서 알아보았습니다. 자바스크립트만 하다가 타입을 명시하면서 코딩을 하니까 몬가 어색했지만 프로젝트를 진행할 때 좀 더 안정적으로 개발할 수 있을것 같다는 생각이 들었습니다. 특히 인터페이스나 타입이 지정되어 있기 때문에 새로운 팀원이 투입될 시 빠르게 코드 분석을 할 수 있을 것 같습니다. 타입스크립트를 계속 관심만 가지고 지켜보다가 비로소 이번 포스팅으로 인해 첫걸음을 뗀 것 같습니다. 이번에 다루지 못하고 지나간 부분들은 다음 포스팅때 좀 더 공부해서 공유해보도록 하겠습니다.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://www.typescriptlang.org" target="_blank" rel="noopener">타입스크립트 공식 홈페이지</a><br><a href="http://poiemaweb.com/typescript-typing" target="_blank" rel="noopener">타입 선언과 정적 타이핑</a><br><a href="https://stackoverflow.com/questions/36782896/in-typescript-what-is-the-difference-between-type-and-interface" target="_blank" rel="noopener">type과 interface 차이는 무엇인가?</a></p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jason0853.github.io/2018/03/01/Typescript-Features/" data-id="cjvt7egz40031gfuwibnait08" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/js0853" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/js0853" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jason0853" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jason0853" data-width="100%" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/03/02/2018-kakao-blind-recruitment-round-1-4/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2018 카카오 코딩 테스트 (셔틀버스)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/02/27/Typescript-Basic-and-Configuration/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Typescript Basic and Configuration</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Javascript/">Javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/React/">React</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Typescript/">Typescript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/">Ops</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Git/">Git</a><span class="category-list-count">5</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 14px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Immer/" style="font-size: 10px;">Immer</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Spritesmith/" style="font-size: 10px;">Spritesmith</a> <a href="/tags/Typescript/" style="font-size: 14px;">Typescript</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/tsconfig/" style="font-size: 12px;">tsconfig</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/15/React-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/08/15/React-Basic/" class="title">React Basic</a></p>
+                            <p class="item-date"><time datetime="2018-08-15T05:51:56.000Z" itemprop="datePublished">2018-08-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="Config create-react-app with sass and spritesmith" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="title">Config create-react-app with sass and spritesmith</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T05:58:57.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/12/React-and-Redux-with-Typescript/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React and Redux with Typescript" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/12/React-and-Redux-with-Typescript/" class="title">React and Redux with Typescript</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T08:06:26.000Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/23/Docker-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/docker/docker-logo.png)" alt="Docker Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ops/">Ops</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ops/Docker/">Docker</a></p>
+                            <p class="item-title"><a href="/2018/04/23/Docker-Basic/" class="title">Docker Basic</a></p>
+                            <p class="item-date"><time datetime="2018-04-23T04:36:13.000Z" itemprop="datePublished">2018-04-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/algorithm/2018-kakao-blind-recruitment-logo.png)" alt="2018 카카오 코딩 테스트 (추석 트래픽)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="title">2018 카카오 코딩 테스트 (추석 트래픽)</a></p>
+                            <p class="item-date"><time datetime="2018-03-24T14:01:32.000Z" itemprop="datePublished">2018-03-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jason Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'jason0853';
+    
+    
+    var disqus_url = 'http://jason0853.github.io/2018/03/01/Typescript-Features/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

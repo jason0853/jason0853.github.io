@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Functional Programming | Jason&#39;s blog</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Javascript" />
+    
+    <meta name="description" content="Functional Programming(함수형 프로그래밍)은 기존 객체지향 프로그래밍처럼 객체에 존재하는 property나 method를 사용하는 것과 달리 이름 그대로 함수를 기반으로 프로그래밍하는 기법입니다. 최근 개발자들 사이에서 함수형 프로그래밍이 trend로 잡고 있는데 어떤 점이 좋은지 한번 정리해보겠습니다. # The advantage of">
+<meta name="keywords" content="Javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Functional Programming">
+<meta property="og:url" content="http://jason0853.github.io/2018/02/02/Functional-Programming/index.html">
+<meta property="og:site_name" content="Jason&#39;s blog">
+<meta property="og:description" content="Functional Programming(함수형 프로그래밍)은 기존 객체지향 프로그래밍처럼 객체에 존재하는 property나 method를 사용하는 것과 달리 이름 그대로 함수를 기반으로 프로그래밍하는 기법입니다. 최근 개발자들 사이에서 함수형 프로그래밍이 trend로 잡고 있는데 어떤 점이 좋은지 한번 정리해보겠습니다. # The advantage of">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://jason0853.github.io/images/javascript/javascript-logo.png">
+<meta property="og:updated_time" content="2019-05-18T06:10:55.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Functional Programming">
+<meta name="twitter:description" content="Functional Programming(함수형 프로그래밍)은 기존 객체지향 프로그래밍처럼 객체에 존재하는 property나 method를 사용하는 것과 달리 이름 그대로 함수를 기반으로 프로그래밍하는 기법입니다. 최근 개발자들 사이에서 함수형 프로그래밍이 trend로 잡고 있는데 어떤 점이 좋은지 한번 정리해보겠습니다. # The advantage of">
+<meta name="twitter:image" content="http://jason0853.github.io/images/javascript/javascript-logo.png">
+    
+    <link rel="canonical" href="http://jason0853.github.io/2018/02/02/functional-programming/"/>
+
+    
+        <link rel="alternate" href="/" title="Jason&#39;s blog" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-106873845-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-3546887837495101",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Tech blog</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Algorithm/">Algorithm</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/">Front-end</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Javascript/">Javascript</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/React/">React</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Front-end/Typescript/">Typescript</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/">Ops</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Docker/">Docker</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Ops/Git/">Git</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Front-end/Javascript/">Javascript</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+                            <article id="post-Functional-Programming" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Functional Programming
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/02/02/Functional-Programming/" class="article-date">
+            <time datetime="2018-02-02T06:37:46.000Z" itemprop="datePublished">2018-02-02</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Javascript/">Javascript</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="../../../../images/javascript/javascript-logo.png" alt=""></p>
+<p><strong>Functional Programming(함수형 프로그래밍)</strong>은 기존 <a href="https://jason0853.github.io/2018/01/10/OOP-Inheritance/">객체지향 프로그래밍</a>처럼 객체에 존재하는 property나 method를 사용하는 것과 달리 이름 그대로 함수를 기반으로 프로그래밍하는 기법입니다. 최근 개발자들 사이에서 <strong>함수형 프로그래밍</strong>이 trend로 잡고 있는데 어떤 점이 좋은지 한번 정리해보겠습니다.</p>
+<h3 id="The-advantage-of-Functional-Programming"><a href="#The-advantage-of-Functional-Programming" class="headerlink" title="# The advantage of Functional Programming"></a># The advantage of Functional Programming</h3><ul>
+<li>버그가 적음.</li>
+<li>추론하기가 쉬움.</li>
+<li>시간 절약.</li>
+</ul>
+<p>우선 기본적으로 함수형 프로그래밍을 어떻게 하는지 알아보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a + <span class="number">3</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> result = sum;</span><br><span class="line"></span><br><span class="line">result(<span class="number">3</span>);  <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<p>위 코드처럼 함수는 변수에 할당될 수 있으며 <strong>입출력이 순수</strong>하기 하기 때문에 <strong>side-effect가 전혀 없습니다.</strong> 그럼 자바스크립트에서 <strong>Higher-Order Function</strong>하면 자주 언급되는 함수들과 필요한 개념들을 한번 살펴보겠습니다.</p>
+<h3 id="Filter"><a href="#Filter" class="headerlink" title="# Filter"></a># Filter</h3><p>조건에 부합하는 값들을 필터링해서 새로운 배열을 반환합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> _ = <span class="built_in">require</span>(<span class="string">'underscore'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> players = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kyrie Irving'</span>, <span class="attr">retire</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kobe Bryant'</span>, <span class="attr">retire</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Tracy Mcgrady'</span>, <span class="attr">retire</span>: <span class="literal">true</span>  &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Aaron Gordon'</span>, <span class="attr">retire</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Tim Duncan'</span>, <span class="attr">retire</span>: <span class="literal">true</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> isRetired = <span class="function"><span class="keyword">function</span>(<span class="params">player</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> player.retire === <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> retiredPlayers = players.filter(isRetired);</span><br><span class="line"><span class="keyword">let</span> currentPlayers = _.reject(players, isRetired);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output: retiredPlayers */</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">[ &#123; name: 'Kobe Bryant', retire: true &#125;,</span></span><br><span class="line"><span class="comment">  &#123; name: 'Tracy Mcgrady', retire: true &#125;,</span></span><br><span class="line"><span class="comment">  &#123; name: 'Tim Duncan', retire: true &#125; ]</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output: currentPlayers */</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">[ &#123; name: 'Kyrie Irving', retire: false &#125;,</span></span><br><span class="line"><span class="comment">  &#123; name: 'Aaron Gordon', retire: false &#125; ]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>filter</code>라는 자바스크립트 내장 함수를 사용함으로써 for loop와 if 구문을 사용할 필요가 없어졌습니다. 결론적으로 코드는 좀 더 간결해졌습니다.</li>
+<li><code>isRetired</code> 변수를 함수형으로 표현함으로써 재사용성이 높아지게 되었습니다.</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="# Map"></a># Map</h3><p>기존 데이터에서 필요한 값들만 추출해서 새로운 배열을 반환합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> players = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kyrie Irving'</span>, <span class="attr">retire</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kobe Bryant'</span>, <span class="attr">retire</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Tracy Mcgrady'</span>, <span class="attr">retire</span>: <span class="literal">true</span>  &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Aaron Gordon'</span>, <span class="attr">retire</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Tim Duncan'</span>, <span class="attr">retire</span>: <span class="literal">true</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> names = players.map(<span class="function"><span class="params">x</span> =&gt;</span> x.name);  <span class="comment">// arrow function(=&gt;) - es6 문법</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Output: names</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">["Kyrie Irving", "Kobe Bryant", "Tracy Mcgrady", "Aaron Gordon", "Tim Duncan"]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>ES6 문법을 사용하여 코드를 한 줄로 정리하였습니다.</li>
+<li>파라미터명을 player라고 명명할수도 있지만 <strong>함수형 프로그래밍</strong>에서는 <code>x</code>라고 짧게 하는 것이 일반적입니다.</li>
+</ul>
+<h3 id="Reduce"><a href="#Reduce" class="headerlink" title="# Reduce"></a># Reduce</h3><p>기존 데이터 값들을 가지고 연산에 의해 반환되는 값을 구할때 주로 사용하는 메서드입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> orders = [</span><br><span class="line">  &#123; <span class="attr">price</span>: <span class="number">30000</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">price</span>: <span class="number">1000</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">price</span>: <span class="number">5000</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">price</span>: <span class="number">10000</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">price</span>: <span class="number">20000</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> totalPrice = orders.reduce(<span class="function">(<span class="params">sum, order</span>) =&gt;</span> sum + order.price, <span class="number">0</span>);  <span class="comment">// arrow function(=&gt;) - es6 문법</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Output: totalPrice</span></span><br><span class="line"><span class="comment">// 66000</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>reduce</code>의 두번째 파라미터는 초기값을 설정해주기 때문에 변수로 initial 값을 지정해 줄 필요가 없어졌습니다.</li>
+</ul>
+<h3 id="Closure"><a href="#Closure" class="headerlink" title="# Closure"></a># Closure</h3><p><strong>Closure(클로저)</strong>란 외부함수가 실행이 끝났음에도 불구하고 내부함수가 외부함수의 변수에 접근할 수 있는 것을 가리킵니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> count = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> _number = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    _number++;</span><br><span class="line">    <span class="keyword">return</span> _number;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> increase = count();  <span class="comment">// increase -&gt; 클로저</span></span><br><span class="line">increase();  <span class="comment">// 1</span></span><br><span class="line">increase();  <span class="comment">// 2</span></span><br><span class="line">increase();  <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>count()</code> 함수가 실행되어 내부함수를 return하여 종료되었음에도 불구하고 <code>increase()</code> 함수는 호출되면서 <code>count</code> 함수의 지역변수인 <code>_number</code>에 접근하게 되어 값이 제대로 출력됩니다.</li>
+<li><code>increase</code>에서 <strong>클로저</strong>가 생성됩니다.</li>
+</ul>
+<p>이번에 조금 다른 예제로 클로저를 다뤄보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeNumber</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> sum3 = makeNumber(<span class="number">3</span>);  <span class="comment">// sum3 -&gt; 클로저</span></span><br><span class="line"><span class="keyword">var</span> sum5 = makeNumber(<span class="number">5</span>);  <span class="comment">// sum5 -&gt; 클로저</span></span><br><span class="line">sum3(<span class="number">10</span>);  <span class="comment">// 13</span></span><br><span class="line">sum5(<span class="number">10</span>);  <span class="comment">// 15</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>makeNumber</code>는 두 개의 새로운 함수들을 만들기 위해 <strong>함수 팩토리</strong>를 사용합니다.</li>
+<li><code>a</code> 인자를 보통 자유변수라고 부르며 <code>b</code> 인자를 묶인 변수라고 합니다.</li>
+<li>문법적 환경으로 바라보았을 때 <code>sum3</code>의 <code>a = 3</code>이며, <code>sum5</code>의 <code>a = 5</code>입니다.</li>
+</ul>
+<h3 id="Currying"><a href="#Currying" class="headerlink" title="# Currying"></a># Currying</h3><p><strong>Currying(커링)</strong>은 한 번에 모든 인자를 전달하지 않고 첫번째 인자를 전달하고 두번째 인자를 전달할 새 함수를 반환합니다. 이렇게 인자의 일부만 받도록 하는 기법을 <strong>커링</strong>이라고 부릅니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> person = </span><br><span class="line">      name =&gt; </span><br><span class="line">        age =&gt; </span><br><span class="line">          job =&gt; </span><br><span class="line">            <span class="string">`I'm <span class="subst">$&#123;name&#125;</span>. I'm <span class="subst">$&#123;age&#125;</span>. I work as a <span class="subst">$&#123;job&#125;</span>.`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> personName = person(<span class="string">'Jason'</span>);</span><br><span class="line"><span class="keyword">let</span> personAge = personName(<span class="number">33</span>);</span><br><span class="line">personAge(<span class="string">'Front-end Engineer'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output */</span></span><br><span class="line"><span class="comment">// I'm Jason. I'm 33. I work as a Front-end Engineer.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>person</code> 함수는 <strong>커링</strong> 기법을 사용할 수 있게 파라미터 이후에 함수를 계속 리턴해주었습니다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> person = <span class="function">(<span class="params">name, age, job</span>) =&gt;</span> <span class="string">`I'm <span class="subst">$&#123;name&#125;</span>. I'm <span class="subst">$&#123;age&#125;</span>. I work as a <span class="subst">$&#123;job&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line">person = _.curry(person);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> personName = person(<span class="string">'Jason'</span>); </span><br><span class="line"><span class="keyword">let</span> personAge = personName(<span class="number">33</span>);</span><br><span class="line">personAge(<span class="string">'Front-end Engineer'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output */</span></span><br><span class="line"><span class="comment">// I'm Jason. I'm 33. I work as a Front-end Engineer.</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>lodash 라이브러리를 이용하여 <code>person</code> 함수를 <strong>커링</strong>할 수 있는 함수로 만들어 보았습니다.</li>
+</ul>
+<p>위에서 filter 함수를 다뤄보았을 때 underscore 라이브러리를 사용하여 은퇴한 선수들과 현역 선수들을 구분했었습니다. 이번에는 lodash의 curry 함수를 사용하여 구분해보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> players = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kyrie Irving'</span>, <span class="attr">retire</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Kobe Bryant'</span>, <span class="attr">retire</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Tracy Mcgrady'</span>, <span class="attr">retire</span>: <span class="literal">true</span>  &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Aaron Gordon'</span>, <span class="attr">retire</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Tim Duncan'</span>, <span class="attr">retire</span>: <span class="literal">true</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> retired = _.curry(<span class="function">(<span class="params">val, obj</span>) =&gt;</span> obj.retire === val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> retiredPlayers = players.filter(retired(<span class="literal">true</span>));</span><br><span class="line"><span class="keyword">let</span> currentPlayers = players.filter(retired(<span class="literal">false</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output: retiredPlayers */</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">[ &#123; name: 'Kobe Bryant', retire: true &#125;,</span></span><br><span class="line"><span class="comment">  &#123; name: 'Tracy Mcgrady', retire: true &#125;,</span></span><br><span class="line"><span class="comment">  &#123; name: 'Tim Duncan', retire: true &#125; ]</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output: currentPlayers */</span></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">[ &#123; name: 'Kyrie Irving', retire: false &#125;,</span></span><br><span class="line"><span class="comment">  &#123; name: 'Aaron Gordon', retire: false &#125; ]</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="Recursion"><a href="#Recursion" class="headerlink" title="# Recursion"></a># Recursion</h3><p><strong>Recursion(재귀)</strong>는 함수가 자기 자신을 호출하는 것을 말하며, 어느 조건을 주었을 경우 만족할 때까지 반복문처럼 계속 호출합니다. <strong>함수형 프로그래밍</strong>에서는 반복문 대신 재귀를 사용합니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> count = <span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (num === <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(num);</span><br><span class="line">  count(num<span class="number">-1</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">count(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">10</span></span><br><span class="line"><span class="comment">9</span></span><br><span class="line"><span class="comment">8</span></span><br><span class="line"><span class="comment">7</span></span><br><span class="line"><span class="comment">6</span></span><br><span class="line"><span class="comment">5</span></span><br><span class="line"><span class="comment">4</span></span><br><span class="line"><span class="comment">3</span></span><br><span class="line"><span class="comment">2</span></span><br><span class="line"><span class="comment">1</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>count</code> 함수는 0이 되기 전까지 계속 자기 자신을 호출하기 때문에 <strong>재귀함수</strong>라고 할 수 있습니다.</li>
+</ul>
+<p>이번에는 <strong>재귀함수</strong>를 응용해서 object tree 구조를 한 번 만들어보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> categories = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'human'</span>, <span class="attr">parent</span>: <span class="literal">null</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'men'</span>, <span class="attr">parent</span>: <span class="string">'human'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'women'</span>, <span class="attr">parent</span>: <span class="string">'human'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'jason'</span>, <span class="attr">parent</span>: <span class="string">'men'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'tom'</span>, <span class="attr">parent</span>: <span class="string">'men'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'jane'</span>, <span class="attr">parent</span>: <span class="string">'women'</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Result */</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  human: &#123;</span><br><span class="line">    men: &#123;</span><br><span class="line">      <span class="string">'jason'</span>: &#123;&#125;,</span><br><span class="line">      <span class="string">'tom'</span>: &#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    women: &#123;</span><br><span class="line">      <span class="string">'jane'</span>: &#123;&#125;,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>categories</code>라는 데이터베이스가 있다고 가정하고 재귀함수를 사용하여 위와 같이 똑같은 결과값이 나오도록 해보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> categories = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'human'</span>, <span class="attr">parent</span>: <span class="literal">null</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'men'</span>, <span class="attr">parent</span>: <span class="string">'human'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'women'</span>, <span class="attr">parent</span>: <span class="string">'human'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'jason'</span>, <span class="attr">parent</span>: <span class="string">'men'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'tom'</span>, <span class="attr">parent</span>: <span class="string">'men'</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="string">'jane'</span>, <span class="attr">parent</span>: <span class="string">'women'</span> &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> makeObjectTree = <span class="function">(<span class="params">categories, parent</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  categories</span><br><span class="line">    .filter(<span class="function"><span class="params">c</span> =&gt;</span> c.parent === parent)</span><br><span class="line">    .forEach(<span class="function"><span class="params">c</span> =&gt;</span> obj[c.id] = makeObjectTree(categories, c.id));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">JSON</span>.stringify(makeObjectTree(categories, <span class="literal">null</span>), <span class="literal">null</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Output */</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">  human: &#123;</span></span><br><span class="line"><span class="comment">    men: &#123;</span></span><br><span class="line"><span class="comment">      'jason': &#123;&#125;,</span></span><br><span class="line"><span class="comment">      'tom': &#123;&#125;</span></span><br><span class="line"><span class="comment">    &#125;,</span></span><br><span class="line"><span class="comment">    women: &#123;</span></span><br><span class="line"><span class="comment">      'jane': &#123;&#125;,</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>JSON.stringify()</code>를 사용해서 자바스크립트 값을 JSON 문자열로 변경하였습니다.</li>
+</ul>
+<p><strong><em>주의) 반복문보다 속도가 느리며 stack을 사용하기 때문에 재귀호출이 많아지면 성능상에 이슈가 발생합니다.</em></strong></p>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="# Promise"></a># Promise</h3><p><strong>Promise</strong>는 콜백처럼 비동기를 다루는 방식 중에 하나입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = <span class="function">(<span class="params">str</span>) =&gt;</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">reslove, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> str === <span class="string">'string'</span>) &#123;</span><br><span class="line">    reslove(str);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> msg = <span class="string">'This argument must be string'</span>;</span><br><span class="line">    reject(<span class="keyword">new</span> <span class="built_in">Error</span>(msg));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [];</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all([ test(<span class="string">'test1'</span>), test(<span class="string">'test2'</span>), test(<span class="string">'test3'</span>) ])</span><br><span class="line">  .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    data.forEach(<span class="function">(<span class="params">val</span>) =&gt;</span> arr.push(val));</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(err));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr);  <span class="comment">// ["test1", "test2", "test3"]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Promise</code>는 ECMA6의 글로벌 객체에 포함되어 있으며 표준으로 채택되었습니다.</li>
+<li><strong>Promise</strong>의 가장 큰 장점은 콜백 지옥에서 벗어날 수 있다는 점입니다.</li>
+</ul>
+<h3 id="Functor"><a href="#Functor" class="headerlink" title="# Functor"></a># Functor</h3><p><strong>Functor</strong>는 map(매핑)될 수 있는 객체이며, 주로 컴퓨터 공학에서 사용됩니다. 기존 값들은 유지 및 변형시키면서 새로운 결과물(<strong>functor</strong>)를 얻게 됩니다. 아래 예제를 통해 한번 설명을 해보겠습니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newArr = arr.map(<span class="function"><span class="params">num</span> =&gt;</span> num * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newArr);  <span class="comment">// [2, 4, 6, 8, 10]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>map</code> 메서드를 통해 변형이 일어납니다. 하지만 기존 <code>arr</code> 배열안에 있는 값들은 바뀌지 않습니다.</li>
+<li><code>newArr</code>은 <code>map</code> 메서드를 통해 새로운 배열, 즉 매핑될 수 있는 새로운 <strong>functor</strong>를 얻게 됩니다.</li>
+</ul>
+<p>아래 코드도 위와 같은 <strong>functor</strong>의 또 다른 예제입니다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Jason'</span>, <span class="attr">age</span>: <span class="number">33</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Jane'</span>, <span class="attr">age</span>: <span class="number">28</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">name</span>: <span class="string">'Tom'</span>, <span class="attr">age</span>: <span class="number">37</span>&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newArr = arr.map(<span class="function"><span class="params">obj</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> newObj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  newObj[obj.name] = obj.age;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newObj;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(newArr);  <span class="comment">// [&#123;"Jason":32&#125;,&#123;"Jane":30&#125;,&#123;"Tom":31&#125;]</span></span><br></pre></td></tr></table></figure>
+<h3 id="Wrap-up"><a href="#Wrap-up" class="headerlink" title="Wrap-up"></a>Wrap-up</h3><p><strong>함수형 프로그래밍</strong>의 특징</p>
+<ul>
+<li><strong>High Order Function</strong>을 통한 코드 재사용성.</li>
+<li>항상 부작용이 없는 <strong>Pure Function</strong> 유지.</li>
+<li><code>for</code>, <code>if</code>구문식보다는 <strong>표현식</strong> 사용. </li>
+<li><strong>Immutable</strong>한 데이터 구조.</li>
+</ul>
+<p>지금까지 함수형 프로그래밍을 다루면서 필요한 개념들을 다뤄보았습니다. 위 포스팅에 잘못된 내용이나 오타가 있는 부분은 댓글 부탁드립니다.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures" target="_blank" rel="noopener">Mozilla - 클로저</a><br><a href="http://sungjk.github.io/2017/07/17/fp.html" target="_blank" rel="noopener">함수형 프로그래밍이란 무엇인가?</a></p>
+
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://jason0853.github.io/2018/02/02/Functional-Programming/" data-id="cjvt7egyx002tgfuwooezbk7r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/js0853" target="_blank">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="https://www.facebook.com/js0853" target="_blank">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/jason0853" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    <div class="github-card" data-github="jason0853" data-width="100%" data-height="" data-theme="default"></div>
+    <script src="//cdn.jsdelivr.net/github-cards/latest/widget.js"></script>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/02/05/2018-kakao-blind-recruitment-round-1-1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            2018 카카오 코딩 테스트 (비밀 지도)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/01/23/Using-design-pattern-to-refactory-jQuery-spaghetti-code/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Using design pattern to refactory jQuery spaghetti code</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/">Front-end</a><span class="category-list-count">12</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Javascript/">Javascript</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/React/">React</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Front-end/Typescript/">Typescript</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/">Ops</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Docker/">Docker</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Ops/Git/">Git</a><span class="category-list-count">5</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Algorithm/" style="font-size: 18px;">Algorithm</a> <a href="/tags/Design-Pattern/" style="font-size: 14px;">Design Pattern</a> <a href="/tags/Docker/" style="font-size: 10px;">Docker</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Immer/" style="font-size: 10px;">Immer</a> <a href="/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/Redux/" style="font-size: 10px;">Redux</a> <a href="/tags/Sass/" style="font-size: 10px;">Sass</a> <a href="/tags/Spritesmith/" style="font-size: 10px;">Spritesmith</a> <a href="/tags/Typescript/" style="font-size: 14px;">Typescript</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/jQuery/" style="font-size: 12px;">jQuery</a> <a href="/tags/tsconfig/" style="font-size: 12px;">tsconfig</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/15/React-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/08/15/React-Basic/" class="title">React Basic</a></p>
+                            <p class="item-date"><time datetime="2018-08-15T05:51:56.000Z" itemprop="datePublished">2018-08-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="Config create-react-app with sass and spritesmith" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/28/Config-create-react-app-with-sass-and-spritesmith/" class="title">Config create-react-app with sass and spritesmith</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T05:58:57.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/12/React-and-Redux-with-Typescript/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/react/react-logo.png)" alt="React and Redux with Typescript" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Front-end/">Front-end</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Front-end/React/">React</a></p>
+                            <p class="item-title"><a href="/2018/05/12/React-and-Redux-with-Typescript/" class="title">React and Redux with Typescript</a></p>
+                            <p class="item-date"><time datetime="2018-05-12T08:06:26.000Z" itemprop="datePublished">2018-05-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/23/Docker-Basic/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/docker/docker-logo.png)" alt="Docker Basic" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Ops/">Ops</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Ops/Docker/">Docker</a></p>
+                            <p class="item-title"><a href="/2018/04/23/Docker-Basic/" class="title">Docker Basic</a></p>
+                            <p class="item-date"><time datetime="2018-04-23T04:36:13.000Z" itemprop="datePublished">2018-04-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="thumbnail">
+    
+    
+        <span style="background-image:url(../../../../images/algorithm/2018-kakao-blind-recruitment-logo.png)" alt="2018 카카오 코딩 테스트 (추석 트래픽)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Algorithm/">Algorithm</a></p>
+                            <p class="item-title"><a href="/2018/03/24/2018-kakao-blind-recruitment-round-1-7/" class="title">2018 카카오 코딩 테스트 (추석 트래픽)</a></p>
+                            <p class="item-date"><time datetime="2018-03-24T14:01:32.000Z" itemprop="datePublished">2018-03-24</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+        
+    </div>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 광고 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3546887837495101"
+     data-ad-slot="6861569823"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 Jason Lee</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_shortname = 'jason0853';
+    
+    
+    var disqus_url = 'http://jason0853.github.io/2018/02/02/Functional-Programming/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
