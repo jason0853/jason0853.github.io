@@ -1,4 +1,1245 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 28 May 2019 01:41:17 GMT</lastBuildDate><item><title><![CDATA[리액트에서 중요한 3가지]]></title><description><![CDATA[이번에 드디어 react…]]></description><link>https://jason0853.github.io/react/react-basic/</link><guid isPermaLink="false">https://jason0853.github.io/react/react-basic/</guid><pubDate>Thu, 23 May 2019 15:05:51 GMT</pubDate><content:encoded>&lt;p&gt;이번에 드디어 react 기반인 &lt;code class=&quot;language-text&quot;&gt;gatsby&lt;/code&gt;로 블로그를 마이그레이션하게 되었다. 콘텐츠도 그대로 이전할 생각도 있었지만 다시 공부해서 올리는게 개인적으로 도움이 될 것 같았다. 그래서 어떤 포스팅을 먼저 올릴까 고민해보았는데 역시 내가 제일 좋아하는 &lt;code class=&quot;language-text&quot;&gt;react&lt;/code&gt;로…😃😃😃&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 03 Jun 2019 09:48:44 GMT</lastBuildDate><item><title><![CDATA[AWS Amplify와 React로 어플리케이션 만들기]]></title><description><![CDATA[출처 : 페이스북 AWSKRUG- AWS한국사용자모임 (민소매를 입은 사람이 필자다.😃)이제부터 지난달 5월 25일과 29일에 열린  관련 meetup에 다녀온 후기를 작성해보려 한다. 2…]]></description><link>https://jason0853.github.io/aws/getting-started-with-aws-amplify-and-react/</link><guid isPermaLink="false">https://jason0853.github.io/aws/getting-started-with-aws-amplify-and-react/</guid><pubDate>Sun, 02 Jun 2019 15:06:03 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7affe1c568dcd28779d12bebe56a3659/2b40c/getting-started-with-aws-amplify-and-react-1.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIDAQT/xAAVAQEBAAAAAAAAAAAAAAAAAAABAv/aAAwDAQACEAMQAAAB1OWUtRBP/8QAHhAAAQIHAQAAAAAAAAAAAAAAAAECAxESExQhIjL/2gAIAQEAAQUC0hV0r40/KXHmQf/EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAECAQE/AYf/xAAcEAADAAEFAAAAAAAAAAAAAAAAASERA0FxkaH/2gAIAQEABj8Cg1siLweGXD5Lprtn/8QAHRABAAMAAQUAAAAAAAAAAAAAAQARITFBUWGhwf/aAAgBAQABPyFWoWVzsL3DuBLy2oBsGmbxEPRER1L4D7P/2gAMAwEAAgADAAAAEKv/AP/EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAEDAQE/EFn/xAAXEQEAAwAAAAAAAAAAAAAAAAAAARFh/9oACAECAQE/EI0p/8QAHRABAAICAgMAAAAAAAAAAAAAAQARIUFRYXGRof/aAAgBAQABPxDa0KgKvxEH0LFe61Kc0qF6QWuoDk2TNMSgCmPtRLjOFE9Ef//Z&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7affe1c568dcd28779d12bebe56a3659/c739e/getting-started-with-aws-amplify-and-react-1.jpg&quot;
+        srcset=&quot;/static/7affe1c568dcd28779d12bebe56a3659/8ee9c/getting-started-with-aws-amplify-and-react-1.jpg 148w,
+/static/7affe1c568dcd28779d12bebe56a3659/ebbe7/getting-started-with-aws-amplify-and-react-1.jpg 295w,
+/static/7affe1c568dcd28779d12bebe56a3659/c739e/getting-started-with-aws-amplify-and-react-1.jpg 590w,
+/static/7affe1c568dcd28779d12bebe56a3659/5413e/getting-started-with-aws-amplify-and-react-1.jpg 885w,
+/static/7affe1c568dcd28779d12bebe56a3659/4efde/getting-started-with-aws-amplify-and-react-1.jpg 1180w,
+/static/7affe1c568dcd28779d12bebe56a3659/abfc3/getting-started-with-aws-amplify-and-react-1.jpg 1770w,
+/static/7affe1c568dcd28779d12bebe56a3659/2b40c/getting-started-with-aws-amplify-and-react-1.jpg 2048w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;출처 : 페이스북 AWSKRUG- AWS한국사용자모임 (민소매를 입은 사람이 필자다.😃)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;이제부터 지난달 5월 25일과 29일에 열린 &lt;code class=&quot;language-text&quot;&gt;Amplify&lt;/code&gt; 관련 meetup에 다녀온 후기를 작성해보려 한다. 25일은 사진 앨범을 공유하는 서비스를 개발하고 배포하는 과정에 대한 발표었고 29일은 인증 및 Todo 어플리케이션을 만드는 과정을 실습하는 발표였다. 우선 난 aws에 친숙하지 않은 프론트엔드 개발자이다. 그렇기 때문에 솔직히 25일 meetup은 따라하기 바빴지만 29일은 이전 밋업을 참여한 덕분인지 그럭저럭(?) 발표 과정을 잘 따라할 수 있었다.&lt;/p&gt;
+&lt;p&gt;그래서 이번 포스팅은 29일에 발표한 내용을 바탕으로 실습하는 과정을 복습하는 차원에서 포스팅을 작성하려 한다.&lt;/p&gt;
+&lt;h2 id=&quot;i-classdevicon-amazonwebservices-plain-wordmark-colored-stylefont-size-13remi-amplify란&quot;&gt;&lt;a href=&quot;#i-classdevicon-amazonwebservices-plain-wordmark-colored-stylefont-size-13remi-amplify%EB%9E%80&quot; aria-label=&quot;i classdevicon amazonwebservices plain wordmark colored stylefont size 13remi amplify란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;i class=&quot;devicon-amazonwebservices-plain-wordmark colored&quot; style=&quot;font-size: 1.3rem;&quot;&gt;&lt;/i&gt; Amplify란?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;AWS Amplify를 사용하면 AWS 기반의 확장 가능한 모바일 및 웹 앱을 손쉽게 생성, 구성 및 구현할 수 있습니다. Amplify는 모바일 백엔드를 원활하게 프로비저닝하고 관리하며, 백엔드를 iOS, Android, 웹 및 React Native 프런트엔드와 손쉽게 통합할 수 있는 간단한 프레임워크를 제공합니다. 또한, 프런트엔드와 백엔드 모두의 애플리케이션 릴리스 프로세스를 자동화하므로 기능을 더 빠르게 제공할 수 있습니다.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;사전준비&quot;&gt;&lt;a href=&quot;#%EC%82%AC%EC%A0%84%EC%A4%80%EB%B9%84&quot; aria-label=&quot;사전준비 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;사전준비&lt;/h3&gt;
+&lt;p&gt;아래 항목들이 준비되었다는 전제하에 포스팅을 진행하겠다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;aws 계정 생성하기&lt;/li&gt;
+&lt;li&gt;vscode 준비&lt;/li&gt;
+&lt;li&gt;node&lt;/li&gt;
+&lt;li&gt;npm or yarn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;install-amplify-cli&quot;&gt;&lt;a href=&quot;#install-amplify-cli&quot; aria-label=&quot;install amplify cli permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Install amplify cli&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -g @aws-amplify/cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;amplify 명령어를 터미널에서 사용하기 위해 global로 설치한다.&lt;/p&gt;
+&lt;h3 id=&quot;amplify-환경-설정&quot;&gt;&lt;a href=&quot;#amplify-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;amplify 환경 설정 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Amplify 환경 설정&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ amplify configure&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;amplfiy configure&lt;/code&gt; 명령어를 터미널에 입력하고 Enter를 한다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/88129eda73773e63145bbfbf3da5be75/a34ba/getting-started-with-aws-amplify-and-react-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 40.159574468085104%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABSklEQVQoz4WRaW6DMBCFOUwTICxJwAursbGBhKZKq6r3P8rrgJpWXZT++DS2xvP8ZsZ7e7TQ1x6l7mH6CY2ykKWCKBSKsoMdZvRuhrEndGaiXAcuG6L9BhMNylrDO7AeTDrwkkSrEULQnRtkTCMnjrnCIWuxiws8bDNsA/4LP+TY+AxxWsErzADWksjizIyQdkRemw8hRQVsLQh24i7Lm2Rfw2NFj0yQE96tLuNDhU2QE2wV+0/oxvYmqPsLzeaCUs1QwzOJW0TUXkL2w0h+OrxHEPL13VLj2emK0/kVyl6gxhe0JFpUAypFC6gc9lmDMCkQROJvEkl5CZ/OyZEcimlCMZ/BR1rI+QQ+jThaGoNzODqLfHBIdYekIyimziBRConRiClGokYka4SsxF4qatk9ISUXC5nU6wz9WKw/3gjiBbm6WYm/+NnyOz+1Avyt8f0xAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/88129eda73773e63145bbfbf3da5be75/b9e4f/getting-started-with-aws-amplify-and-react-2.png&quot;
+        srcset=&quot;/static/88129eda73773e63145bbfbf3da5be75/cf440/getting-started-with-aws-amplify-and-react-2.png 148w,
+/static/88129eda73773e63145bbfbf3da5be75/d2d38/getting-started-with-aws-amplify-and-react-2.png 295w,
+/static/88129eda73773e63145bbfbf3da5be75/b9e4f/getting-started-with-aws-amplify-and-react-2.png 590w,
+/static/88129eda73773e63145bbfbf3da5be75/f9b6a/getting-started-with-aws-amplify-and-react-2.png 885w,
+/static/88129eda73773e63145bbfbf3da5be75/2d849/getting-started-with-aws-amplify-and-react-2.png 1180w,
+/static/88129eda73773e63145bbfbf3da5be75/a34ba/getting-started-with-aws-amplify-and-react-2.png 1504w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;region: &lt;strong&gt;ap-northeast-2&lt;/strong&gt; (서울 리전을 의미!)&lt;/li&gt;
+&lt;li&gt;username: &lt;strong&gt;test-amplify&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enter를 한 후 다음과 같이 설정하자!&lt;/p&gt;
+&lt;h3 id=&quot;사용자-추가&quot;&gt;&lt;a href=&quot;#%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%B6%94%EA%B0%80&quot; aria-label=&quot;사용자 추가 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;사용자 추가&lt;/h3&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6a8ec3a4472e0d35cc75b6cff1431644/202d9/getting-started-with-aws-amplify-and-react-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 85.01199040767386%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAACIklEQVQ4y61Uy5KbMBDk/6vyFfmD3PIHyW1zSlVq4/XuYvMSIEBCCASdmcG4sMvJXjJVbWQh9Wh6WkTee2it0fc9tliWhX8Ey91znhdZ8/25xo+jptEMP46YpgkhBETWWhRFgbIsBc65lfSCfeznrA9whGWZKckKThp1XYc0TYU0yzLUtUbXNmirCpoStBWh6aBqC+8GLHSaQFVhDkK/EV0Jtz8cw+ChiLR7PaI6/MaQJghFhqnIMRKCKjCXBJVjpvll1eemiuiuKoRpRJ1XiN9ytIo0sgaL7VaYHWgejwi5GRWV1zQNDJW/xbzTa/kbLs3aQzTM81zAOkqDVImGOq9oXNc12rYlHRuZY0fwHm1GdG5ak++bcrWJaDjIaS1peT6fEcexJGInMAm7gCvhNTURcwP53T81FOIsRfz+jtPphCRJhJxJOCHbiklYHk5ytdlW8r7+q36Dk5NsJ9vA/1lzY4y839Y8JOTgTaybow2aFhdKyS34KPaHuSGcpkAY0b8ckD6/IDm8oEkyuLJGryr0RUnG9muH59vKrie8z7Ayj9CnBOr1DQOR+UqvoKYgjB+fkIM/EopKLKlkn8SoaMxXka8ly5DRs9Qt3eEZhuzSD6Pox/tufLgRso9G0osxmRY5kYnw5EFugnjROCFj/1nnZd5T5/dmj/A/gr8FnuxD+kbl5dqt/uphyRY9lWIfot9hnTM0/vXziE+fv+HL1yf8ASFqKzcA+JFGAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 3&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6a8ec3a4472e0d35cc75b6cff1431644/b9e4f/getting-started-with-aws-amplify-and-react-3.png&quot;
+        srcset=&quot;/static/6a8ec3a4472e0d35cc75b6cff1431644/cf440/getting-started-with-aws-amplify-and-react-3.png 148w,
+/static/6a8ec3a4472e0d35cc75b6cff1431644/d2d38/getting-started-with-aws-amplify-and-react-3.png 295w,
+/static/6a8ec3a4472e0d35cc75b6cff1431644/b9e4f/getting-started-with-aws-amplify-and-react-3.png 590w,
+/static/6a8ec3a4472e0d35cc75b6cff1431644/f9b6a/getting-started-with-aws-amplify-and-react-3.png 885w,
+/static/6a8ec3a4472e0d35cc75b6cff1431644/2d849/getting-started-with-aws-amplify-and-react-3.png 1180w,
+/static/6a8ec3a4472e0d35cc75b6cff1431644/202d9/getting-started-with-aws-amplify-and-react-3.png 1668w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;사용자 이름: &lt;strong&gt;test-amplify&lt;/strong&gt;&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; AWS Management Console 액세스&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 사용자 지정 비밀번호 설정&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; 비밀번호 재설정 필요&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;다음: 권한&lt;/strong&gt; 버튼 클릭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/55aafc9bd73269f47e50950e02de2af0/51c08/getting-started-with-aws-amplify-and-react-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 88.19095477386935%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAACRUlEQVQ4y6VU247aMBTM3/cX+hHtS1+rqi99rLRSxXYphSwEQu43QhInJkw9B7wLaFettpZGdhx7PGfOsZ2yLNE0DQ6HA9iOx+OLGC/GZhXqtseXSYph0GavNv0g/xwSdl33RPavbdAHrJIW4zgKKEgIfd/HbreTE7TWQt62LZRSMh6GXja6cYuw7BAUHaLdADWcIhrHo8Cqd2az30JI8JQsy7DdbuU7y3KorsHnSYZPdwkmXom7ZYmHaMCu0+eocBWdE0fhk3+Ufhv2ePbPiHiCPoxX/rLVdS0ROffzNdI0RVnk6EyoDJc/mCiO2SdJckaM1PS5icLOce9qtcJ8Psd+v4czX7h4+HmPX3MXfhBivd7AdReIogj0dzqdYrPZyJhWeJ6H2Wxm1q1lTCyXS+mp0mkDD0XiwU8bhPkeVd0gjiOj8pSUqqokYRZ935v/sXhNUCHBdbTM0V2FKnmEmzCbDRpDRCU8jd7akrL+co6EjCAMQwRBIOuLojglRas96syHn/cIcuNZq5CYDfTOlpGtM9tnZw8vVVKhlM3QGoXRAo+JwjI25E0nflEhCZkYuSkXBUxlFlRIP/M8Pyns2x3q1MMmV/CzRhQyHGbMEloignNUZBVyTAsoQBQetYKqE1P9GpG5CZ3qpSwYKgmYBKvQesjrSjL6ZsGDRWFlbkS9bzDq4VzKz4Vti/b2oXitiUKaSSjVX3n1Fggh/qMdb14ojpzX3r+/AS+GbhS+LbQRvXkPq6ZHmUT48PEb3r3/Cvf7D/wBKlNxQGrkiMAAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 4&quot;
+        title=&quot;&quot;
+        src=&quot;/static/55aafc9bd73269f47e50950e02de2af0/b9e4f/getting-started-with-aws-amplify-and-react-4.png&quot;
+        srcset=&quot;/static/55aafc9bd73269f47e50950e02de2af0/cf440/getting-started-with-aws-amplify-and-react-4.png 148w,
+/static/55aafc9bd73269f47e50950e02de2af0/d2d38/getting-started-with-aws-amplify-and-react-4.png 295w,
+/static/55aafc9bd73269f47e50950e02de2af0/b9e4f/getting-started-with-aws-amplify-and-react-4.png 590w,
+/static/55aafc9bd73269f47e50950e02de2af0/f9b6a/getting-started-with-aws-amplify-and-react-4.png 885w,
+/static/55aafc9bd73269f47e50950e02de2af0/2d849/getting-started-with-aws-amplify-and-react-4.png 1180w,
+/static/55aafc9bd73269f47e50950e02de2af0/51c08/getting-started-with-aws-amplify-and-react-4.png 1592w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; disabled&gt; AdministratorAccess 체크 : 권한 설정은 나중에 필요한 부분만 체크하기 위해 해제하도록 한다.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;다음: 태그&lt;/strong&gt; 버튼 클릭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/d3ebb/getting-started-with-aws-amplify-and-react-5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 86.6751269035533%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABDUlEQVQ4y+2SS2rDMBRFtf8lddRCR11BAqUEx3/J0c+R4498Kz1wMYWWOPWwFw5cgzjv2TK7Xq8wxsA5h5h5nu9imnw4PeGQGby9S+rDMIJFobWWiH1rtBvBTU/dh0Gs5hx5nuOcpkgDUinaWOmAaaFDb9uWBmqtqS/PkVvncHNxqRZd14EJEmYoiwJVVVI/Jwk+TglOuYBoJIlUGPQbUko0TQNWCom0bFBfLKqLCVjkZY0sS6FVlMXD6i6hEAJMWYeCS3BpCNuN4Vtg0wVFlrB59vB++iJoiC2yNez7rcVhj8pI+NP669fYEoad8y/cQfiXX2SN957Yf8PF/Aj9OKEfBvCixtPLEc+vB3wC5oM5MMEHDH8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 5&quot;
+        title=&quot;&quot;
+        src=&quot;/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/b9e4f/getting-started-with-aws-amplify-and-react-5.png&quot;
+        srcset=&quot;/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/cf440/getting-started-with-aws-amplify-and-react-5.png 148w,
+/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/d2d38/getting-started-with-aws-amplify-and-react-5.png 295w,
+/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/b9e4f/getting-started-with-aws-amplify-and-react-5.png 590w,
+/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/f9b6a/getting-started-with-aws-amplify-and-react-5.png 885w,
+/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/2d849/getting-started-with-aws-amplify-and-react-5.png 1180w,
+/static/7cd2627dc1ecd1aeeb6e014e7e2cbbde/d3ebb/getting-started-with-aws-amplify-and-react-5.png 1576w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;다음: 검토&lt;/strong&gt; 버튼 클릭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/786990ab7969d463ccded7541476c732/a4ab0/getting-started-with-aws-amplify-and-react-6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 87.46898263027293%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAABYlAAAWJQFJUiTwAAABpklEQVQ4y62U227bMAyG9f6vVWBXRbvddMkwZIs7O8Ea1zrbliX/JZkaSNdmDbYS+EDKliiebDVNE4wxsNYipQSWeZ7/yrKHz2LOqNuIT99aelqgxnFE3/d43oVLhR3mUuSMjRPqR/YxQ4UQsN/v4b2HJ1tztM7BEUZ3sEYTBt5ZsR1lkifKZC7ki2CnKOKslAxVRouxWyM+3MHVN3DNZ/jmltZf0btfiPZe9ED0bBMpNEhxh/FEj2GHHBuoebLA1MA+foc9rAXXrhHMBtFV8PYngtsi+nvRztDabgWrf8h7qzekt0h+C5VToAh2GMJvIBsK3VMG9kjWdNlCd9R5sV8zDy03JaHrOmitMfQDDg8HqR+vub7cyZQm0QLZJReqV3mpxaamnHaOHdd1LQ1q21bGKcYoI8WXSOOIIo14W54d0gjkjKqqsFqtxBkzDIPMJr/7cwbPofi2040cDUe1RHM68JeI4qHmWvGAnzvIF0mtLkBxOkudWL/32b2HwgeLOvfh/3OE/5visb78o5hfz+GHpHxp994iTVn+PJvNHlfXFW6+VHgCvjI0Gr4seNMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 6&quot;
+        title=&quot;&quot;
+        src=&quot;/static/786990ab7969d463ccded7541476c732/b9e4f/getting-started-with-aws-amplify-and-react-6.png&quot;
+        srcset=&quot;/static/786990ab7969d463ccded7541476c732/cf440/getting-started-with-aws-amplify-and-react-6.png 148w,
+/static/786990ab7969d463ccded7541476c732/d2d38/getting-started-with-aws-amplify-and-react-6.png 295w,
+/static/786990ab7969d463ccded7541476c732/b9e4f/getting-started-with-aws-amplify-and-react-6.png 590w,
+/static/786990ab7969d463ccded7541476c732/f9b6a/getting-started-with-aws-amplify-and-react-6.png 885w,
+/static/786990ab7969d463ccded7541476c732/2d849/getting-started-with-aws-amplify-and-react-6.png 1180w,
+/static/786990ab7969d463ccded7541476c732/a4ab0/getting-started-with-aws-amplify-and-react-6.png 1612w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;사용자 만들기&lt;/strong&gt; 버튼 클릭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/55601ddde7fb4282d6c9418a326cd126/e4620/getting-started-with-aws-amplify-and-react-7.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 88.01498127340824%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAABwklEQVQ4y9WUzY7TMBDH/YpcOXHmyIXn4BF4AB6AKzckDqwQXdqUTZM2znfsfDSxG8d/xql2txshFsQKiZF++k8m48nYI4dppSGFxLE7whiD2Szu9dJfqBnNAz5cl2Bq1KiHBoNR0JPGyY7Q9nTH8vkypih/xjhV+MoFWHNqEXYRbjIfqUwRlxyJSJCR7zSu+Oyn5Oc1qUyQVDHFktl3a5xmdUZNNWC9GeCK+pGPQ7rHPgnvCPkOAbFPIwRJhB1xyDiCeD/HfB5id/Dn3LIp0FId1ukWtapQ1K6jGGmTIWvPFF1OmiNuJTgRNWJW3tWIjzWpRE45bk1xLNCM1GG78xCtviBdXcGI/DwHO5FaTPZ2Ag/ncxuxi8hE61hXlTh4a3hXn5HxCFUlUJbljBAC0bcVgk8fUa5XEJtrRFsPW2+LLEkgiwL8EGHjfUcQhBBVBWbMBNE3yMoCQkoopc4MA03Oon/7Bv3LZ9CvX0C/eo7u/TsUVLS/2WD016ipiTBvIOsWWisw/I65rdN2ZpaxhTFLL37Jxfn9lEU+e7TYYx9cFsQT239Q8E/P6J+eoX3aDif3gwSbpgl/i+tslBUSup4/ALEyeMw6j/xsAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 7&quot;
+        title=&quot;&quot;
+        src=&quot;/static/55601ddde7fb4282d6c9418a326cd126/b9e4f/getting-started-with-aws-amplify-and-react-7.png&quot;
+        srcset=&quot;/static/55601ddde7fb4282d6c9418a326cd126/cf440/getting-started-with-aws-amplify-and-react-7.png 148w,
+/static/55601ddde7fb4282d6c9418a326cd126/d2d38/getting-started-with-aws-amplify-and-react-7.png 295w,
+/static/55601ddde7fb4282d6c9418a326cd126/b9e4f/getting-started-with-aws-amplify-and-react-7.png 590w,
+/static/55601ddde7fb4282d6c9418a326cd126/f9b6a/getting-started-with-aws-amplify-and-react-7.png 885w,
+/static/55601ddde7fb4282d6c9418a326cd126/2d849/getting-started-with-aws-amplify-and-react-7.png 1180w,
+/static/55601ddde7fb4282d6c9418a326cd126/e4620/getting-started-with-aws-amplify-and-react-7.png 1602w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;.CSV 다운로드&lt;/strong&gt; 버튼을 클릭하여 csv 파일을 잘 보관해두자.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;닫기&lt;/strong&gt; 버튼을 클릭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/712cabb32b14d09083c39c7332111284/8e846/getting-started-with-aws-amplify-and-react-8.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 17.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAADCAYAAACTWi8uAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAk0lEQVQI13WOUQ6CMBAFOY2CgkZsi9DS1raEFKKiifH+J3muMWqM8WMyP7uzm0gTEboJ1h2g7QgXjuQBSkdUdUDJDLJlRewwzwTBkS4+fjFLGYq1RGJ9xPlyw2m6wncj+mEiD3SgR6M84VBLh9Z0FFe0+B36CZZCQzQOonYoti1W1R75RtIQIzh9Jt5+8PyM/w3eARi7YcOKnuGZAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 8&quot;
+        title=&quot;&quot;
+        src=&quot;/static/712cabb32b14d09083c39c7332111284/b9e4f/getting-started-with-aws-amplify-and-react-8.png&quot;
+        srcset=&quot;/static/712cabb32b14d09083c39c7332111284/cf440/getting-started-with-aws-amplify-and-react-8.png 148w,
+/static/712cabb32b14d09083c39c7332111284/d2d38/getting-started-with-aws-amplify-and-react-8.png 295w,
+/static/712cabb32b14d09083c39c7332111284/b9e4f/getting-started-with-aws-amplify-and-react-8.png 590w,
+/static/712cabb32b14d09083c39c7332111284/f9b6a/getting-started-with-aws-amplify-and-react-8.png 885w,
+/static/712cabb32b14d09083c39c7332111284/2d849/getting-started-with-aws-amplify-and-react-8.png 1180w,
+/static/712cabb32b14d09083c39c7332111284/8e846/getting-started-with-aws-amplify-and-react-8.png 1500w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;다시 터미널로 돌아와 돌아와서 Enter를 한 후 다운로드 받은 csv 파일을 열어 &lt;code class=&quot;language-text&quot;&gt;accessKeyId&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;secretAccessKey&lt;/code&gt;를 입력해준다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/40e9f1a969870b43ea8102a7e45e6127/f456e/getting-started-with-aws-amplify-and-react-9.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 21.932299012693935%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAArElEQVQY04WPyQ7CMAxE+/+fxR9wQj2B6JKQRGmrkqXZhtSiojdGevKMLVtJs20bQoy43ATaawsrBXyIsNbCGEPs/sh7dd989Jxz0FqDc47GvN/YpeuhfmTQ00RDpRSklIQQAuM4QkkF9uK4Px/gjKPvezDGMAwDuq4j3yzLjFwK3LzA1IVSMnL+UepsryEE8iFFGG+RUkKsPzvw3tNLm3VdqXGo7px8Ic75nz7T/DVdg0nykAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 9&quot;
+        title=&quot;&quot;
+        src=&quot;/static/40e9f1a969870b43ea8102a7e45e6127/b9e4f/getting-started-with-aws-amplify-and-react-9.png&quot;
+        srcset=&quot;/static/40e9f1a969870b43ea8102a7e45e6127/cf440/getting-started-with-aws-amplify-and-react-9.png 148w,
+/static/40e9f1a969870b43ea8102a7e45e6127/d2d38/getting-started-with-aws-amplify-and-react-9.png 295w,
+/static/40e9f1a969870b43ea8102a7e45e6127/b9e4f/getting-started-with-aws-amplify-and-react-9.png 590w,
+/static/40e9f1a969870b43ea8102a7e45e6127/f9b6a/getting-started-with-aws-amplify-and-react-9.png 885w,
+/static/40e9f1a969870b43ea8102a7e45e6127/2d849/getting-started-with-aws-amplify-and-react-9.png 1180w,
+/static/40e9f1a969870b43ea8102a7e45e6127/bbefa/getting-started-with-aws-amplify-and-react-9.png 1770w,
+/static/40e9f1a969870b43ea8102a7e45e6127/f456e/getting-started-with-aws-amplify-and-react-9.png 2836w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;다시 브라우저로 가서 AWS Management Console -&gt; IAM 검색 -&gt; 사용자 탭 클릭하면 다음과 같이 &lt;strong&gt;test-amplify&lt;/strong&gt;라는 사용자가 추가되었다. 😃&lt;/p&gt;
+&lt;h3 id=&quot;iam-권한-설정&quot;&gt;&lt;a href=&quot;#iam-%EA%B6%8C%ED%95%9C-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;iam 권한 설정 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;IAM 권한 설정&lt;/h3&gt;
+&lt;p&gt;다음은 우리가 추가해야할 정책들이다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;API Gateway&lt;/code&gt; - 시스템의 아키텍처를 내부에 숨기고 서비스로 전달되는 API 요청에 대한 응답을 적절한 형태로 응답, 즉 REST API endpoint 역할.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;CloudFormation&lt;/code&gt; - 해당 리소스의 프로비저닝과 구성을 담당한다. AWS 리소스를 개별적으로 생성하고 구성할 필요가 없다. 서버 세팅을 규격화해서 자동화 할 수 있는 서비스.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Cognito Identity&lt;/code&gt; &amp;#x26; &lt;code class=&quot;language-text&quot;&gt;Congito User Pools&lt;/code&gt; - 사용자 등록과 인증 처리.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;DynamoDB&lt;/code&gt; - NoSQL Database 서비스.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;IAM&lt;/code&gt; - AWS 리소스에 대한 액세스를 안전하게 제어할 수 있는 웹 서비스.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;Lambda&lt;/code&gt; - 서버에 대한 걱정없이 코드를 실행하고 사용한 컴퓨팅 시간에 대해서만 비용을 지불하는 서비스&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;S3&lt;/code&gt; - &lt;em&gt;Simple Storage Service&lt;/em&gt;의 약자로 파일 서버의 역할을 담당.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/515551f949779a3d16797b3ecd5d7d8e/cef9c/getting-started-with-aws-amplify-and-react-10.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 32.19616204690831%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAYAAADDl76dAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA2klEQVQY022Q7U7DMAxF+/7PxX+eACRAGzCytUmcxPm8uOnCplFLR9eyFesoU4wRpRRoQ3Deo7WGtUaOvtba85Ex9/KWiDA5R3+LtXLOIOfAzD29D322d+yelBJWuckagyQPcgxwZKCXBernhPlyBgcxrmVVHK4bbYdrTdZaZLluPeP1eMZBacwudiwXmJChO2lLmdlY/0GxgDhjymUzCBJPLxbPHxbKJRw1byzh2gccdMQnVajQbjBwkt372xfULH84VDkmfF8M1EIgsY2l7ZMr+IGQCpzYseQvWVDUlkljYboAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 10&quot;
+        title=&quot;&quot;
+        src=&quot;/static/515551f949779a3d16797b3ecd5d7d8e/b9e4f/getting-started-with-aws-amplify-and-react-10.png&quot;
+        srcset=&quot;/static/515551f949779a3d16797b3ecd5d7d8e/cf440/getting-started-with-aws-amplify-and-react-10.png 148w,
+/static/515551f949779a3d16797b3ecd5d7d8e/d2d38/getting-started-with-aws-amplify-and-react-10.png 295w,
+/static/515551f949779a3d16797b3ecd5d7d8e/b9e4f/getting-started-with-aws-amplify-and-react-10.png 590w,
+/static/515551f949779a3d16797b3ecd5d7d8e/f9b6a/getting-started-with-aws-amplify-and-react-10.png 885w,
+/static/515551f949779a3d16797b3ecd5d7d8e/2d849/getting-started-with-aws-amplify-and-react-10.png 1180w,
+/static/515551f949779a3d16797b3ecd5d7d8e/bbefa/getting-started-with-aws-amplify-and-react-10.png 1770w,
+/static/515551f949779a3d16797b3ecd5d7d8e/cef9c/getting-started-with-aws-amplify-and-react-10.png 2814w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;인라인 정책 추가&lt;/strong&gt; 버튼을 클릭하여 필요한 정책들을 추가해보겠다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b2a8299ed1c1605c7def0fca953bef36/a9972/getting-started-with-aws-amplify-and-react-11.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 68.77510040160642%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABWklEQVQ4y61Ty3LCMAzM/39Rv4NDDz3QmVIeJSTxM4njWFvJAUo6UGCmntnYluXVSnIKYyzGccTzg5AS5dXrp8WmbvO60E0Naw201nDOwRjDewvvfZ4FYjPHtdi1D+jCCKLEvATFe9sNOUhRlzvUdcVkns8oqxWklG6AfSae8wgxoQ18xsbifdtgXynYkzJW6b2Dy4rMDFnpBbQ2+V7VaJS1zgELSaFt2wylFFabLyxXa2zLGsp6KOPQMKyb/MT/EmKrlMXuoFk5E/4udbMrsX5bollvwFmAS4UuAiPdaREhl6yY1YcNwXBzDhWCnlIYb9byB9KcaWZC+dCxwjFGtF2HgecwDFMXj+HpDq4SdkzWcl36vs8govuv8exD85RlE0LIEKWCU+S/0+V7cYTv41zhNTX0QKoy+iHBSefkT7lG8NwPOL9fPKLiEZWn5v0L4eLD4GVx4NeR8A1hyEzDgK2DrAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 11&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b2a8299ed1c1605c7def0fca953bef36/b9e4f/getting-started-with-aws-amplify-and-react-11.png&quot;
+        srcset=&quot;/static/b2a8299ed1c1605c7def0fca953bef36/cf440/getting-started-with-aws-amplify-and-react-11.png 148w,
+/static/b2a8299ed1c1605c7def0fca953bef36/d2d38/getting-started-with-aws-amplify-and-react-11.png 295w,
+/static/b2a8299ed1c1605c7def0fca953bef36/b9e4f/getting-started-with-aws-amplify-and-react-11.png 590w,
+/static/b2a8299ed1c1605c7def0fca953bef36/f9b6a/getting-started-with-aws-amplify-and-react-11.png 885w,
+/static/b2a8299ed1c1605c7def0fca953bef36/2d849/getting-started-with-aws-amplify-and-react-11.png 1180w,
+/static/b2a8299ed1c1605c7def0fca953bef36/bbefa/getting-started-with-aws-amplify-and-react-11.png 1770w,
+/static/b2a8299ed1c1605c7def0fca953bef36/a9972/getting-started-with-aws-amplify-and-react-11.png 1992w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;필요한 정책(CloudFormation)을 검색한 후 해당 정책(CloudFormation)을 클릭한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4e07fd78264ef8d6199c719862c5a982/da39e/getting-started-with-aws-amplify-and-react-12.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 68.90672016048144%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABlUlEQVQ4y5VUW47bMAz0/U/SgxQ9QX/6USy2GyeIk1hvS9ZrSspxk3WNBhUwICHQo+FQchdjhDYGOWf8/6oopbbs+4fGRXl03k+Q4gatFaRScM5RrmHoEM6ttS1/Bu8rFxFiRq1ESBB2hvUR3UyE4nqGEGMr5PMSqWXFpZQWt+D9RMpqfWgNqcDHgs5OAT/fj/h1OOEynKEuBxglSIltSl9BUVccb0JhGBW6RB5aowmG2jPQ8gYxjhgJ0zQhhADvfctfwU3kYX3WTWtOGaPUjZBPl1I20jaCWj/hz2goNT7D+Xkh3BaJYcChP0EZB39Xyb5t8fxdLozyIFwV8JLnM/r+CGPvrdCw9q7VWs9kLmRMc94nDHNAfxrwcXW7BHvEi8KKbiudkchHYx2kDcv1uPu0rfts1XIfu60fkchmPaCqA6ruEcd3xOsbSgp30rJLyC+mPHu4tsOe8WtQhqL1RDSjMpgI+LdCQrewPyaXUmotx1wbytIJxbo7aQYTeRqI9unva7O+zRX1BZafQ8XXHyO+fDviN4EYSVkHpEK0AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 12&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4e07fd78264ef8d6199c719862c5a982/b9e4f/getting-started-with-aws-amplify-and-react-12.png&quot;
+        srcset=&quot;/static/4e07fd78264ef8d6199c719862c5a982/cf440/getting-started-with-aws-amplify-and-react-12.png 148w,
+/static/4e07fd78264ef8d6199c719862c5a982/d2d38/getting-started-with-aws-amplify-and-react-12.png 295w,
+/static/4e07fd78264ef8d6199c719862c5a982/b9e4f/getting-started-with-aws-amplify-and-react-12.png 590w,
+/static/4e07fd78264ef8d6199c719862c5a982/f9b6a/getting-started-with-aws-amplify-and-react-12.png 885w,
+/static/4e07fd78264ef8d6199c719862c5a982/2d849/getting-started-with-aws-amplify-and-react-12.png 1180w,
+/static/4e07fd78264ef8d6199c719862c5a982/bbefa/getting-started-with-aws-amplify-and-react-12.png 1770w,
+/static/4e07fd78264ef8d6199c719862c5a982/da39e/getting-started-with-aws-amplify-and-react-12.png 1994w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; CloudFormation 작업(cloudformation:*)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e4c1eeee7df8de8ad28daf1538046ae3/1e4b3/getting-started-with-aws-amplify-and-react-13.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 69.33198380566802%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAABTUlEQVQ4y62T206EMBCG+/5P5LUP4IVXXhg1cVcXlkJbeqBA+zsdIKvGuBvdhi+dztBhTgjvPax1+NPKmZ5cBNw9K9gQIWyvoToJrTXjnIMxhj5iWe77nim6TXY+QLsR4zSzw5QSOhsxxIkcGoVO1mjbDjFGNs7zzCzy6fxFnyi6NVASEcbECKl6PL7s8Lp/g2yaJZIVQxEbs2FOsl7Ysiq6o+wglYGIw0CpLek556GU4milbFHq60M4SyAs3XV+gNADUFFPag8cib0a8VQZ3ouudpdRfHQBEP2QIF1C6wsZtYmoyNLYic+S9Ocod4sPHaiGOSduO/JS4hK+OlTwVIZtNNh+AcWXKB3bmAkeERdpDEaaqxGf7b+R113kdTg3Ti9l5rv9J0p07e4d/aGGwJVWHgJzPYcr4pKULk27wE35r7OJfs+b+wa3Dy0+ADm8SRAR8hkfAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 13&quot;
+        title=&quot;&quot;
+        src=&quot;/static/e4c1eeee7df8de8ad28daf1538046ae3/b9e4f/getting-started-with-aws-amplify-and-react-13.png&quot;
+        srcset=&quot;/static/e4c1eeee7df8de8ad28daf1538046ae3/cf440/getting-started-with-aws-amplify-and-react-13.png 148w,
+/static/e4c1eeee7df8de8ad28daf1538046ae3/d2d38/getting-started-with-aws-amplify-and-react-13.png 295w,
+/static/e4c1eeee7df8de8ad28daf1538046ae3/b9e4f/getting-started-with-aws-amplify-and-react-13.png 590w,
+/static/e4c1eeee7df8de8ad28daf1538046ae3/f9b6a/getting-started-with-aws-amplify-and-react-13.png 885w,
+/static/e4c1eeee7df8de8ad28daf1538046ae3/2d849/getting-started-with-aws-amplify-and-react-13.png 1180w,
+/static/e4c1eeee7df8de8ad28daf1538046ae3/bbefa/getting-started-with-aws-amplify-and-react-13.png 1770w,
+/static/e4c1eeee7df8de8ad28daf1538046ae3/1e4b3/getting-started-with-aws-amplify-and-react-13.png 1976w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; 모든 리소스&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;권한 추가&lt;/strong&gt; 클릭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;위와 같은 순서로 8개의 권한 추가를 완료하면 &lt;strong&gt;정책 검토&lt;/strong&gt; 버튼을 눌러 다음화면으로 넘어간다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/98798f8d97ab8549ccc9e8b3f9533aac/a9972/getting-started-with-aws-amplify-and-react-14.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 68.57429718875501%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB8klEQVQ4y5VUy3LbMAzU/x977if00P/opc0xjZNaSmxT1suW+LBEcrugrNhu3elEM2uCILgEsaCzvu8RvId8Mcb38SMIIeDbqoUdPbLj8ZgcCzzJZby7Wfx/Is77HMkCY7KmbTAMA7q2xaHrIAc46xgcU+bBh/PoIfn/C8uXyY8fR1SPj3j98YDm6SnZ3eoZOs+JIo2myEFWBl9jutjBXxH2B+hyB9tUcE2dxlPXYCR0VaLnmt6XCcNeJaR5tZ/njDFqiziekKV0zQC12+JXUWBfN9ioEquXF5RVhe1O4W3DtXWONdfFFoj9c7WivUGx3ULla0Rnz4RWpxrmr2/Yk0RVLVTJ09kBUl+tuc76CsQWSK1lj9YDBm1g2xrx5JYMuVE7FLXFOInSE+q6fldeFDbGJJJFceccrLVz25Ak8JY3hMfe4llp9HbCRJGUUrO6Z8LUCcxwIRQyyRT3CQccBodGj6kFTuOEXVnCS18KAX09N7fdAeHcJpYZamYttugbjL4ipMqGwXbQqbDj0KOhSJ5B3hoE+kzXoq8rBJkT7sj4Q5dsz/XQ1VeiUO7I4kaKE+UkZuxJOtszgr71yVwgdjpYrs9ezOL5Svc6/3++yzdfXP4KspECJNfN+72807/e8bJOaOdZrQafv37Hpy8PwHTCbxRWQA98mA4dAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 14&quot;
+        title=&quot;&quot;
+        src=&quot;/static/98798f8d97ab8549ccc9e8b3f9533aac/b9e4f/getting-started-with-aws-amplify-and-react-14.png&quot;
+        srcset=&quot;/static/98798f8d97ab8549ccc9e8b3f9533aac/cf440/getting-started-with-aws-amplify-and-react-14.png 148w,
+/static/98798f8d97ab8549ccc9e8b3f9533aac/d2d38/getting-started-with-aws-amplify-and-react-14.png 295w,
+/static/98798f8d97ab8549ccc9e8b3f9533aac/b9e4f/getting-started-with-aws-amplify-and-react-14.png 590w,
+/static/98798f8d97ab8549ccc9e8b3f9533aac/f9b6a/getting-started-with-aws-amplify-and-react-14.png 885w,
+/static/98798f8d97ab8549ccc9e8b3f9533aac/2d849/getting-started-with-aws-amplify-and-react-14.png 1180w,
+/static/98798f8d97ab8549ccc9e8b3f9533aac/bbefa/getting-started-with-aws-amplify-and-react-14.png 1770w,
+/static/98798f8d97ab8549ccc9e8b3f9533aac/a9972/getting-started-with-aws-amplify-and-react-14.png 1992w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;이름 - &lt;strong&gt;test-amplify&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;요약 - 8개의 정책들이 잘 추가되었는지 확인.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;정책 생성&lt;/strong&gt; 버튼 클릭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;create-react-app-설치&quot;&gt;&lt;a href=&quot;#create-react-app-%EC%84%A4%EC%B9%98&quot; aria-label=&quot;create react app 설치 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Create react app 설치&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ npx create-react-app amplify-app &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; amplify-app
+$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;브라우저에 react logo가 돌아가는 화면이 보여진다면 &lt;strong&gt;Ctrl + C&lt;/strong&gt;로 종료한다.&lt;/p&gt;
+&lt;h3 id=&quot;initialize-amplify&quot;&gt;&lt;a href=&quot;#initialize-amplify&quot; aria-label=&quot;initialize amplify permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Initialize Amplify&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ amplify init&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/db13bade211f7be231d2d15e9c880d0d/8e846/getting-started-with-aws-amplify-and-react-15.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 49.733333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAABh0lEQVQoz3WS23KjMBBE+Zo1sWMgDiAQFyOQQFi+wHrtpPZp8/8f0RkUJ9nEzsOprpJKXd2jcZ5HBTFq5HWPRnRQRQXVGnTDHnq3R28OaFSPutFQnYFsN5ZaasRJeYWT1hqF2ELqA/SEMhCNARMt2FrCf0iw9GOCWbwgsWce8cuNiPALTlkbmO0Z/eaErv+DjlSbMzI54jHrEbAGcz+Hu2CY3cUXIos7j69wKrmlKiOl2lltCdkOyApKvt4gKXt4UY37gEx/MPliKNo9DsNfmtUJ292T1bwyCJMGq7DCgoymKjNievCW7NP4e1JreH5+wenpH4Q+omh/I1Mj4vpAVfmH0S1u1XZ41qKkahV9DOMt4lSBFz0yqhrGAi4NfnaLi9lVwoCvsWQFgqzCQ05MSmd+WmK6W7AMd6sE85BjHvEPdZfsdsLHRKCoaPg5peOS5jel00iLDn40zZATGdVP4d7HF9jPlafHuj/SyhxpoQda2L1VqQZb2VuV8EKBBa3Oe9X/1+a76SuifkrFMXgSDgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 15&quot;
+        title=&quot;&quot;
+        src=&quot;/static/db13bade211f7be231d2d15e9c880d0d/b9e4f/getting-started-with-aws-amplify-and-react-15.png&quot;
+        srcset=&quot;/static/db13bade211f7be231d2d15e9c880d0d/cf440/getting-started-with-aws-amplify-and-react-15.png 148w,
+/static/db13bade211f7be231d2d15e9c880d0d/d2d38/getting-started-with-aws-amplify-and-react-15.png 295w,
+/static/db13bade211f7be231d2d15e9c880d0d/b9e4f/getting-started-with-aws-amplify-and-react-15.png 590w,
+/static/db13bade211f7be231d2d15e9c880d0d/f9b6a/getting-started-with-aws-amplify-and-react-15.png 885w,
+/static/db13bade211f7be231d2d15e9c880d0d/2d849/getting-started-with-aws-amplify-and-react-15.png 1180w,
+/static/db13bade211f7be231d2d15e9c880d0d/8e846/getting-started-with-aws-amplify-and-react-15.png 1500w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;명령어를 Enter 한 후 위와 같이 작성하자.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a0f79fea25fadf03dd4e6dd904e056ae/b395b/getting-started-with-aws-amplify-and-react-16.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 368px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 100.54347826086956%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAABYlAAAWJQFJUiTwAAADrElEQVQ4y3VUyW7jRhDVJ+SWiyWRlLiKi7hrXynJq2xZ1siSLFszHiNAPINswADZgMkpSA4Jcs8PJPf8QL4if/NS3bIWZ5BDsarJ7sdXVa861epO0E5eIOlfo3c0x9XiEd3BDJ3eFP3DOXqHMwwvVhjQt2bnCmz/vrF3ffo2OF6gXDtDqn+0xMnwJa4XbzCafoqff/8Dy4d3eHz7Ld59/SO++e4nfP7le7IfwPYOjm93dnKLbn/Bz86Xn6HeGiPlhV14QReO24IfJXD8Jmy3iSDqwg87COMERb+FqNxD0Wtxc/321rPzrt+ByzEaSKWzOnKyhYAOGZGOX/76BMPJCFkphOE04ITHUAsVshqtW7C8hHvbH0DWY6SzGrKCgaxo8Dgl5ixIsg1Z8ZBTVdw9HKLdHSAjuQRShmJUkNciHutmFYbd4F636lD0CKJkgmGIORsCxSn2yMkOLDPAgdXER+P3EJwmCoYL045RrVEqxRIEcc0iK+hbL4gFDiY8gWZpvQZUioj8Cj62Wgh//RvJ/BFnJxc4H80wv3mF07MrqLpPZdiw2Rk7/wHgemFS6ibypkIHdWQEVhMdBxmNx5t9wv+AbgHZQ9ZclEsJ5FIR138uUblI0OsOMRxNOTN+IG9/APDf+BlDiSyTN6HXqKN2AMPwYVJdRWKXYSyZpdVnddsyo0yYCVJh3WUxZyItWbDlAr6yJTiSBsmuwO0MERxewa4N4DSO4dFaLoRb0A0Y+872ptPKhqFJMrGgE8N7R0GBalhkYP1LlM8X8Mm77VP4vREBRpztlil51alAc2vIEHhqW1yWQt6CWvaR023qvEu6dJE3Au4lUgL7eV7zoZgxf79Jm8WKFXOBp3YFNUn5NpKJC7sUIj5doHJ5i+p4hfr0NZLXXyCk9OPTa1rfw+ueryeEWBVbJ5x9+kDZY/hU6LxdhUhCZyaQ+jOUkkAdlnRilHcgEdvMXkM4mSfgvabQ2GRVyF4P1d/+gdVbYT6dYfxiidF4hpvlPe5WD7gcz2lyEszmK8SlNtcpP88kRcZls2NXoDp5MAYPxLIOl8bN86rw/CpctwKffBDUULAixOUONJJV9qkxjF2GLgY+y88ESoWXGueUKpuYGHrUhlKsQqUOamGLrwXae5DWdmCUrhE0YZUT3v0dIA27ZJGo776HqHrUgDFqk1dwSGMeTU354gbR0YS67O3dMGt2VqUHp35EOlTXgPtzym6VTcy6xtOhPzPR8knZ37s3KZuU/wWIZH775iRJaQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 16&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a0f79fea25fadf03dd4e6dd904e056ae/b395b/getting-started-with-aws-amplify-and-react-16.png&quot;
+        srcset=&quot;/static/a0f79fea25fadf03dd4e6dd904e056ae/cf440/getting-started-with-aws-amplify-and-react-16.png 148w,
+/static/a0f79fea25fadf03dd4e6dd904e056ae/d2d38/getting-started-with-aws-amplify-and-react-16.png 295w,
+/static/a0f79fea25fadf03dd4e6dd904e056ae/b395b/getting-started-with-aws-amplify-and-react-16.png 368w&quot;
+        sizes=&quot;(max-width: 368px) 100vw, 368px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;initializing을 마치면 amplify 폴더가 생성된다. 이 폴더는 즉 백엔드 역할을 수행하는 리소스들이다.&lt;/p&gt;
+&lt;h3 id=&quot;인증-추가하기&quot;&gt;&lt;a href=&quot;#%EC%9D%B8%EC%A6%9D-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0&quot; aria-label=&quot;인증 추가하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;인증 추가하기&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ amplify auth &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/515e102debb341206b698a4650a8fda7/6967e/getting-started-with-aws-amplify-and-react-17.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 43.313953488372086%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABsUlEQVQoz21R2ZKbMBDkX3ZtbGOWSxcIkEBc9m7s1Fb+/1c6Mzh5SFUeutQaSa2enqidvmHDT/T9E3O9YDABvf9E5QKs2xDCA7ZdkWYW8VnidFH/xZHOiqpHdBUNGKlukegOF2GRKuIl1VSHK/FUtDgnGseT+Acxg4QYh7hCXnaIRD2iNB6FdpBtgLSvvbLMA6pmQKk9SuH2B6XwEGpATm6upUOStbgWzHtUakS0+TtGamnqVgx2wepumAmh27D2NyzujqV/1Uwzo6O1p1pNd2Wz4EMFZDrgQsKl9IhuJLiNXyS4wdv5JUgCQ8OcxTZMLWVL54oETD1BE9iNJAgzISehE0XCziM3fSGsDwzbE830A7qly/Wwt2vcAtGMKFSPXI9IK4+P3O5IcsqWUEmHjPc0NEkDjc7a4iRqXAytZY1jrhAXGnFlEAuDY6b22iEReD8UeD+WO3gIjLc/nGtZ0SIyfkETNrJOrsQARU6EJL5jRF3PL1AEppkou3nPUvI9apHbV+QsSWtySxmG6Ynb/Rc85cgI8xOW8yQ+zg+44XN/xAJ/H/PKYjx5Zcb9jDl/9Bs3UivAbQxjpQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 17&quot;
+        title=&quot;&quot;
+        src=&quot;/static/515e102debb341206b698a4650a8fda7/b9e4f/getting-started-with-aws-amplify-and-react-17.png&quot;
+        srcset=&quot;/static/515e102debb341206b698a4650a8fda7/cf440/getting-started-with-aws-amplify-and-react-17.png 148w,
+/static/515e102debb341206b698a4650a8fda7/d2d38/getting-started-with-aws-amplify-and-react-17.png 295w,
+/static/515e102debb341206b698a4650a8fda7/b9e4f/getting-started-with-aws-amplify-and-react-17.png 590w,
+/static/515e102debb341206b698a4650a8fda7/f9b6a/getting-started-with-aws-amplify-and-react-17.png 885w,
+/static/515e102debb341206b698a4650a8fda7/2d849/getting-started-with-aws-amplify-and-react-17.png 1180w,
+/static/515e102debb341206b698a4650a8fda7/6967e/getting-started-with-aws-amplify-and-react-17.png 1376w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; Default Configuration&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; Username 선택&lt;/li&gt;
+&lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; checked disabled&gt; Email 선택&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ amplify push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Are you sure you want to continue? &lt;strong&gt;Y&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;클라우드에 변경사항을 반영하기 위해 실행하는 명령어이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;install-amplify&quot;&gt;&lt;a href=&quot;#install-amplify&quot; aria-label=&quot;install amplify permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Install Amplify&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; aws-amplify aws-amplify-react&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;루트 디렉토리(amplify-app) 터미널 위치에서 react와 amplify를 연동하기 위해 2가지의 패키지를 &lt;code class=&quot;language-text&quot;&gt;yarn&lt;/code&gt;을 통해 install 한다.
+&lt;code class=&quot;language-text&quot;&gt;npm&lt;/code&gt;을 사용해도 무방하다.&lt;/p&gt;
+&lt;h3 id=&quot;react-app-인증-추가하기&quot;&gt;&lt;a href=&quot;#react-app-%EC%9D%B8%EC%A6%9D-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0&quot; aria-label=&quot;react app 인증 추가하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;React App 인증 추가하기&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// App.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Amplify &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;aws-amplify&apos;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; awsExports &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./aws-exports&apos;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; withAuthenticator &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;aws-amplify-react&apos;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./App.css&apos;&lt;/span&gt;
+
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;Amplify&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awsExports&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;App&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Hello World&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;withAuthenticator&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;App&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;awsConfig&lt;/code&gt;는 어플리케이션에서 사용하는 클라우드 리소스의 구성 데이터를 담고 있습니다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;withAuthenticator&lt;/code&gt; HOC 컴포넌트를 이용하여 &lt;code class=&quot;language-text&quot;&gt;App&lt;/code&gt; 컴포넌트 감싸주고 로그인한 뒤 &lt;em&gt;USERNAME&lt;/em&gt;과 &lt;em&gt;SIGN OUT&lt;/em&gt; 버튼을 보여주기 &lt;code class=&quot;language-text&quot;&gt;true&lt;/code&gt;로 설정해줍니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; start&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/195cd790943a979a18202e38d149f2a3/a5428/getting-started-with-aws-amplify-and-react-18.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 81.55668358714043%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAABYlAAAWJQFJUiTwAAABw0lEQVQ4y4WUz06DQBDGvXnw7XwV38ObJ/VJjGeNtyZGjSbGWsVWSiksLH92dz5nFlrBQt3kV6YD+/WbnSkHRIQuzrn+9xb6B1lyPdgEm+S+NSa2MSFrKygrURlepzMswgizYI7PrwWmHwHeZgHq2nRE0cIx50YF66rCKo6RZRnKsmCRClXVAIxXMCq4UhVePtZ4DRJEGSHWnMsZjpfK7RCmDutcrDoWHRBcJBZRrJDnGimXH69Tf7UODO1gLGG+FneDgoREO3yz6DK1/OsGYcJwHGVuEHEp7kcd6qJAMA+xXCWwtj1w/jBs0Q4g+b1dttZyuTm01r4pRaF9Q5rONqWR+0WEZM+goCA3RUxEc+60SlPoPIOTTZ66j6l4j/Hl7nVYliU0U8q41AmoikBFCGqHp0szNnbY4RbJlRqkMxbi2dGq2fl5DdyfAU+XwOMFSOLvOzh5nkW9YFfIGAOlUijNQ/32ALzcgqYT4PmWO8NPXx0Dp+zh8gg4PwRJfHPSCPIR7Ahu3fq/TQ3KVeNSkHvqHbScgKL7Bo6h534SpEk9Qdd2bYvk5Hw2cEm9711s5wz/Ouy8Wvr4nJPdUl8H13sb/QDfa+Ea0gHiOAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 18&quot;
+        title=&quot;&quot;
+        src=&quot;/static/195cd790943a979a18202e38d149f2a3/b9e4f/getting-started-with-aws-amplify-and-react-18.png&quot;
+        srcset=&quot;/static/195cd790943a979a18202e38d149f2a3/cf440/getting-started-with-aws-amplify-and-react-18.png 148w,
+/static/195cd790943a979a18202e38d149f2a3/d2d38/getting-started-with-aws-amplify-and-react-18.png 295w,
+/static/195cd790943a979a18202e38d149f2a3/b9e4f/getting-started-with-aws-amplify-and-react-18.png 590w,
+/static/195cd790943a979a18202e38d149f2a3/f9b6a/getting-started-with-aws-amplify-and-react-18.png 885w,
+/static/195cd790943a979a18202e38d149f2a3/2d849/getting-started-with-aws-amplify-and-react-18.png 1180w,
+/static/195cd790943a979a18202e38d149f2a3/a5428/getting-started-with-aws-amplify-and-react-18.png 1182w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;짜잔! 위와 같은 로그인 화면이 렌더링된다. 우선 계정을 만들기 위해 &lt;strong&gt;Create account&lt;/strong&gt; 클릭한다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f6ecb1e3ab971003f0b5bea1b856a202/2b6f6/getting-started-with-aws-amplify-and-react-19.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 108.51419031719533%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAWCAYAAADAQbwGAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB10lEQVQ4y5WVQW6cMBSG5zS9Xw+STaU0myx6haqLLnqBqpWyTKouUk0ynWQyBMY2Bgx+/vtsysjAwBBLH9jG/P55zzYr5xxiiKL6oH0OX1b+EndMlTkhIhoL+iJkjvv1IzbbZ2x3ezxsnvDn4S/2SRqJIoLb3D8pWNc1DkJAKcV1EzCmgrXNrPtJwZesxO/HDOudwmtOyDQCqXZ4VRT6YhLuE4V3TSHWI8GnzOI5UUgPClIblLVDYYhxI/wzXTlsM2KBk4IOB014EQ0SUSPNLbtzDE2Ssks557AoCuz2CSdHtX2LlspMlpumgeSEtElpwqx+8BzW2tOCHT6r3qkXPycWc9Kh1gUyIRfvjO69SUFjakipwnp8i7ue4HDGqqpAHJcw0QKhUQxj6yWL+Qx3dIPPOZsULMoS2UHw9pOBLjFLhUef7B/45RLqLCKlDAje314cznIYmh5km+MRd1LQu+kYxctnNOLYJjudlD7tPg2HlB9/9xn4+RG4uW75cQlsboKoIzuOoTEm7BKtc6hco84TDuyuFaz4tU/vgA+80i6ZqxXcBd+/vW8Fbb3sxD4epP6+/g53+wXu19cWriO5/++Q+g4XLeBBDI/YQQwXF84yaICj3n/nH5H1vD1OoSp1AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 19&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f6ecb1e3ab971003f0b5bea1b856a202/b9e4f/getting-started-with-aws-amplify-and-react-19.png&quot;
+        srcset=&quot;/static/f6ecb1e3ab971003f0b5bea1b856a202/cf440/getting-started-with-aws-amplify-and-react-19.png 148w,
+/static/f6ecb1e3ab971003f0b5bea1b856a202/d2d38/getting-started-with-aws-amplify-and-react-19.png 295w,
+/static/f6ecb1e3ab971003f0b5bea1b856a202/b9e4f/getting-started-with-aws-amplify-and-react-19.png 590w,
+/static/f6ecb1e3ab971003f0b5bea1b856a202/f9b6a/getting-started-with-aws-amplify-and-react-19.png 885w,
+/static/f6ecb1e3ab971003f0b5bea1b856a202/2d849/getting-started-with-aws-amplify-and-react-19.png 1180w,
+/static/f6ecb1e3ab971003f0b5bea1b856a202/2b6f6/getting-started-with-aws-amplify-and-react-19.png 1198w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;모든 필드를 작성하고 난뒤 &lt;strong&gt;CREATE ACCOUNT&lt;/strong&gt; 클릭한다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/be79ecd4446a4286181e13877b91b24a/64a11/getting-started-with-aws-amplify-and-react-21.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 24.137931034482758%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAx0lEQVQY032Qxw6DMBBE/RWRgijGYGroEIpJk3IPx/z/j0xsS+QQQQ5PI692vbND8rLGeZi+DNOMUcxSBcq6hU3ZJpbjgocxgihBnJz0jKqRrh9xuT0kd0zzFXV7Bg8i3cj8QDftQZmvtaobvJYFpk1ByqpBIYnTDGlWwGEcB8OCYVE4rqeHVtT716VCfWSYtq4R5cJXjqR9JjUPQ4xxhIgx+GGiz1pPcz2+G8G6jKicdHajQNUNeA493qJHFXAcpUv7z8lbfABlBZGUzk18ogAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 21&quot;
+        title=&quot;&quot;
+        src=&quot;/static/be79ecd4446a4286181e13877b91b24a/b9e4f/getting-started-with-aws-amplify-and-react-21.png&quot;
+        srcset=&quot;/static/be79ecd4446a4286181e13877b91b24a/cf440/getting-started-with-aws-amplify-and-react-21.png 148w,
+/static/be79ecd4446a4286181e13877b91b24a/d2d38/getting-started-with-aws-amplify-and-react-21.png 295w,
+/static/be79ecd4446a4286181e13877b91b24a/b9e4f/getting-started-with-aws-amplify-and-react-21.png 590w,
+/static/be79ecd4446a4286181e13877b91b24a/f9b6a/getting-started-with-aws-amplify-and-react-21.png 885w,
+/static/be79ecd4446a4286181e13877b91b24a/64a11/getting-started-with-aws-amplify-and-react-21.png 1160w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;이메일 확인, validation code 복사&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9776642895a0238368ed29d2dad0898e/a7b2a/getting-started-with-aws-amplify-and-react-20.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 90.2930402930403%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAAB50lEQVQ4y6VUy27TQBS1BIv+HXuWrJD6KWy6KvwEa4TUrigVEh+AQis1cXDs2I7j54zteZze8SOZRHEf4kpHx5mMjs992QGF1noHpQ75NTDh2IJT8RIxpVTHjn0YhBHmSw+ev+54FYRo2vZZURM7QftymuXYphnSvECyTZERS6nwktg7HAQVISGxMNqQcHFwUUrZCU9hMuXFMsDsfkFsUg4GrE9iMbDrhWiFsAX3KftBjLnrw18nVL9Nh39+PI1VDI/uCCFP17CuORhjHaqqAud87PMT6GNM3embpCGkxmyZYeYm+LtMce9lePALRLlCOAHzX5Aq8NYYOhKsBeCGnJyVqFiNoiSndGh6bBotadBtGAMwk1EpJKW5dcKhG9VYxQxezOHHBcJNjnhbIsoaRIUmR5JY7BATgkyANZbDsYbmbbxuwHiDirdoWA7FE0hGaGsYQ51TeQglhxrum2JNvKat0KJnHK2i+fn7Evj2Hrj6CFyfA98/0PM5tH9Hc4zOpTWH9AYWEiLo0iPNou+jOYcEEfTXd9CfHOjLN9BfzqAv6PnzW+Dupqu1JWjsPrVYunfo/wEefgDzW+Ib4p+EX0CZUkn0flPG9VLKhjqCRN/LCQzFdF71zVMmdTGwhV16R7v8PzFqPALHDHUNd2BqCwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 20&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9776642895a0238368ed29d2dad0898e/b9e4f/getting-started-with-aws-amplify-and-react-20.png&quot;
+        srcset=&quot;/static/9776642895a0238368ed29d2dad0898e/cf440/getting-started-with-aws-amplify-and-react-20.png 148w,
+/static/9776642895a0238368ed29d2dad0898e/d2d38/getting-started-with-aws-amplify-and-react-20.png 295w,
+/static/9776642895a0238368ed29d2dad0898e/b9e4f/getting-started-with-aws-amplify-and-react-20.png 590w,
+/static/9776642895a0238368ed29d2dad0898e/f9b6a/getting-started-with-aws-amplify-and-react-20.png 885w,
+/static/9776642895a0238368ed29d2dad0898e/a7b2a/getting-started-with-aws-amplify-and-react-20.png 1092w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Confirmation Code에 validation code 붙여넣기 한 뒤 &lt;strong&gt;CONFIRM&lt;/strong&gt; 버튼 클릭&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cf4be0ebef95a5f9624d10361787d002/f583d/getting-started-with-aws-amplify-and-react-22.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 55.27210884353742%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAc0lEQVQoz+WRUQqAIBBE917dqd+u1SWCjhMoZrnupB9CIaiRfw0MC8syvGFJRFCzcw7MjKi0izoPC7UzZJ2AeYAsI6glUGsNY8wjMNp7Dw6WU0PsFqYC4YUSWUlNhPeatRsqHbVSZYRfKmaB3Ql/GNj7KRckUmho9ejT/gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 22&quot;
+        title=&quot;&quot;
+        src=&quot;/static/cf4be0ebef95a5f9624d10361787d002/b9e4f/getting-started-with-aws-amplify-and-react-22.png&quot;
+        srcset=&quot;/static/cf4be0ebef95a5f9624d10361787d002/cf440/getting-started-with-aws-amplify-and-react-22.png 148w,
+/static/cf4be0ebef95a5f9624d10361787d002/d2d38/getting-started-with-aws-amplify-and-react-22.png 295w,
+/static/cf4be0ebef95a5f9624d10361787d002/b9e4f/getting-started-with-aws-amplify-and-react-22.png 590w,
+/static/cf4be0ebef95a5f9624d10361787d002/f9b6a/getting-started-with-aws-amplify-and-react-22.png 885w,
+/static/cf4be0ebef95a5f9624d10361787d002/2d849/getting-started-with-aws-amplify-and-react-22.png 1180w,
+/static/cf4be0ebef95a5f9624d10361787d002/bbefa/getting-started-with-aws-amplify-and-react-22.png 1770w,
+/static/cf4be0ebef95a5f9624d10361787d002/f583d/getting-started-with-aws-amplify-and-react-22.png 2352w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;마지막으로 로그인을 하면 위와 같은 화면이 렌더링된다. 인증 구현 성공!😃😃😃&lt;/p&gt;
+&lt;h3 id=&quot;cognito-사용자-확인하기&quot;&gt;&lt;a href=&quot;#cognito-%EC%82%AC%EC%9A%A9%EC%9E%90-%ED%99%95%EC%9D%B8%ED%95%98%EA%B8%B0&quot; aria-label=&quot;cognito 사용자 확인하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cognito 사용자 확인하기&lt;/h3&gt;
+&lt;p&gt;사용자 데이터는 어디에 저장되어있는지 궁금하다. AWS Console에서 Cognito 검색 -&gt; 사용자 풀 관리 버튼 클릭 -&gt; 해당 사용자 풀 선택 -&gt; 사용자 및 그룹 탭 선택&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a9dbce6d04516ab7f1e0c0eec2682b49/bb31e/getting-started-with-aws-amplify-and-react-23.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 47.26507713884993%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABTklEQVQoz52SW26DMBBF2f9Kqm4jG2j7UbU0DSIhAWziGINtHobbsQlSn/ko0tGMGXPnjnH0FO/w/BrjJX7DdrdDkqbYJgni7Tass7yA0gay1aiJRv9NawyiNMuQ72MokaPVDVTTgJ8F6qaF7TrMrgfgFuYRXT8Q/a+0xiKqlURR5tCmhbEG7TAhU2OI/tkkCvePFe4eKmzeJcZxwDTPcNME56Ylp+jXlkQjIWvkJYOicQw58l0KodB1PfrOopQaSVkTEkcuYWkso1u4ccTkHOU65DMJepfksEbBGLS1gV4KjFUJy8h1fkTPTpgFAy4MA88xCo7mlMHSVE5UYY8pTyHvqVGUFhwXKcOBamuCqPF4J77JNa7YL/XPe5bvozONvD8c6Cc0QcwLB3y+Ytb39mftG9GRX8A4uzpcut3E3q5FolYkyMM9Wh2u5/kfPgBrNbMNJxFupAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 23&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a9dbce6d04516ab7f1e0c0eec2682b49/b9e4f/getting-started-with-aws-amplify-and-react-23.png&quot;
+        srcset=&quot;/static/a9dbce6d04516ab7f1e0c0eec2682b49/cf440/getting-started-with-aws-amplify-and-react-23.png 148w,
+/static/a9dbce6d04516ab7f1e0c0eec2682b49/d2d38/getting-started-with-aws-amplify-and-react-23.png 295w,
+/static/a9dbce6d04516ab7f1e0c0eec2682b49/b9e4f/getting-started-with-aws-amplify-and-react-23.png 590w,
+/static/a9dbce6d04516ab7f1e0c0eec2682b49/f9b6a/getting-started-with-aws-amplify-and-react-23.png 885w,
+/static/a9dbce6d04516ab7f1e0c0eec2682b49/2d849/getting-started-with-aws-amplify-and-react-23.png 1180w,
+/static/a9dbce6d04516ab7f1e0c0eec2682b49/bbefa/getting-started-with-aws-amplify-and-react-23.png 1770w,
+/static/a9dbce6d04516ab7f1e0c0eec2682b49/bb31e/getting-started-with-aws-amplify-and-react-23.png 2852w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;회원가입한 데이터를 확인해볼 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;serverless-backend-service-구축하기&quot;&gt;&lt;a href=&quot;#serverless-backend-service-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0&quot; aria-label=&quot;serverless backend service 구축하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Serverless Backend Service 구축하기&lt;/h3&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ amplify api &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위 명령어를 터미널에서 입력한 후 Enter를 하면 여러가지 질문에 대답을 입력해야한다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/04b5661ec1847277ffaf7f3d821db0cd/635d6/getting-started-with-aws-amplify-and-react-24.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 117.11590296495957%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAABYlAAAWJQFJUiTwAAADWklEQVQ4y3VV2XbaMBT0z2QD7ADeF3nFGxAISZtz2v//j+lceSnQ9GGOZFm6ujN3kfHr0qC49MjyA+q0RpHtUB3ecDx/ot+/Y9ccUVQ9lPwre+RFy70tVFbD9RQ8P4UXTFAw4h0PtT956IRddUZZviGriPKIRHUIowYusd6mMF9jbOwMrxtFJHp8fHau4MKoOjH4gaa9IC2OiOipm3TYhjU2Xom1k8N6jfRhax3T8GDMWhO84Hnh3YAGL+jPv1F3Hzgcv7SnJZERflTDdgvYXgGHxrece7zIDSquyXeOpxf31mBMinl9QUbkzUXPFddi0vfTPey4g0lDK1Je0qslPV1yvuD8xYxmg0+zwbRDEDfIR90UKafFAQH1W9OQJZSp24oGnuUw8cKDGkuf8G68NBIaVGmPiAYCUoyTdkbEi2QM43pEgyjhGveqrNf7l2Z4a1A825FqujsjoWHRzSStxcrXm1dWOI4RVuYwn77Fw5nyOBpbJ4NNWg4FtgkRWtYWq2De+D88L9xvoty+Y3/4opfvTJ0PtP0nMnobkOojNzw82XOePVzl3MOTc5eDA7SGkehFbdJsryFBCqiZw3Rx/VJ77ujU+Qu97gxs7JGdwBBjIq4EQDSUUQIQq2Fd4Ie7eR5EO/0tRiXZJdE3dqpHSXxDystjovphpW/1OZfvaYOUnBwQT2QUI1tdfsnV2jB/ZWoZET0Rz+69kdSQshtyzddBkshP83ltebtmiFa5NAQm8zSKrjnrWgIjDWGo3VhjqmnB8E/pujZZ78LKGAwdkeZ7DdFOfsgGgdAQbIT6dqA3NIhBu4ny1DSMUAeDOlK/64iJTqLftDZpOnmsLxs9v14z3LJG1r8havYoz2wShxOqtwuK/jyX5JrGpfgfr3Lyvg/KKMlupDRW8nDWnxC3R6wVe2CUYxMzLZwUK94uDUAHgCWnxdcBCuZquqmUhn2w7X6gbdgP91+o6g9WirSyT3r5E2n7yY5dw6JmJqOuqUkQRt3+7Ycd2xW9TLojytOFdN+h9ic4fFtE8NVaDXSF0kjvtp7vPDQjRinOYIUpLD44Fh8b01d42Y5taTwkOTYdmrrMd1oaCV8yQaga+D6rRMD2HrLVS30LwniAlJ10pTCSF6+YK2iqGJHgD29B+VZV5DTbAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 24&quot;
+        title=&quot;&quot;
+        src=&quot;/static/04b5661ec1847277ffaf7f3d821db0cd/b9e4f/getting-started-with-aws-amplify-and-react-24.png&quot;
+        srcset=&quot;/static/04b5661ec1847277ffaf7f3d821db0cd/cf440/getting-started-with-aws-amplify-and-react-24.png 148w,
+/static/04b5661ec1847277ffaf7f3d821db0cd/d2d38/getting-started-with-aws-amplify-and-react-24.png 295w,
+/static/04b5661ec1847277ffaf7f3d821db0cd/b9e4f/getting-started-with-aws-amplify-and-react-24.png 590w,
+/static/04b5661ec1847277ffaf7f3d821db0cd/f9b6a/getting-started-with-aws-amplify-and-react-24.png 885w,
+/static/04b5661ec1847277ffaf7f3d821db0cd/2d849/getting-started-with-aws-amplify-and-react-24.png 1180w,
+/static/04b5661ec1847277ffaf7f3d821db0cd/635d6/getting-started-with-aws-amplify-and-react-24.png 1484w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;단 몇 분만에 CRUD EST API를 생성.😃😃&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ amplify status
+$ amplify push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/89828829d05c78a370177193b8ce7e17/4033a/getting-started-with-aws-amplify-and-react-25.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.669735327963178%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAt0lEQVQY043Q3Q6CIBQHcJ/GjFARFAE/s8y25laXvf+D/Duw1rpos4sz4Bz4wSEq2gXCXaDVCCNaZKoDqxoU5YBDZhHvK+yYRkKxo/n3+Csirix45ZCrBlnmwmZGhU/4tUf/wAJoZAdJkFU9itSC8Rq1bKFyByUaGMob/2puNrEAum7BcLxhvT8hZA9Obc7XR2h5PK0h70NVI+Kk3Ab9zZIOG3eGrqeAajMR7AJi3Uy1Gen7O7bAF4wVns2mKEfbAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 25&quot;
+        title=&quot;&quot;
+        src=&quot;/static/89828829d05c78a370177193b8ce7e17/b9e4f/getting-started-with-aws-amplify-and-react-25.png&quot;
+        srcset=&quot;/static/89828829d05c78a370177193b8ce7e17/cf440/getting-started-with-aws-amplify-and-react-25.png 148w,
+/static/89828829d05c78a370177193b8ce7e17/d2d38/getting-started-with-aws-amplify-and-react-25.png 295w,
+/static/89828829d05c78a370177193b8ce7e17/b9e4f/getting-started-with-aws-amplify-and-react-25.png 590w,
+/static/89828829d05c78a370177193b8ce7e17/f9b6a/getting-started-with-aws-amplify-and-react-25.png 885w,
+/static/89828829d05c78a370177193b8ce7e17/2d849/getting-started-with-aws-amplify-and-react-25.png 1180w,
+/static/89828829d05c78a370177193b8ce7e17/4033a/getting-started-with-aws-amplify-and-react-25.png 1738w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;위 터미널은 &lt;code class=&quot;language-text&quot;&gt;amplify push&lt;/code&gt; 하기 전 상황&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9a89fde102831ccc516f8bcf5a207eb5/af071/getting-started-with-aws-amplify-and-react-26.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.837370242214533%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAwUlEQVQY042QS3LCMBAFOY0NwgY70lhCtgPhZxb8N6nk/vfojM2GRapg0aWZKU3rlUZl01HEPd6u8EXDzLUYqSndkmm+IJkIqakYK6nWz+d/jHIbySQytzVZFkjGDmOEiWL0gtHlnndkg1DmETuLhI+WICuKshlqW9Q4JdhPvPZm6l/KBmFsO5brI+fbLxI2lCrYHe5suxub3YXT9Yfj+XuY9+lfCnNNZzVZ5dck6WNBqi9Ee6fzsNji9aH+P99J+Ae8Pp8AUgjyewAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 26&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9a89fde102831ccc516f8bcf5a207eb5/b9e4f/getting-started-with-aws-amplify-and-react-26.png&quot;
+        srcset=&quot;/static/9a89fde102831ccc516f8bcf5a207eb5/cf440/getting-started-with-aws-amplify-and-react-26.png 148w,
+/static/9a89fde102831ccc516f8bcf5a207eb5/d2d38/getting-started-with-aws-amplify-and-react-26.png 295w,
+/static/9a89fde102831ccc516f8bcf5a207eb5/b9e4f/getting-started-with-aws-amplify-and-react-26.png 590w,
+/static/9a89fde102831ccc516f8bcf5a207eb5/f9b6a/getting-started-with-aws-amplify-and-react-26.png 885w,
+/static/9a89fde102831ccc516f8bcf5a207eb5/2d849/getting-started-with-aws-amplify-and-react-26.png 1180w,
+/static/9a89fde102831ccc516f8bcf5a207eb5/af071/getting-started-with-aws-amplify-and-react-26.png 1734w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;위 터미널은 &lt;code class=&quot;language-text&quot;&gt;amplify push&lt;/code&gt; 한 후 상황&lt;/p&gt;
+&lt;p&gt;클라우드에 제대로 반영이 된 이후에는 로컬과 비교했을 때 변한게 없기 때문에 Opertation에 &lt;strong&gt;No Change&lt;/strong&gt;라고 나온다. 결국 제대로 반영되었다는 이야기!! 😃😃&lt;/p&gt;
+&lt;h3 id=&quot;frontend에-api-연동하기&quot;&gt;&lt;a href=&quot;#frontend%EC%97%90-api-%EC%97%B0%EB%8F%99%ED%95%98%EA%B8%B0&quot; aria-label=&quot;frontend에 api 연동하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Frontend에 API 연동하기&lt;/h3&gt;
+&lt;p&gt;API를 연동하기 전에 프로젝트 root 폴더에서 &lt;em&gt;amplify/backend/function/todoLambda/src/app.js&lt;/em&gt; 파일을 열어 약간의 코드를 수정해야한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//app.js&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// let tableName = &apos;todoTable&apos; ❌&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; tableName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;todo&apos;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// ✅&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;/********************************
+ * HTTP Get method for list objects *
+ ********************************/&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// ✅ Change get method logic&lt;/span&gt;
+app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;req&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; res&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; queryParams &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    TableName&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; tableName&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    ProjectionExpression&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;id, title&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  dynamodb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;scan&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;queryParams&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;err&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; data&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; error&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Could not load items: &apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; err &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      res&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Items&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;백엔드 코드를 수정한 후 &lt;code class=&quot;language-text&quot;&gt;amplify push&lt;/code&gt; 명령어를 이용하여 클라우드에 반영한다.&lt;/p&gt;
+&lt;p&gt;자 그럼, 프론트엔드 코드인 &lt;em&gt;App.js&lt;/em&gt; 를 수정해보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// App.js&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; Component &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;react&apos;&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Amplify&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;API&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;aws-amplify&apos;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; awsConfig &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./aws-exports&apos;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; withAuthenticator &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;aws-amplify-react&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;./App.css&apos;&lt;/span&gt;
+
+Amplify&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;configure&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;awsConfig&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; apiName &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;todoAPI&apos;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; path &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/items&apos;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;App&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    content&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    list&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    showDetail&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    selectedItem&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function-variable function&quot;&gt;handleChange&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; value&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;target
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; value &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function-variable function&quot;&gt;handleSubmit&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    e&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; body &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Date&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      content&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; res &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;apiName&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; body &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;res&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;fetchList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function-variable function&quot;&gt;handleSelectItem&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; showDetail&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; selectedItem&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; res &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;apiName&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;path &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/object/&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; id&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; selectedItem&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;res &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function-variable function&quot;&gt;handleDelete&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token parameter&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;del&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;apiName&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;path &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;/object/&apos;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; id&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; showDetail&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;fetchList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function-variable function&quot;&gt;handleBackList&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; showDetail&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;fetchList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; res &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;token constant&quot;&gt;API&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;apiName&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;...&lt;/span&gt;res&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;componentDidMount&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;fetchList&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      handleChange&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      handleSubmit&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      handleSelectItem&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      handleBackList&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+      handleDelete&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; content&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; list&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; showDetail&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; selectedItem &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state
+
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;App&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;h2&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Todo&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;h2&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;form onSubmit&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleSubmit&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;row&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;label htmlFor&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Title&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;label&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;input
+              id&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;title&quot;&lt;/span&gt;
+              type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;text&quot;&lt;/span&gt;
+              name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;title&quot;&lt;/span&gt;
+              value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+              onChange&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleChange&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;row&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;label htmlFor&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;content&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;content&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;label&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;textarea
+              id&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;content&quot;&lt;/span&gt;
+              name&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;content&quot;&lt;/span&gt;
+              value&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+              onChange&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleChange&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;btn&quot;&lt;/span&gt; type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;submit&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            Submit
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;form&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;hr &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;h3&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;List&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;h3&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;ul style&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; display&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; showDetail &lt;span class=&quot;token operator&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;none&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;block&apos;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;list&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;li key&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleSelectItem&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+              &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;item&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;li&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;ul&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;showDetail &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;detail&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;h4&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;selectedItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;h4&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;selectedItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;content&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;p&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;button&quot;&lt;/span&gt; className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;btn&quot;&lt;/span&gt; onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;handleBackList&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+              Back to List
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;button
+              type&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;button&quot;&lt;/span&gt;
+              className&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;btn&quot;&lt;/span&gt;
+              onClick&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;handleDelete&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;selectedItem&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+              Delete
+            &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;button&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+          &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;div&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;withAuthenticator&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;App&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;http 통신을 하기 위해 &lt;code class=&quot;language-text&quot;&gt;aws-amplify&lt;/code&gt; 에서 제공하는 &lt;code class=&quot;language-text&quot;&gt;API&lt;/code&gt;를 이용한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;apiName&lt;/code&gt;과 &lt;code class=&quot;language-text&quot;&gt;path&lt;/code&gt;는 api와 연동할 때 빈번하게 사용되므로 변수로 따로 할당한다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이제 &lt;code class=&quot;language-text&quot;&gt;yarn start&lt;/code&gt; 명령어를 이용하여 로컬에서 테스트를 해보겠다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/getting-started-with-aws-amplify-and-react-27-091b3b49b72d580b6a5b892bfec34909.gif&quot;&gt;&lt;/p&gt;
+&lt;p&gt;짜잔!! 드디어 완성!! 😃😃😃&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/54bce317e3a0d8dcd1cea1d7f071dbca/93eac/getting-started-with-aws-amplify-and-react-28.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 47.486033519553075%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABYlAAAWJQFJUiTwAAABgklEQVQoz32RTU/iUBSG+4s04QforyABdk5mAfHnqAkgMxscXIFhpRuNCxZmMgkMiXFjJvOVUNF+0EIvpb338balipOJJ3nynnvOzXtPTw3btgmXgokj6H2dcPfTJFjMiWOJ71q49hOe7+N5Hr5Wx3GYzWZpnqtlWUyn07Rn+J5LEkEQ8Ov3H0zT5MGcYOtLl7cW3+4fCcWCKIpSwjBktVq9nBPyEEJgJK9LKZmLkB9/HzGfZhlTi4vrG3rnVwwGA4bDIaPRiO+a0Qbj8Zh+v0+9XqfRaGBk3opYKiKJRqWV+SJgv1bl44c9qrUaxWKRcqVCqVx+pVSioms7u7tsbW9TKBQwlFLkJMaozDDSn3Xa6XDSPuGs2+Xo8IBWs6lprLXJp+PjVD+3Wnxpt1PSCV9NWRuDXIV6TB/XDWC5JHRsveg5eqH6LDJN7qgYYVtZrgd6Y5jnScRxTBQsiEWQoXOpVWkzuUHey++9ayjzGrzo/9jsvW+o/z4bO1bZTt6c/+UZFEeQauuwEoEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 28&quot;
+        title=&quot;&quot;
+        src=&quot;/static/54bce317e3a0d8dcd1cea1d7f071dbca/b9e4f/getting-started-with-aws-amplify-and-react-28.png&quot;
+        srcset=&quot;/static/54bce317e3a0d8dcd1cea1d7f071dbca/cf440/getting-started-with-aws-amplify-and-react-28.png 148w,
+/static/54bce317e3a0d8dcd1cea1d7f071dbca/d2d38/getting-started-with-aws-amplify-and-react-28.png 295w,
+/static/54bce317e3a0d8dcd1cea1d7f071dbca/b9e4f/getting-started-with-aws-amplify-and-react-28.png 590w,
+/static/54bce317e3a0d8dcd1cea1d7f071dbca/f9b6a/getting-started-with-aws-amplify-and-react-28.png 885w,
+/static/54bce317e3a0d8dcd1cea1d7f071dbca/2d849/getting-started-with-aws-amplify-and-react-28.png 1180w,
+/static/54bce317e3a0d8dcd1cea1d7f071dbca/bbefa/getting-started-with-aws-amplify-and-react-28.png 1770w,
+/static/54bce317e3a0d8dcd1cea1d7f071dbca/93eac/getting-started-with-aws-amplify-and-react-28.png 2864w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DynamoDB에도 데이터가 잘 저장되어있는 모습을 확인할 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;배포&quot;&gt;&lt;a href=&quot;#%EB%B0%B0%ED%8F%AC&quot; aria-label=&quot;배포 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;배포&lt;/h3&gt;
+&lt;p&gt;기능이 잘 작동하는것까지 확인해봤으니 S3 버킷에 배포하는 방법을 알아보겠다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ amplify hosting &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt;
+$ amplify publish&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6c5141efa7e9f6255ed4111aa2c2fe79/5c8bc/getting-started-with-aws-amplify-and-react-29.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 55.1490514905149%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABYlAAAWJQFJUiTwAAABuElEQVQoz4WS647aMBCFeZgtbEJuBCeOc3Eu5L4BEliVqq3U93+K07EXaatKsD+OzkTxfD4z8up2alFfe6TVgLIY0GYV+u6I/rygGY+YpgvGaUFZ9VqHetRelB14lCOMJLn8cJFjJeojTssfjOefmOffBLhBNjOCdkbYLhDNAl6dsEt6mF6Gl80eL+s9vpGvX9ldgfaNEWKVyA59f6EbJ7r9jOHtO6J8QljNcFmJV5NrmZaAaQuqw4cythwrj2LaYQpXSC2bohuMmlkMwxcfdRBrbYzgIUz900CeNgiTFkHcIhINeCBhOQTZxdiSnF0Kw6aU1r3xK+CWUypRU7IKflCBewlcN6GECbZ+gp0v9chratj80/wQ6NBYjsdh+xF0TenUwk1atK0OGQyWGWhtFfQO+x/6OTIrkPEKbJehiBuUGY0flmB7CSkO8NwYGXmRNEjJTSt6njDJ6A0WIxgvMZ1/oKxP8Jl6Xwd04xUibdEOV4zHGzpyh1ainshDYJr3kARU4OXyS4NslSofCfiOiFIX5RsOzUm75cTPE0Y0Sk4HU9lrV4AsH+h7QEg1CwqdeE+upJqeAf8C2zxonUjbMBMAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 29&quot;
+        title=&quot;&quot;
+        src=&quot;/static/6c5141efa7e9f6255ed4111aa2c2fe79/b9e4f/getting-started-with-aws-amplify-and-react-29.png&quot;
+        srcset=&quot;/static/6c5141efa7e9f6255ed4111aa2c2fe79/cf440/getting-started-with-aws-amplify-and-react-29.png 148w,
+/static/6c5141efa7e9f6255ed4111aa2c2fe79/d2d38/getting-started-with-aws-amplify-and-react-29.png 295w,
+/static/6c5141efa7e9f6255ed4111aa2c2fe79/b9e4f/getting-started-with-aws-amplify-and-react-29.png 590w,
+/static/6c5141efa7e9f6255ed4111aa2c2fe79/f9b6a/getting-started-with-aws-amplify-and-react-29.png 885w,
+/static/6c5141efa7e9f6255ed4111aa2c2fe79/2d849/getting-started-with-aws-amplify-and-react-29.png 1180w,
+/static/6c5141efa7e9f6255ed4111aa2c2fe79/5c8bc/getting-started-with-aws-amplify-and-react-29.png 1476w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Enviroment Setup에서 &lt;strong&gt;DEV&lt;/strong&gt; 모드를 선택하다고 나머지 질문에는 Enter!&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b7623d2e1037db6e6d81aeff6c9c22f7/cef07/getting-started-with-aws-amplify-and-react-30.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 89.40217391304348%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABYlAAAWJQFJUiTwAAACSUlEQVQ4y41UWXbiMBD0ZRJj7BgvsiTvxsKGkISP2XL/k9SUxEAgw5D5qNdaS93V3fJ+6g6TbDEXNUxaY856bPPB2efC4E3vnHVzMXJv7cY78WF3do04iAGeyXuoVQkVKxSRpNXQcXkFu2YhnzTPHM+drHT2CM25lxUDqmaLtt9DlRvYeZw2SPLOjXO5dkhFjyUJHxYCj0FxEw+Ep5oNVL2BbibodkKhRuQkEiSJkxo+Dy1OWMov4a2qHquyR1JZDIiSCkGosCQCHvAviM7jy0c+wUvTFjnFzKhlRpGjpxI+LwWRPuOSzP/KQxveML4ipWYuVKubMtDTNwc5HhAXa/jU7i9PbxHaROhqg5CCq9I40rycoEhmoefvjth6aknPntLeIvas+CnDTbL2SOY8XCPhuqhmZNrgSQ0I8wbBiuFT27sediwXszlgNAf0wwsGYuRcDAad2WMc31D2M5LGEBMiPnyXcJmUWDU9wqxCJGqERKQaLAvOZeOyH69YPgubRXnEHR09Sf3ydna1mDO0qttC0ZN62EFWBn50ukzNlsWVdjc1tN2gmARJrSwEM5qwlNKsY6LKo2efLt0NOeRFQcKqnpCxvezig5+7Frud0eIP/kFoPbKZFnJ0baeryfW0zfxVQV8R3iALznU4Y35+h5l/0P7Cdv9OsgGPtpBD+V/9e/mgV3c7Vy72x+mHPWwZVfXs2tHCHV58JOMKi+K8dyL1SsOvayKh2aGdX9DtX9G9vEG0BkFWYin4WaS02RFufFrLK4cg/ij23zyHQVfN0gy4AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;getting started with aws amplify and react 30&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b7623d2e1037db6e6d81aeff6c9c22f7/b9e4f/getting-started-with-aws-amplify-and-react-30.png&quot;
+        srcset=&quot;/static/b7623d2e1037db6e6d81aeff6c9c22f7/cf440/getting-started-with-aws-amplify-and-react-30.png 148w,
+/static/b7623d2e1037db6e6d81aeff6c9c22f7/d2d38/getting-started-with-aws-amplify-and-react-30.png 295w,
+/static/b7623d2e1037db6e6d81aeff6c9c22f7/b9e4f/getting-started-with-aws-amplify-and-react-30.png 590w,
+/static/b7623d2e1037db6e6d81aeff6c9c22f7/f9b6a/getting-started-with-aws-amplify-and-react-30.png 885w,
+/static/b7623d2e1037db6e6d81aeff6c9c22f7/2d849/getting-started-with-aws-amplify-and-react-30.png 1180w,
+/static/b7623d2e1037db6e6d81aeff6c9c22f7/cef07/getting-started-with-aws-amplify-and-react-30.png 1472w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;배포가 완료되면 &lt;strong&gt;Hosting Endpoint&lt;/strong&gt; &lt;a href=&quot;http://amplify-app-20190603180537-hostingbucket-dev.s3-website.ap-northeast-2.amazonaws.com/&quot;&gt;URL&lt;/a&gt;이 보일 것이다. 드디어 끝!!!&lt;/p&gt;
+&lt;h3 id=&quot;wrap-up&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap-up&lt;/h3&gt;
+&lt;p&gt;지금까지 프론트엔드 개발자가 AWS &lt;code class=&quot;language-text&quot;&gt;Amplify Framework&lt;/code&gt;를 이용하여 손쉽게 어플리케이션을 제작하는 workflow를 경험해보았다. 복습을 하고 나니 AWS Service가 어떻게 유기적으로 연결되어 있는지 이해하는 계기가 되었다. 결론적으로 AWS 서비스와 친숙해지자. 😃😃&lt;/p&gt;
+&lt;h3 id=&quot;reference&quot;&gt;&lt;a href=&quot;#reference&quot; aria-label=&quot;reference permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/AUSG/ausg-seminar-2019/tree/master/WebTrack3&quot;&gt;ausg-seminar-2019&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://awskrug.github.io/amplify-photo-gallery-workshop/120_deploying/10_deploying.html&quot;&gt;Amplify Web App Workshop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://aws-amplify.github.io/docs/js/react&quot;&gt;React와 Amplify 연동&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[리액트에서 중요한 3가지]]></title><description><![CDATA[이번에 드디어 react…]]></description><link>https://jason0853.github.io/react/react-basic/</link><guid isPermaLink="false">https://jason0853.github.io/react/react-basic/</guid><pubDate>Thu, 23 May 2019 15:05:51 GMT</pubDate><content:encoded>&lt;p&gt;이번에 드디어 react 기반인 &lt;code class=&quot;language-text&quot;&gt;gatsby&lt;/code&gt;로 블로그를 마이그레이션하게 되었다. 콘텐츠도 그대로 이전할 생각도 있었지만 다시 공부해서 올리는게 개인적으로 도움이 될 것 같았다. 그래서 어떤 포스팅을 먼저 올릴까 고민해보았는데 역시 내가 제일 좋아하는 &lt;code class=&quot;language-text&quot;&gt;react&lt;/code&gt;로…😃😃😃&lt;/p&gt;
 &lt;h2 id=&quot;i-classdevicon-react-original-colored-stylefont-size-13remi-리액트&quot;&gt;&lt;a href=&quot;#i-classdevicon-react-original-colored-stylefont-size-13remi-%EB%A6%AC%EC%95%A1%ED%8A%B8&quot; aria-label=&quot;i classdevicon react original colored stylefont size 13remi 리액트 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;i class=&quot;devicon-react-original colored&quot; style=&quot;font-size: 1.3rem;&quot;&gt;&lt;/i&gt; 리액트&lt;/h2&gt;
 &lt;p&gt;리액트는 페이스북에서 나온 UI 라이브러리이며 &lt;a href=&quot;https://reactjs.org/&quot;&gt;리액트 공식 홈페이지&lt;/a&gt; 메인에 3가지로 정의를 내린다.&lt;/p&gt;
 &lt;blockquote&gt;
