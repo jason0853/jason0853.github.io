@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 07 Jul 2019 11:48:39 GMT</lastBuildDate><item><title><![CDATA[Nginx 사용법, 캐싱, 로드밸런싱 알아보기]]></title><description><![CDATA[지금까지 회사에서의 업무는 DevOps Engineer…]]></description><link>https://jason0853.github.io/nginx/nginx-basic-usage-with-caching-and-load-balancing/</link><guid isPermaLink="false">https://jason0853.github.io/nginx/nginx-basic-usage-with-caching-and-load-balancing/</guid><pubDate>Sun, 07 Jul 2019 14:07:49 GMT</pubDate><content:encoded>&lt;p&gt;지금까지 회사에서의 업무는 DevOps Engineer가 자동화 시켜놓은 시스템 안에 프론트 관련 리소스를 저장소에 옮기는 것이 업무의 마침표였다. 하지만 난 업무 영역을 좀 더 확장시키고 싶다.
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 07 Jul 2019 18:45:53 GMT</lastBuildDate><item><title><![CDATA[Nginx 사용법, 캐싱, 로드밸런싱 알아보기]]></title><description><![CDATA[지금까지 회사에서의 업무는 DevOps Engineer…]]></description><link>https://jason0853.github.io/nginx/nginx-basic-usage-with-caching-and-load-balancing/</link><guid isPermaLink="false">https://jason0853.github.io/nginx/nginx-basic-usage-with-caching-and-load-balancing/</guid><pubDate>Sun, 07 Jul 2019 14:07:49 GMT</pubDate><content:encoded>&lt;p&gt;지금까지 회사에서의 업무는 DevOps Engineer가 자동화 시켜놓은 시스템 안에 프론트 관련 리소스를 저장소에 옮기는 것이 업무의 마침표였다. 하지만 난 업무 영역을 좀 더 확장시키고 싶다.
 &lt;strong&gt;자신이 짠 코드는 직접 서버에 배포하고 관리해야한다는게&lt;/strong&gt; 나의 생각이다.&lt;/p&gt;
 &lt;h2 id=&quot;i-classdevicon-nginx-original-colored-stylefont-size-13remi-nginx란&quot;&gt;&lt;a href=&quot;#i-classdevicon-nginx-original-colored-stylefont-size-13remi-nginx%EB%9E%80&quot; aria-label=&quot;i classdevicon nginx original colored stylefont size 13remi nginx란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;i class=&quot;devicon-nginx-original colored&quot; style=&quot;font-size: 1.3rem;&quot;&gt;&lt;/i&gt; Nginx란?&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/Nginx&quot;&gt;위키백과&lt;/a&gt;에서 &lt;strong&gt;Nginx&lt;/strong&gt;를 다음과 같이 소개한다.&lt;/p&gt;
@@ -338,7 +338,7 @@ $ ab -n 10 http://127.0.0.1/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;지금해본 실습을 다이어그램으로 정리하면 아래와 같다.&lt;/p&gt;
 &lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/a39d40cfe74d1cd2f308a35773e53e1a/04907/nginx-basic-usage-with-caching-and-load-balancing-6.png&quot;
+    href=&quot;/static/67d33e2dab792670e57e2014b4285b0e/04907/nginx-basic-usage-with-caching-and-load-balancing-6.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -349,18 +349,18 @@ $ ab -n 10 http://127.0.0.1/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 53.90524967989757%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABe0lEQVQoz42SD0/bMBTE8/0/0sY2QExsCKZFmzRtLaIUSkgIdZs0TRz/+e05SVdGW4mnWM+W3l3uzo7qugbv5ZMFXQ/n1+WHGf7NuG7v5iPs7Sl6coa7PydSSvVDL0CvwTtkA8K0YLIR7c0J6tcH3J0QzhcL9HwO0g+p2iF1QtY4nJV9o/DlDKpH6Q9EYUSv1zwlCWmaMp1OybKMLgp23du2JwukQaUf3G1cRl0OghqNx8RxzFh6IF6tyj4jyeq5ykmKGUVZ4gwv4EHhDLv8jlYxrvgxEDpH0zT/KSnKGiuWkjzn+OcnjuJ3XP2+wtSiUDtRaWkFYhZjTH6Mmr7Hqc9bwmAxdGMMWms5N51dI6xZkXKv7lCLJbYZ8nS+u2hb5/jqGupbXHXTE4aBQLJZQa0N8vaUNR4rCvtstwFvdpHf8+befMtBYbGkTR6wTykmfdwqPAg+9A6lBxPrP9cUZyckH4+ovp73hG+pfT8JpScT1hdfWF1eUH+75C+jVFkM11NWzAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 53.90524967989757%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsSAAALEgHS3X78AAABeklEQVQoz42Si07jMBBF+/+fxAILiBUPASICCbEtohRKSAh1mzTNw4/DOEm3LG0lrFgzlmZO7h27VxQFOCefbGiiP39frqvhX41tcjvpY56OqIbH2JcTekqptuhL0/fmNVjXoWvQcZ/68RB1t4d9FuAsy6gmE5hOt6pag1qBlRZrJC8VLhtD/ibxlZ4vqBYL3sOQKIoYjUbEcUwzCtbdm7qFeahX6Tp3S5cN0EpXfzAgCAIGEj14Ps/aGcmsPvKEMB2Tihur+dLuFY4xs2sqFWDTmw5oLWVZ/qckzQqMWAqThIPb3+wGO1zeX6ILUVhZUWmopUVPB+jkADX6hVV/VkBv0UetNVVVybls7GqhxmnEi3pGTWeYspundc1FmyLB5Q9QPGHzxxboCzxkub1a4+VtWEY7jChsZ7sa8DLruQ1v7se37BWmM+rwFfMeoaO3lcKtzdveoURvYvH3gfT4kHB/l/zspAX+ZG36SfPkhkMW56fML84pri74BL9qWRYVyIG0AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
     &gt;&lt;/span&gt;
     &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
         alt=&quot;nginx basic usage with caching and load balancing 6&quot;
         title=&quot;&quot;
-        src=&quot;/static/a39d40cfe74d1cd2f308a35773e53e1a/b9e4f/nginx-basic-usage-with-caching-and-load-balancing-6.png&quot;
-        srcset=&quot;/static/a39d40cfe74d1cd2f308a35773e53e1a/cf440/nginx-basic-usage-with-caching-and-load-balancing-6.png 148w,
-/static/a39d40cfe74d1cd2f308a35773e53e1a/d2d38/nginx-basic-usage-with-caching-and-load-balancing-6.png 295w,
-/static/a39d40cfe74d1cd2f308a35773e53e1a/b9e4f/nginx-basic-usage-with-caching-and-load-balancing-6.png 590w,
-/static/a39d40cfe74d1cd2f308a35773e53e1a/04907/nginx-basic-usage-with-caching-and-load-balancing-6.png 781w&quot;
+        src=&quot;/static/67d33e2dab792670e57e2014b4285b0e/b9e4f/nginx-basic-usage-with-caching-and-load-balancing-6.png&quot;
+        srcset=&quot;/static/67d33e2dab792670e57e2014b4285b0e/cf440/nginx-basic-usage-with-caching-and-load-balancing-6.png 148w,
+/static/67d33e2dab792670e57e2014b4285b0e/d2d38/nginx-basic-usage-with-caching-and-load-balancing-6.png 295w,
+/static/67d33e2dab792670e57e2014b4285b0e/b9e4f/nginx-basic-usage-with-caching-and-load-balancing-6.png 590w,
+/static/67d33e2dab792670e57e2014b4285b0e/04907/nginx-basic-usage-with-caching-and-load-balancing-6.png 781w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
   &lt;/span&gt;
