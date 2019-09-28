@@ -1,4 +1,238 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 13 Sep 2019 04:15:29 GMT</lastBuildDate><item><title><![CDATA[cherry-pick으로 merge 하기]]></title><description><![CDATA[요새 바쁘다는 핑계로 블로그에 글을 못 올리고 공부도 하지 않았다. 😢😢
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 28 Sep 2019 06:37:50 GMT</lastBuildDate><item><title><![CDATA[Vim 사용법과 플러그인]]></title><description><![CDATA[ Vim주로 개발을 하다가 terminal 창에서 코드를 수정하거나 문서를 작성해야되는 경우가 종종 생긴다. 하지만  사용법도 너무 어렵고 코드 하이라이팅 및 단축키를 잘 몰라 항상 VS Code나 다른 IDE…]]></description><link>https://jason0853.github.io/vim/vim-usage/</link><guid isPermaLink="false">https://jason0853.github.io/vim/vim-usage/</guid><pubDate>Sat, 28 Sep 2019 13:09:38 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9a4cfe76fff39ee153d26edfb5995b3e/e95bd/vim-usage-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 41.992433795712486%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABYlAAAWJQFJUiTwAAABr0lEQVQozy1RyZKbMBTkY5KJNwwIBGhBEgKz2C7PVJyqHPIBOUzllP+vTpvKoetpeVt3J+/RQ/c9ZBUhKodToXASGmUVoMwFLt7g+yvCtEK5CUXtkJYGx8Iw1yAVdrunrBGNR5KJHrF7omki9qcSO+LrsYQWEV5PsGGC4V+rDM8aYbREh8ZopEWNfVrhjflvhwJfdgUS6xbE+IT1K6TyKKTFIWshCodKOtQmsjiiFI4MDO8GUms01hAWmdTYnxvWNNilNZJjpnCZfyAMd67s+CixY4IQHt7M3GqGHAeUywBpBrJouFGFbyzen1scckX6apPqkGskUvfw44qi6ZBVFse83bQpXhqSqlIjKhVQ2h7N9xXtY0WtIvM9zszfUL5AHRmTWg/oL3eK7Sms2ZqeaY58NeJb1bBZGxhpnB9RulezsDXMaVBe+/9wpE9Tak4eljuyWtPdhutLRoVShs2oVg3UaoTyE9puQrkN8BCSw0VLJpq6G+TUN6fmyeP+iZ/Pv3hcP3GbfzP+wXj5hTDfENcPxOUdXbzChAW2X+D6GR039f0EHy7buTU9rBvIyOEfMaYMSkXa/l4AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;vim usage 1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9a4cfe76fff39ee153d26edfb5995b3e/b9e4f/vim-usage-1.png&quot;
+        srcset=&quot;/static/9a4cfe76fff39ee153d26edfb5995b3e/cf440/vim-usage-1.png 148w,
+/static/9a4cfe76fff39ee153d26edfb5995b3e/d2d38/vim-usage-1.png 295w,
+/static/9a4cfe76fff39ee153d26edfb5995b3e/b9e4f/vim-usage-1.png 590w,
+/static/9a4cfe76fff39ee153d26edfb5995b3e/f9b6a/vim-usage-1.png 885w,
+/static/9a4cfe76fff39ee153d26edfb5995b3e/2d849/vim-usage-1.png 1180w,
+/static/9a4cfe76fff39ee153d26edfb5995b3e/e95bd/vim-usage-1.png 1586w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;i-classdevicon-vim-plain-colored-stylefont-size-13remi-vim&quot;&gt;&lt;a href=&quot;#i-classdevicon-vim-plain-colored-stylefont-size-13remi-vim&quot; aria-label=&quot;i classdevicon vim plain colored stylefont size 13remi vim permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;i class=&quot;devicon-vim-plain colored&quot; style=&quot;font-size: 1.3rem;&quot;&gt;&lt;/i&gt; Vim&lt;/h2&gt;
+&lt;p&gt;주로 개발을 하다가 terminal 창에서 코드를 수정하거나 문서를 작성해야되는 경우가 종종 생긴다. 하지만 &lt;code class=&quot;language-text&quot;&gt;Vim&lt;/code&gt; 사용법도 너무 어렵고 코드 하이라이팅 및 단축키를 잘 몰라 항상 VS Code나 다른 IDE를 열어서 주로 해결을 한다. 이제 더 이상 외부툴에 의존하지 않고 터미널 내부에서 해결하고 싶은 욕심이 생겼다. &lt;code class=&quot;language-text&quot;&gt;Vim&lt;/code&gt;에 대한 갈증을 풀기 위한 포스팅이다.😃😃&lt;/p&gt;
+&lt;h3 id=&quot;vim-플러그인-패키지&quot;&gt;&lt;a href=&quot;#vim-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%ED%8C%A8%ED%82%A4%EC%A7%80&quot; aria-label=&quot;vim 플러그인 패키지 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Vim 플러그인 패키지&lt;/h3&gt;
+&lt;p&gt;기본적으로 UI가 이뻐야 쓰고 싶어지기 때문에 먼저 여러 플러그인들을 설치해보고 나서 사용법을 익혀보겠다. 플러그인을 설치하기 이전에 플러그인을 설치하는데 필요한 툴을 설치해보겠다. 검색해보면 &lt;code class=&quot;language-text&quot;&gt;Vundle&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;vim-plug&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;pathogen&lt;/code&gt;이 있다. Star수가 가장 많은 Vundle을 이용하여 플러그인 설치해보겠다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ &lt;span class=&quot;token function&quot;&gt;vim&lt;/span&gt; .vimrc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;우선 vunlde.vim을 깃허브로부터 클론을 받은 뒤 &lt;code class=&quot;language-text&quot;&gt;.vimrc&lt;/code&gt; 파일을 만들어 보자.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;vim&quot;&gt;&lt;pre class=&quot;language-vim&quot;&gt;&lt;code class=&quot;language-vim&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;nocompatible&lt;/span&gt;              &lt;span class=&quot;token comment&quot;&gt;&quot; be iMproved, required&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;filetype&lt;/span&gt; off                  &lt;span class=&quot;token comment&quot;&gt;&quot; required&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;&quot; let Vundle manage Vundle, required&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;rtp&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt;~&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;bundle&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;Vundle&lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;vim&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;call&lt;/span&gt; vundle#&lt;span class=&quot;token function&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+Plugin &lt;span class=&quot;token string&quot;&gt;&apos;VundleVim/Vundle.vim&apos;&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;&quot; 여기 부분부터 설치할 플러그인들을 작성해주면 된다.&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;&quot; ex) Plugin &lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;scrooloose/nerdtree&apos;&lt;/span&gt;
+&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;👉👉👉&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;call&lt;/span&gt; vundle#&lt;span class=&quot;token function&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;            &lt;span class=&quot;token comment&quot;&gt;&quot; required&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;filetype&lt;/span&gt; plugin indent &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt;    &lt;span class=&quot;token comment&quot;&gt;&quot; required&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위 코드는 &lt;code class=&quot;language-text&quot;&gt;Vundle&lt;/code&gt; 플러그인을 위한 필수 코드들이다. 그리고 하이라이트된 부분에 설치할 플러그인들을 예제와 같이 작성해준다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight has-highlighted-lines&quot; data-language=&quot;vim&quot;&gt;&lt;pre class=&quot;language-vim&quot;&gt;&lt;code class=&quot;language-vim&quot;&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;Plugin &lt;span class=&quot;token string&quot;&gt;&apos;scrooloose/nerdtree&apos;&lt;/span&gt;        &lt;span class=&quot;token comment&quot;&gt;&quot; tree 구조로 폴더 및 파일을 볼 수 있는 플러그인&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;Plugin &lt;span class=&quot;token string&quot;&gt;&apos;vim-airline/vim-airline&apos;&lt;/span&gt;    &lt;span class=&quot;token comment&quot;&gt;&quot; Vim 상태바 개선해주는 플러그인&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;Plugin &lt;span class=&quot;token string&quot;&gt;&apos;airblade/vim-gitgutter&apos;&lt;/span&gt;     &lt;span class=&quot;token comment&quot;&gt;&quot; Git으로 변경된 부분 표시해주는 플러그인&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;Plugin &lt;span class=&quot;token string&quot;&gt;&apos;tpope/vim-fugitive&apos;&lt;/span&gt;         &lt;span class=&quot;token comment&quot;&gt;&quot; Git의 현재 브랜치 및 상태 등을 표시해주는 플러그인&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;Plugin &lt;span class=&quot;token string&quot;&gt;&apos;vim-syntastic/syntastic&apos;&lt;/span&gt;    &lt;span class=&quot;token comment&quot;&gt;&quot; 문법 체크해주는 플러그인&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;gatsby-highlight-code-line&quot;&gt;Plugin &lt;span class=&quot;token string&quot;&gt;&apos;ctrlpvim/ctrlp.vim&apos;&lt;/span&gt;         &lt;span class=&quot;token comment&quot;&gt;&quot; 파일 찾기 플러그인&lt;/span&gt;&lt;/span&gt;Plugin &lt;span class=&quot;token string&quot;&gt;&apos;dracula/vim&apos;&lt;/span&gt;                &lt;span class=&quot;token comment&quot;&gt;&quot; 색상 테마 플러그인&lt;/span&gt;
+
+Plugin &lt;span class=&quot;token string&quot;&gt;&apos;pangloss/vim-javascript&apos;&lt;/span&gt;    &lt;span class=&quot;token comment&quot;&gt;&quot; 자바스크립트 플러그인&lt;/span&gt;
+Plugin &lt;span class=&quot;token string&quot;&gt;&apos;leafgarland/typescript-vim&apos;&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;&quot; 타입스크립트 플러그인&lt;/span&gt;
+Plugin &lt;span class=&quot;token string&quot;&gt;&apos;mxw/vim-jsx&apos;&lt;/span&gt;                &lt;span class=&quot;token comment&quot;&gt;&quot; jsx 문법 플러그인&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;하이라이팅된 플러그인들은 &lt;a href=&quot;https://blog.b1ue.sh//vim-ide/&quot;&gt;블로그&lt;/a&gt;의 추천 플러그인들이다. 그럼 설치 및 삭제 방법을 알아보겠다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ :PluginInstall
+$ :PluginClean
+$ :PluginList&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;PluginInstall&lt;/code&gt; - 플러그인을 설치할 목록을 작성해주고 저장(&lt;code class=&quot;language-text&quot;&gt;w&lt;/code&gt;)한 다음에 &lt;code class=&quot;language-text&quot;&gt;ESC&lt;/code&gt;키를 누른 다음 &lt;code class=&quot;language-text&quot;&gt;:PluginInstall&lt;/code&gt;을 한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;PluginClean&lt;/code&gt; - 사용하지 않을 플러그인을 목록에서 삭제해주고 저장(&lt;code class=&quot;language-text&quot;&gt;w&lt;/code&gt;)한 다음에 &lt;code class=&quot;language-text&quot;&gt;ESC&lt;/code&gt;키를 누른 다음 &lt;code class=&quot;language-text&quot;&gt;:PluginClean&lt;/code&gt;을 한다.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;PluginList&lt;/code&gt; - 설치한 플러그인 리스트 보기&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;설치한 플러그인들 중에 몇 가지는 추가 설정이 필요하다. 아래 코드는 syntastic, ctrlp.vim, vim-airline, 테마 플러그인을 위한 설정이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vim&quot;&gt;&lt;pre class=&quot;language-vim&quot;&gt;&lt;code class=&quot;language-vim&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;&quot; recommended settings for syntastic&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;statusline&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;#warningmsg#
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;statusline&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SyntasticStatuslineFlag&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;statusline&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;syntastic_always_populate_loc_list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;syntastic_auto_loc_list &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;syntastic_check_on_open &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;syntastic_check_on_wq &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;&quot; 속도 향상을 위해 이런 디렉토리를 무시할 수 있는 설정(ctrlp.vim)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;ctrlp_custom_ignore &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  \ &lt;span class=&quot;token string&quot;&gt;&apos;dir&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;token string&quot;&gt;&apos;\.git$\|public$\|log$\|tmp$\|vendor$&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  \ &lt;span class=&quot;token string&quot;&gt;&apos;file&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;\v\.(exe|so|dll)$&apos;&lt;/span&gt;
+\ &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;&quot; powerline font 적용&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; g&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;airline_powerline_fonts &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;&quot; 테마 설정&lt;/span&gt;
+color dracula&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Vim&lt;/code&gt; 상태바를 이쁘게 하기 위해서 &lt;em&gt;powerline font&lt;/em&gt;를 적용해야한다. 이건 옵션이므로 건너뛰어도 상관없다. ㅎㅎ&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# clone&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone https://github.com/powerline/fonts.git --depth&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;1
+&lt;span class=&quot;token comment&quot;&gt;# install&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; fonts
+./install.sh
+&lt;span class=&quot;token comment&quot;&gt;# clean-up a bit&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;..&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; -rf fonts&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1219142ff250fc82b776a0ca04c8ae1a/62d0f/vim-usage-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 51.19305856832972%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABYlAAAWJQFJUiTwAAACAElEQVQoz11S227aUBD0fzRA0lZA0iglgDG+H98hgG/HMRBAIbRK33pR+9pvn+45IUjNw2iPrPXszO4of//8QLVaglc1fv76jcPXZ2x3exy+PGOzfUSU3CGMJojjCVzHheeHKPk9spwTymN9eedUlYIvwYIAcTLF+mGLRZqfMJ0twLwQhmFhbHoYmgkchyEi8leEUYIgjOWbsQDKSBvDNG30Byp6twPc9oentzoa42Gzo8kZ4mwHI/uOrLjHbJ5KzI9IsxxFWcG0HChBGCEvSmhj/UTWHwwlRpouJzuuR0NNuLYBzU6gaiY+9/qyX/TYpNq0bBKgQfl0fYN2p4sPH9toti7QOn9/xAX6qoF5uUFZcrlHYV/XDRqSkKqCrIaw/DmS6RxeEGNkeFA63Uu8O2tKsrcYDDXaZSFtiZ3mBSfSgA5QYP90wGpNw6qltBxNUmjuDEq3e/VG2REtoVDHLK/hByFssu0SmU4HsmyX1uDLVTDvpdr0TdyDFF6h0Tz/j6zZOlomhZYdIKCfJmRzSmDMkwfhVSWVCetZTqkoltDYAkq7c4mzRkuSvlahuEGktqri26rGnpd4JKyzGmVa00UL+HcrWCyCR8NENkV0LJtB8fwALvNlnhLKorA31k1c3/QwUjXUWYYt50inC3Ai5BRg0a8ZDjTdkr0CYhUiKf8Aku5ccmEHttEAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;vim usage 2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/1219142ff250fc82b776a0ca04c8ae1a/b9e4f/vim-usage-2.png&quot;
+        srcset=&quot;/static/1219142ff250fc82b776a0ca04c8ae1a/cf440/vim-usage-2.png 148w,
+/static/1219142ff250fc82b776a0ca04c8ae1a/d2d38/vim-usage-2.png 295w,
+/static/1219142ff250fc82b776a0ca04c8ae1a/b9e4f/vim-usage-2.png 590w,
+/static/1219142ff250fc82b776a0ca04c8ae1a/f9b6a/vim-usage-2.png 885w,
+/static/1219142ff250fc82b776a0ca04c8ae1a/2d849/vim-usage-2.png 1180w,
+/static/1219142ff250fc82b776a0ca04c8ae1a/bbefa/vim-usage-2.png 1770w,
+/static/1219142ff250fc82b776a0ca04c8ae1a/62d0f/vim-usage-2.png 1844w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;터미널 환경 설정에서 font를 바꿔주면 상태바 및 git 관련 아이콘이 이쁘게 노출될 것이다.😃&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0eb1c580adeaaed508fd68a403a68668/57e65/vim-usage-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 3.414634146341464%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAABCAYAAADeko4lAAAACXBIWXMAABYlAAAWJQFJUiTwAAAATUlEQVQI1x3JMQ6AMAxDUc4FKk0IJNAK6EJ32Nm4v4k6WHr67nJ5YfuFdNa21c16gOYEkg00GSIb2C1Ldiuit5EMfRAMofr3eL9R9MMPzLEk8Ryd6PsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;vim usage 4&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0eb1c580adeaaed508fd68a403a68668/b9e4f/vim-usage-4.png&quot;
+        srcset=&quot;/static/0eb1c580adeaaed508fd68a403a68668/cf440/vim-usage-4.png 148w,
+/static/0eb1c580adeaaed508fd68a403a68668/d2d38/vim-usage-4.png 295w,
+/static/0eb1c580adeaaed508fd68a403a68668/b9e4f/vim-usage-4.png 590w,
+/static/0eb1c580adeaaed508fd68a403a68668/f9b6a/vim-usage-4.png 885w,
+/static/0eb1c580adeaaed508fd68a403a68668/2d849/vim-usage-4.png 1180w,
+/static/0eb1c580adeaaed508fd68a403a68668/bbefa/vim-usage-4.png 1770w,
+/static/0eb1c580adeaaed508fd68a403a68668/57e65/vim-usage-4.png 2050w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;vim-기본-환경-설정&quot;&gt;&lt;a href=&quot;#vim-%EA%B8%B0%EB%B3%B8-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95&quot; aria-label=&quot;vim 기본 환경 설정 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Vim 기본 환경 설정&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;Vim&lt;/code&gt;의 여러 환경 설정이 있지만 필요한 설정 몇 가지만 알아보겠다. 아래 내용은 &lt;code class=&quot;language-text&quot;&gt;.vimrc&lt;/code&gt; 파일 최상단에 작성한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vim&quot;&gt;&lt;pre class=&quot;language-vim&quot;&gt;&lt;code class=&quot;language-vim&quot;&gt;&lt;span class=&quot;token builtin&quot;&gt;syntax&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;on&lt;/span&gt;         &lt;span class=&quot;token comment&quot;&gt;&quot; 문법 하이라이트&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;noswapfile&lt;/span&gt;    &lt;span class=&quot;token comment&quot;&gt;&quot; swap파일 생성 안함&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;number&lt;/span&gt;        &lt;span class=&quot;token comment&quot;&gt;&quot; 라인 체크&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;smartindent&lt;/span&gt;   &lt;span class=&quot;token comment&quot;&gt;&quot; 스마트 들여쓰기&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;tabstop&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;     &lt;span class=&quot;token comment&quot;&gt;&quot; 탭 들여쓰기 2칸&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;shiftwidth&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;  &lt;span class=&quot;token comment&quot;&gt;&quot; 자동 들여쓰기 2칸&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;hlsearch&lt;/span&gt;      &lt;span class=&quot;token comment&quot;&gt;&quot; 검색어 강조&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/27d048ba0447e7a12f68d9f17851e849/67bc9/vim-usage-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 141.1669367909238%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAcCAYAAABh2p9gAAAACXBIWXMAABYlAAAWJQFJUiTwAAAEqElEQVRIx3VWO5PbZBTVX2GS3bUsW2/Leluyracte1+QncDCJBkIQ5GCoaKAjgKKzKQhBQUVFUPH8PMO5/ske71MKM7c73l8v3vPvbJyX1ZYXsWYegmmZgDdiYkIUzuSYz8piBJhVqNpK7mn2yH3A0ytYBiHMLjuxwUUPygRbV8i2N1DJeH52MKF5hA2zokz1TriyciWe+LM+dgcYMlzAk9HFpRwXuL+3V+4+fE9nLyTB0a6h9F0JqHqB+tBNbg+zCUmLu0pPChp2OLF+3/w+ds/MS+upGeqMe8JBmJBOubaEaYv7eGM2Jc/zLHi+wUuv3+H/Xe/wEkqHvSgWT40eckb5gEmVniCYEAo945gyJTIL1F/+oaEPyO5fiGJJsMBw81gMySmt4Q5y6TVXSZPJO0E+oCpHUOZzVcIFx389Q0vr2B5Oe2SNoND7y2uGbP0BMn/QvyYkqYdimevkSxbpM2etkOUtYjyDeVSk3BB8pTeJdLK+QnMwdpz8YIFlDitEaZrZNRjUhUkWiNYrDBPlnCDDDOfF9wApu3DdkPYs4jzHjZ/xOG+sLoTkjiDklc7klTIywJFU2PdVLQVFssVvDkvzEK4XowZx4JQNz0WwIygNZj9KTWrUo8jAyNqVOmun5Nkh+6qwf66xnZXoCOqeokgSjEPFvDDhSTWdBfqxOZFClwImiRnFzptjzPOle7yGfJViU23xG5fECWubxs0m4qETAyfaFjznkyzoI4NwsRoQO+dIJxKcqWsd8iXJbZdhaubDcq6RJbn8Pyofx6fpekOxvTsQDg6QD2Me2LpYbu9QVG29KjEulohzVJESYQwZpBdT8ZoPLVJaGEsCDXzg6S916zlur1EvMhRrAMiQhzPEYQenxvA8VglJNQGUvXg5SOYD+C+ElPEIeWxvLpDsrvBfLWDHZeYsORMm9pzEhlD3fKkFfKRc4ZjwnBMGFthxVxnySqekyLgpUX3HIvLe6xuXyHdfEKpJPSyYoYLehpTMhFMak1cmphMkpCMaAr0Xp0QWp99JU0aPP/hV3zx0+/Y3X2Jutig626xu7xjPBu4c1YJyTTRKETXYZs6QBCNJJF1TIyyrW7x+u0fePPb37h7/S3qeouiYm2HGbuxz8SEEgeCIwaPjoSE0KbSrPcoqy2xwbposVy3kkxUh8UOYpB0KnrfxB2S8phEZPZUk0qVbtBuL7G/+hh1u0e+bpBkayTJGqYRkMQ6anDETB6JTsguDhCEKZtqyg+QH7JNsWEKmOxruhGShF14zDiNbQlVcyXJhWo8eHVCdi4IfcomSpcs/gUFnSNZcB4vWCnsLO6cEPKZSSskIi4Kwg9B1LYi4hSyMhwvkDbJekRJwGS49NiGKWALDw1ZtxfqQ0M4Qq6R0ODzphbbt/hWMGYCR0mM7eE5/a/3nugDab/2X2LFMgIpXCFkoTl7FvcNVXQY8ZmUsTo8aWhTF1M8PVfxRGI8QMVHZxqUwGGH5ofI8zPKw5U1qwlMbJndx7AkNL7AMtnJDX4CDArfSAi2OjqnLOPPUGdfsSG08AJRuyLLwQn849iwA+m9+LfR5t+gyb6WKNOXaPI3eLa6xb82I5WuQZjMwQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;vim usage 3&quot;
+        title=&quot;&quot;
+        src=&quot;/static/27d048ba0447e7a12f68d9f17851e849/b9e4f/vim-usage-3.png&quot;
+        srcset=&quot;/static/27d048ba0447e7a12f68d9f17851e849/cf440/vim-usage-3.png 148w,
+/static/27d048ba0447e7a12f68d9f17851e849/d2d38/vim-usage-3.png 295w,
+/static/27d048ba0447e7a12f68d9f17851e849/b9e4f/vim-usage-3.png 590w,
+/static/27d048ba0447e7a12f68d9f17851e849/f9b6a/vim-usage-3.png 885w,
+/static/27d048ba0447e7a12f68d9f17851e849/2d849/vim-usage-3.png 1180w,
+/static/27d048ba0447e7a12f68d9f17851e849/67bc9/vim-usage-3.png 1234w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;지금까지 작성한 &lt;code class=&quot;language-text&quot;&gt;.vimrc&lt;/code&gt; 내용이다.&lt;/p&gt;
+&lt;h3 id=&quot;vim-사용법&quot;&gt;&lt;a href=&quot;#vim-%EC%82%AC%EC%9A%A9%EB%B2%95&quot; aria-label=&quot;vim 사용법 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Vim 사용법&lt;/h3&gt;
+&lt;p&gt;우선 난 vim을 light하게 사용할 목적이기 때문에 간단한 사용법만 알아보겠다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;vim&quot;&gt;&lt;pre class=&quot;language-vim&quot;&gt;&lt;code class=&quot;language-vim&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;h&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 커서 왼쪽 이동
+&lt;span class=&quot;token keyword&quot;&gt;l&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 커서 오른쪽 이동
+&lt;span class=&quot;token keyword&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 커서 위로 이동
+&lt;span class=&quot;token keyword&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 커서 아래 이동
+i &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 위치에서 입력 가능
+&lt;span class=&quot;token keyword&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 커서에서 아래칸으로 내려오면 입력 가능
+shift &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; ^ &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 줄에서 맨앞으로 이동
+shift &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; a &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 줄에서 맨끝으로 이동하면서 입력 가능
+&lt;span class=&quot;token keyword&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 위치에서 문자 삭제
+dd &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 현재 행 삭제
+&lt;span class=&quot;token keyword&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;undo&lt;/span&gt; 기능
+ctrl &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;redo&lt;/span&gt; 기능
+shift &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; v &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; Visual line 기능
+ctrl &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; v &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; Visual Block 기능
+&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 라인으로 이동
+&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;$ &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 파일 맨 마지막 라인으로 이동
+
+ctrl &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; 파일 찾기 단축키 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctrlp&lt;span class=&quot;token operator&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;vim&lt;/span&gt; 플러그인&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;NERDTree &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; NerdTree 켜기 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nerdtree 플러그인&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;NERDTreeToggle &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; NerdTree 토글 기능 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;nerdtree 플러그인&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;사용법 익히는대로 계속 업데이트 예정…&lt;/p&gt;
+&lt;h3 id=&quot;wrap-up&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap-up&lt;/h3&gt;
+&lt;p&gt;Vim을 IDE로서 사용하려면 한참 멀었지만 간단한 테스트코드나 자바스크립트 언어 공부할 때 사용해보니 개인적으로 만족! 👍👍👍 좀 더 사용해보고 괜찮은 플러그인이나 기능들은 계속 공유하도록 하겠다.&lt;/p&gt;
+&lt;h3 id=&quot;reperence&quot;&gt;&lt;a href=&quot;#reperence&quot; aria-label=&quot;reperence permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reperence&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.b1ue.sh//vim-ide/&quot;&gt;Vim을 IDE처럼 사용하기&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/GWo_MxMlJJ4&quot;&gt;Vi (Vim) 시작하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[cherry-pick으로 merge 하기]]></title><description><![CDATA[요새 바쁘다는 핑계로 블로그에 글을 못 올리고 공부도 하지 않았다. 😢😢
 우선 각성하고 공부를 다시 시작해보겠다. 자 그럼 어떤 주제로 정리를 해볼까? 🤔🤔🤔 음… 다들 프로젝트 형상관리를 할 때 git…]]></description><link>https://jason0853.github.io/git/cherry-pick/</link><guid isPermaLink="false">https://jason0853.github.io/git/cherry-pick/</guid><pubDate>Thu, 12 Sep 2019 14:09:46 GMT</pubDate><content:encoded>&lt;p&gt;요새 바쁘다는 핑계로 블로그에 글을 못 올리고 공부도 하지 않았다. 😢😢
 우선 각성하고 공부를 다시 시작해보겠다. 자 그럼 어떤 주제로 정리를 해볼까? 🤔🤔🤔 음… 다들 프로젝트 형상관리를 할 때 git을 많이 쓸 것이다. 그 중에서 &lt;strong&gt;cherry-pick&lt;/strong&gt;에 대해서 살펴보자.&lt;/p&gt;
 &lt;h2 id=&quot;i-classdevicon-git-plain-colored-stylefont-size-13remi-cherry-pick이란&quot;&gt;&lt;a href=&quot;#i-classdevicon-git-plain-colored-stylefont-size-13remi-cherry-pick%EC%9D%B4%EB%9E%80&quot; aria-label=&quot;i classdevicon git plain colored stylefont size 13remi cherry pick이란 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;i class=&quot;devicon-git-plain colored&quot; style=&quot;font-size: 1.3rem;&quot;&gt;&lt;/i&gt; cherry-pick이란?&lt;/h2&gt;
