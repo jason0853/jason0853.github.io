@@ -1,4 +1,327 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 13 Oct 2019 07:29:21 GMT</lastBuildDate><item><title><![CDATA[Vim 사용법과 플러그인]]></title><description><![CDATA[ Vim주로 개발을 하다가 terminal 창에서 코드를 수정하거나 문서를 작성해야되는 경우가 종종 생긴다. 하지만  사용법도 너무 어렵고 코드 하이라이팅 및 단축키를 잘 몰라 항상 VS Code나 다른 IDE…]]></description><link>https://jason0853.github.io/vim/vim-usage/</link><guid isPermaLink="false">https://jason0853.github.io/vim/vim-usage/</guid><pubDate>Sat, 28 Sep 2019 13:09:38 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[jason.log]]></title><description><![CDATA[Blog posted about my dev study.]]></description><link>https://jason0853.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 27 Oct 2019 06:22:10 GMT</lastBuildDate><item><title><![CDATA[merge vs rebase]]></title><description><![CDATA[merge와 rebase의 차이 이해하기merge vs rebase이번 포스팅을 통해 와  차이를 이해하고 넘어가보겠다.
+서로 다른 두 브랜치 간에 병합을 진행할 때 를 사용해왔었지만 git log의 지저분한 merge…]]></description><link>https://jason0853.github.io/git/merge-vs-rebase/</link><guid isPermaLink="false">https://jason0853.github.io/git/merge-vs-rebase/</guid><pubDate>Sun, 27 Oct 2019 12:10:35 GMT</pubDate><content:encoded>&lt;h2 id=&quot;merge와-rebase의-차이-이해하기&quot;&gt;&lt;a href=&quot;#merge%EC%99%80-rebase%EC%9D%98-%EC%B0%A8%EC%9D%B4-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0&quot; aria-label=&quot;merge와 rebase의 차이 이해하기 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;merge와 rebase의 차이 이해하기&lt;/h2&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/09fa137a3783b527713d99228ddf98e9/2e6ac/merge-vs-rebase-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 19.053708439897697%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA5klEQVQY0yWOS3KDMBBEuUvKBoT4GBskhMTHKAo2iUMllXWWuf8JOiN50TXTXTU9L+LdDXL/w2QcZO9Qngzysg+zqAfos8F7Y3CpDUryPtfDCut2XO0jqBFXzMsH3PqFqEo6/GbfWNUDe7xBSwehXlFQ6UvSoOctfgoBzloc0xYx6dzMMMMNSr/BjHcC0OiUw2I/EZ24xqTuqCoiYD14rsCLHiyToaDOBJZcIGUCsRdlorOBaJw3jNOGotIYpuceMd6hJaKYCA5pEw6OyXMmVOBLD4FMBO/z+jIFOiEtJN16Qv/EU/4Dir+Ea/an1scAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 1&quot;
+        title=&quot;&quot;
+        src=&quot;/static/09fa137a3783b527713d99228ddf98e9/b9e4f/merge-vs-rebase-1.png&quot;
+        srcset=&quot;/static/09fa137a3783b527713d99228ddf98e9/cf440/merge-vs-rebase-1.png 148w,
+/static/09fa137a3783b527713d99228ddf98e9/d2d38/merge-vs-rebase-1.png 295w,
+/static/09fa137a3783b527713d99228ddf98e9/b9e4f/merge-vs-rebase-1.png 590w,
+/static/09fa137a3783b527713d99228ddf98e9/f9b6a/merge-vs-rebase-1.png 885w,
+/static/09fa137a3783b527713d99228ddf98e9/2d849/merge-vs-rebase-1.png 1180w,
+/static/09fa137a3783b527713d99228ddf98e9/2e6ac/merge-vs-rebase-1.png 1564w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;merge-vs-rebase&quot;&gt;&lt;a href=&quot;#merge-vs-rebase&quot; aria-label=&quot;merge vs rebase permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;merge vs rebase&lt;/h3&gt;
+&lt;p&gt;이번 포스팅을 통해 &lt;code class=&quot;language-text&quot;&gt;merge&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;rebase&lt;/code&gt; 차이를 이해하고 넘어가보겠다.
+서로 다른 두 브랜치 간에 병합을 진행할 때 &lt;code class=&quot;language-text&quot;&gt;merge&lt;/code&gt;를 사용해왔었지만 git log의 지저분한 merge 기록을 깨끗이 정리하면서 병합을 진행하고 싶을 때가 있다.&lt;/p&gt;
+&lt;p&gt;바로 그 때 &lt;code class=&quot;language-text&quot;&gt;rebase&lt;/code&gt;를 사용하면 된다.&lt;/p&gt;
+&lt;p&gt;이제 간단한 예제를 통해 실습을 진행해보겠다. 두 개의 로그 그래프를 비교하기 위해 위와 같은 비슷한 상황을 연출해보자.&lt;/p&gt;
+&lt;h3 id=&quot;merge&quot;&gt;&lt;a href=&quot;#merge&quot; aria-label=&quot;merge permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;merge&lt;/h3&gt;
+&lt;p&gt;현재 &lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt; 브랜치이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge dev-b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;dev-b&lt;/code&gt;브랜치를 병합하려고 충돌이 난다. 왜 나는지 &lt;strong&gt;3-way-merge&lt;/strong&gt; 툴인 p4merge를 통해 한 번 살펴보겠다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/46c74639a066bf4b5b114e5e62a442ba/f583d/merge-vs-rebase-2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 67.43197278911565%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACN0lEQVQ4y62TyY6bQBCGef+3yTU5JBnF9ijjbWxggLExBpt9aXab7U81WFEOE+WSkj5VN/1T1NIIe3GG152I+XyOxWIBVdXgui6uVxuO445ry7IgSRIUgq8dx4FjO6O3bZu0V4RhgOVqDWHzusPLyzNWqxVEUaSACnT9hKulQ1O2UBQN7+8a9vsdJNIosgzDNKAc30irklbH4XCAaZqYzeYQDOOMy+WCLMtQ1TXKqkJFOI5NwWQcjzqCIEBK5xzGUvi+D93QYRgGwihClufo+g6y/AbBOp9hng34nos0SZCljEjHUozTCfw8pID8GT/Lyfueh4t5gUnJ+NSWJIrR1DfsZQmCupEg/tyijgq0rEbDoXVMpVnqFpmrA1U0UYbALUZ21KCKL3hefocXncFqD1UXY6dtIJRlhbbt0HU9ek4/oKN9QMPo2hbcBiqH0xO0QxT4SCnbpmvQ9u3ouen6GQI+sGEY4FOZAz62MAwpifYPPR4BDQi8wVyQU2Nvt9tITcOJqNmMMcokHT1jyQM2DoXrq8cAi6KgCluIkgwhphf52FVNgzcKCxKUKMqJmn/kfkfbdRNtN7Wl7yeoTS3BExnvYUbRTT5NIqCLmtIHCsoii2PUlEVL2Q5NM9X1m/4BrSkopyPNer2F0Hx7wn75A5+/fILrnZCXPlhGVyh3yTtIUo6NmF3/SkSw+IKnxVcIhaJAOYh4tzQEZYCkSZDc4wfJtP8HMWnzWzb+bUJCffofxqe+Xm/wCzBK1MD1BeDLAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 2&quot;
+        title=&quot;&quot;
+        src=&quot;/static/46c74639a066bf4b5b114e5e62a442ba/b9e4f/merge-vs-rebase-2.png&quot;
+        srcset=&quot;/static/46c74639a066bf4b5b114e5e62a442ba/cf440/merge-vs-rebase-2.png 148w,
+/static/46c74639a066bf4b5b114e5e62a442ba/d2d38/merge-vs-rebase-2.png 295w,
+/static/46c74639a066bf4b5b114e5e62a442ba/b9e4f/merge-vs-rebase-2.png 590w,
+/static/46c74639a066bf4b5b114e5e62a442ba/f9b6a/merge-vs-rebase-2.png 885w,
+/static/46c74639a066bf4b5b114e5e62a442ba/2d849/merge-vs-rebase-2.png 1180w,
+/static/46c74639a066bf4b5b114e5e62a442ba/bbefa/merge-vs-rebase-2.png 1770w,
+/static/46c74639a066bf4b5b114e5e62a442ba/f583d/merge-vs-rebase-2.png 2352w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;가운데 &lt;code class=&quot;language-text&quot;&gt;base&lt;/code&gt; 기준으로 &lt;code class=&quot;language-text&quot;&gt;dev-a&lt;/code&gt;(오른쪽), &lt;code class=&quot;language-text&quot;&gt;dev-b&lt;/code&gt;(왼쪽) 작업 내역을 비교해봤을 때 서로 같은 줄에서 다른 작업들을 했기 때문에 충돌을 해결하고 커밋해야한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같은 순서로 수정을 한 다음 커밋을 해보겠다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;커밋 메세지를 따로 작성하지 않으면 &lt;strong&gt;Merge branch ‘dev-b’&lt;/strong&gt;가 자동으로 작성된다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b87a157989fa38339b8501689de85ddc/c4421/merge-vs-rebase-3.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 21.601941747572816%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA0UlEQVQY022PSXKDMBBFOUxisGTZxmEWQxDY2AR74UVyg9z/Bi8NGSqVyuJXq6ul10+eMS2D7nid3nnrzkyR5XLImcKETEesdMZapz8JVIo2OWnWk9sTWXFkuyuJEkdenPB2qqUMRxo7sd1btAB8PyIIYvx18m/URoB5T2EHinLACDBOHWV9wTMb2ZCNpP2dMKxQplgezSa++jT6nXmm5U7djLjuhutv7A8NtjovvfcoX46fKhLZ8LASsy/YUmej7/MfYCXA1l2pn18EWC/A2fADTW+CNmfGul8AAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 3&quot;
+        title=&quot;&quot;
+        src=&quot;/static/b87a157989fa38339b8501689de85ddc/b9e4f/merge-vs-rebase-3.png&quot;
+        srcset=&quot;/static/b87a157989fa38339b8501689de85ddc/cf440/merge-vs-rebase-3.png 148w,
+/static/b87a157989fa38339b8501689de85ddc/d2d38/merge-vs-rebase-3.png 295w,
+/static/b87a157989fa38339b8501689de85ddc/b9e4f/merge-vs-rebase-3.png 590w,
+/static/b87a157989fa38339b8501689de85ddc/f9b6a/merge-vs-rebase-3.png 885w,
+/static/b87a157989fa38339b8501689de85ddc/2d849/merge-vs-rebase-3.png 1180w,
+/static/b87a157989fa38339b8501689de85ddc/c4421/merge-vs-rebase-3.png 1648w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;그럼 위와 같이 새로운 커밋이 하나 다시 생기고 병합이 병렬적으로 진행되는걸 볼 수 있다.&lt;/p&gt;
+&lt;h3 id=&quot;rebase&quot;&gt;&lt;a href=&quot;#rebase&quot; aria-label=&quot;rebase permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;rebase&lt;/h3&gt;
+&lt;p&gt;이번에 &lt;code class=&quot;language-text&quot;&gt;rebase&lt;/code&gt;로 병합을 진행하기 위해 다시 처음과 같은 상황에서 시작해보겠다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout dev-b
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; rebase master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;dev-b&lt;/code&gt; 브랜치로 바꾼 이유는 &lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt; 브랜치 다음에 병합을 진행을 하기 위해서이다. 이번에도 충돌이 난다. 왜 나는지 살펴보자.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a57e51132be4d3607b556e5dab9597ad/efcce/merge-vs-rebase-4.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 65.79163248564397%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAABYlAAAWJQFJUiTwAAACNElEQVQ4y4VTiW6bQBDl/7+rqdS6Na3j4IuY25zmXC+X8etbHEttoraIpxlmZ9+caC/mFrbnIvB92KcTjp4Hd3+AeXzF3jxgb5nwaAuCAHEcIwzDv+LE+9ra+IHNZgddX2Kp63i1LPiuC9tx4FC6DKaI3Fn3kCQJ0jRFmqR3+Q7az/UCi8VXPD09kVSHeTjMRL7vwrGPsG0bB9r05RIr+u13O547sF17PlOwmISC0rWNsYd1PM7sRZ7PMsvOCAMH69U3kpkIWUrCLCPKE0s/hSdsTAOmaSJOYvpnyM7ZvWSVjcXyEhI1ooG4XAiBME5g2ap0l845bRJCtrjIDllekDhkBWxHlKCpBbq2x5mJaPbLFo6xw1AKDJXAqGTRIGNp7maJIjBxEwmmhqjjWa9f99gZ3/FF/4So8FB0rK5LEOYetKHrME0THQXA7HDje70iiyIMrcT8SJ61PMME5VBwMHkSQcoGoyiZREaOAVXJDPuhx1URTldcxxEjyQbKmJe6vkc/DCynQ8fAj2/Vnr4fVGzeuWIcxjlu0whoquFHDsVnswWzlFLOUHpVVXfUNerfINjrh1/bKrQkq7mrPrSKRsuyuS4mlzvgpEumXqMsSnQcwCP6/56u6+fl16RhYGss8Pz8mZMMOcVohpBveht/gHwPDqQqA/5dOxKuVlhzms/bHzhfUpTdGUWbEQ/5EblM/wRtWRnCC7jYWVXey5puGHsOhc3+J+h7oy/eMOt8Jfc04e/4C+a10uQQjBqhAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 4&quot;
+        title=&quot;&quot;
+        src=&quot;/static/a57e51132be4d3607b556e5dab9597ad/b9e4f/merge-vs-rebase-4.png&quot;
+        srcset=&quot;/static/a57e51132be4d3607b556e5dab9597ad/cf440/merge-vs-rebase-4.png 148w,
+/static/a57e51132be4d3607b556e5dab9597ad/d2d38/merge-vs-rebase-4.png 295w,
+/static/a57e51132be4d3607b556e5dab9597ad/b9e4f/merge-vs-rebase-4.png 590w,
+/static/a57e51132be4d3607b556e5dab9597ad/f9b6a/merge-vs-rebase-4.png 885w,
+/static/a57e51132be4d3607b556e5dab9597ad/2d849/merge-vs-rebase-4.png 1180w,
+/static/a57e51132be4d3607b556e5dab9597ad/bbefa/merge-vs-rebase-4.png 1770w,
+/static/a57e51132be4d3607b556e5dab9597ad/efcce/merge-vs-rebase-4.png 2438w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;h5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;TEST&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;h5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 수정한 다음 &lt;strong&gt;Staging Area&lt;/strong&gt;까지 커밋하고 상태를 체크하자.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/839f9a1b9d812aad1be50b5c4e3a1cfa/e66b2/merge-vs-rebase-5.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 32.60340632603406%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAABYlAAAWJQFJUiTwAAABf0lEQVQozz2R63LaQAyF/SolCcaGgI0v2Lu+4DvgODCESdJpQ//1/d/gq+x2+uOMRme1R0eSoapX0tudqLsSlQP55QdqeKfUV1r1Rh/WfOmG39WFcFcThh3f0gQrSNDJkSjpeDQDHuYe80WA0YclZVSh3JRBNbzGDbW/p5B4Ui25fGgPVz5uP9FS57kJUVjgb1M8J5mQScOi6Nm4GUYqrkL5nJUvZKNbyQMRLurzxKl9zzUpuVctF5Vzb098NUdOXsxn0fCe1/wS7nvZsVprjK2Xi3LKWjpN2CS4wrnbbIJpR7iWj1r6xAK1CqYYmA6R7aGfQ7RwzmIcOcQYzp/UzYU87ydU1Znj6cbL8MHh8EYs7gPZo/2sscWB4xe4sqad7iaYq5hHEZrbOxYCY7RpLyPWuxzb16yCFGsTT24tyZe+uI7kzVEsx7qNnjBO5smuLeEWVjiJmZYImpKMmMUxs0wzSxRPfiwdhdtrHkb+H2ea4kRqx2uOeJLrmv/F/sY/b2nqJhIuG8EAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 5&quot;
+        title=&quot;&quot;
+        src=&quot;/static/839f9a1b9d812aad1be50b5c4e3a1cfa/b9e4f/merge-vs-rebase-5.png&quot;
+        srcset=&quot;/static/839f9a1b9d812aad1be50b5c4e3a1cfa/cf440/merge-vs-rebase-5.png 148w,
+/static/839f9a1b9d812aad1be50b5c4e3a1cfa/d2d38/merge-vs-rebase-5.png 295w,
+/static/839f9a1b9d812aad1be50b5c4e3a1cfa/b9e4f/merge-vs-rebase-5.png 590w,
+/static/839f9a1b9d812aad1be50b5c4e3a1cfa/e66b2/merge-vs-rebase-5.png 822w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;충돌을 해결했으나 아직 다 병합한게 아니기 때문에 &lt;code class=&quot;language-text&quot;&gt;rebase&lt;/code&gt;를 계속 진행할 것인지 아님 뒤로 다시 돌아갈 것인지 선택해야한다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; rebase --continue&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;충돌이 나지 않는다면 &lt;strong&gt;auto-merging&lt;/strong&gt; 작업이 잘 진행된다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4cb25196c7ffdcf0ca796b56618b5449/b52c0/merge-vs-rebase-6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.19730941704036%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA2klEQVQY012P207DMBBE8y9I0IQ0Kmni+NK4zZ1A26i0Ki+I//+Lg21eEA+jldejM7PRurCY4x17+0Z0C/byhTx9YvRCIxfm3DJvavS2QZQDD0qTCYvdv7Fxf3lxQO8mpB5JUkU0jBeOpzvT9IExI113pq5feYoFaaZJMkPsZpxKntc67LxWSRU8jyuvMsi/I3t4Z2dnKjUwzVcaB2z7hUK0lFWH0gOV7HnJ98GzLRs3ezLX2gM8+K8ib/JSrl3bn0N9H1K7EOn2QnYO3oQAf55w8BBkfk/8D/0BaXWF6rWcq2EAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 6&quot;
+        title=&quot;&quot;
+        src=&quot;/static/4cb25196c7ffdcf0ca796b56618b5449/b9e4f/merge-vs-rebase-6.png&quot;
+        srcset=&quot;/static/4cb25196c7ffdcf0ca796b56618b5449/cf440/merge-vs-rebase-6.png 148w,
+/static/4cb25196c7ffdcf0ca796b56618b5449/d2d38/merge-vs-rebase-6.png 295w,
+/static/4cb25196c7ffdcf0ca796b56618b5449/b9e4f/merge-vs-rebase-6.png 590w,
+/static/4cb25196c7ffdcf0ca796b56618b5449/f9b6a/merge-vs-rebase-6.png 885w,
+/static/4cb25196c7ffdcf0ca796b56618b5449/b52c0/merge-vs-rebase-6.png 892w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;그리고 결과적으로 아래와 같은 로그 그래프가 나온다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/54e1c/merge-vs-rebase-7.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 22.09131075110457%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAA3ElEQVQY002Py26DMBRE+Ze2Aey8bF4GbBNjSAgpiZRVu+iq6/7/cmobVeriyNJI93gmeuMj0jTHy+0H4vwBpScUlcUmKZCQCikVjvVN0hL7o0KrphU5oZEXkG0N1c0hi17ZgHivUS/f4O0MYj7RNhZ52YPuGsRO4sUe/8mRaxh7dyzozDu0E3mhHR/QpxkRFTNYYWCWLwh5BdcPVKJH5jKWdU6ggsRzYBKlsBjcsacf7gGen3C5PiHXhiMoKaDdVLIViOMstPrf7A+fHZhyTW4BP9FPprs6NK7qEb8OlYVyf5t8ZwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 7&quot;
+        title=&quot;&quot;
+        src=&quot;/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/b9e4f/merge-vs-rebase-7.png&quot;
+        srcset=&quot;/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/cf440/merge-vs-rebase-7.png 148w,
+/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/d2d38/merge-vs-rebase-7.png 295w,
+/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/b9e4f/merge-vs-rebase-7.png 590w,
+/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/f9b6a/merge-vs-rebase-7.png 885w,
+/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/2d849/merge-vs-rebase-7.png 1180w,
+/static/f8e6a1703a51f8f4fb087e4ce92f1ea7/54e1c/merge-vs-rebase-7.png 1358w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;하지만 아직 &lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt; 브랜치는 병합한 코드를 가지고 있지 않다. &lt;code class=&quot;language-text&quot;&gt;master&lt;/code&gt; 브랜치를 기준으로 해서 &lt;code class=&quot;language-text&quot;&gt;dev-b&lt;/code&gt; 브랜치에서 병합 진행을 했기 때문이다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; checkout master
+$ &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; merge dev-b&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;위와 같이 브랜치를 변경해서 &lt;code class=&quot;language-text&quot;&gt;Fast-forwarding&lt;/code&gt; 작업을 진행하면 아래와 같은 결과가 나온다.&lt;/p&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9098069eead6ab0373ce8c2ed5c01992/4b690/merge-vs-rebase-8.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 21.994134897360702%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAYAAACOXx+WAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAyElEQVQY02WOUQ/BMBRG91cEs84Inem0VUW3MRFeJB7EK///D3xuKzzwcNLbpD33RH3ukLIcneYJ1d6QVXfk7oqVaSCXO7BhSYhwJqnAhBtI1UCbPZZEKWuk2SLMmt5HvalDnCmI0wNCrMFnFow+9gYzxEmBAZsHvMzfvdCsWtjNMeBnL9xWp7AkCBPaXroLeG4wHMlvzS9xMsd4orGgKkU1Su+osCJhCWMPyIs1oi6vwVgBa9sg8xW/or9C+y70kk+hq8+QusELSfKDlCF0S2oAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 8&quot;
+        title=&quot;&quot;
+        src=&quot;/static/9098069eead6ab0373ce8c2ed5c01992/b9e4f/merge-vs-rebase-8.png&quot;
+        srcset=&quot;/static/9098069eead6ab0373ce8c2ed5c01992/cf440/merge-vs-rebase-8.png 148w,
+/static/9098069eead6ab0373ce8c2ed5c01992/d2d38/merge-vs-rebase-8.png 295w,
+/static/9098069eead6ab0373ce8c2ed5c01992/b9e4f/merge-vs-rebase-8.png 590w,
+/static/9098069eead6ab0373ce8c2ed5c01992/f9b6a/merge-vs-rebase-8.png 885w,
+/static/9098069eead6ab0373ce8c2ed5c01992/2d849/merge-vs-rebase-8.png 1180w,
+/static/9098069eead6ab0373ce8c2ed5c01992/4b690/merge-vs-rebase-8.png 1364w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;merge-vs-rebase-로그-비교&quot;&gt;&lt;a href=&quot;#merge-vs-rebase-%EB%A1%9C%EA%B7%B8-%EB%B9%84%EA%B5%90&quot; aria-label=&quot;merge vs rebase 로그 비교 permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;merge vs rebase 로그 비교&lt;/h3&gt;
+&lt;p&gt;&lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/0e5cdaab0b6414b12e1143a5cba30696/bf482/merge-vs-rebase-9.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 590px;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 11.939163498098859%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAg0lEQVQI1x3OQQ6CMBBGYQ5jkKIUiraFQlpEK8GN3v8yzwmL2b358hdeZ/blR+wDoXFca0dVezlH006M05u7fXCzC8pEuvTFjJnOTKiLlWYkzC+sSwxhpdBmox8ypSAn5Tgrf4Bl5dDtTEwf/CAPglRdorcrSrryaGWADsxxx/mnwBt/b1tBChcbUWsAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+    &gt;&lt;/span&gt;
+    &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;box-shadow:inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;merge vs rebase 9&quot;
+        title=&quot;&quot;
+        src=&quot;/static/0e5cdaab0b6414b12e1143a5cba30696/b9e4f/merge-vs-rebase-9.png&quot;
+        srcset=&quot;/static/0e5cdaab0b6414b12e1143a5cba30696/cf440/merge-vs-rebase-9.png 148w,
+/static/0e5cdaab0b6414b12e1143a5cba30696/d2d38/merge-vs-rebase-9.png 295w,
+/static/0e5cdaab0b6414b12e1143a5cba30696/b9e4f/merge-vs-rebase-9.png 590w,
+/static/0e5cdaab0b6414b12e1143a5cba30696/f9b6a/merge-vs-rebase-9.png 885w,
+/static/0e5cdaab0b6414b12e1143a5cba30696/2d849/merge-vs-rebase-9.png 1180w,
+/static/0e5cdaab0b6414b12e1143a5cba30696/bbefa/merge-vs-rebase-9.png 1770w,
+/static/0e5cdaab0b6414b12e1143a5cba30696/bf482/merge-vs-rebase-9.png 2630w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+  &lt;/span&gt;
+  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;왼쪽이 &lt;code class=&quot;language-text&quot;&gt;merge&lt;/code&gt;를 통한 병합 과정이고 오른쪽이 &lt;code class=&quot;language-text&quot;&gt;rebase&lt;/code&gt;를 통한 병합 과정이다.&lt;/p&gt;
+&lt;h3 id=&quot;wrap-up&quot;&gt;&lt;a href=&quot;#wrap-up&quot; aria-label=&quot;wrap up permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Wrap-up&lt;/h3&gt;
+&lt;p&gt;결론적으로 &lt;code class=&quot;language-text&quot;&gt;merge&lt;/code&gt;와 &lt;code class=&quot;language-text&quot;&gt;rebase&lt;/code&gt;는 개발팀의 문화 및 프로젝트 성격에 따라 적절하게 사용하면 될 것 같다. 예를 들어 작업한 커밋 히스토리 하나하나가 중요하고 변경이 있어서는 안된다고 생각된다면 &lt;code class=&quot;language-text&quot;&gt;merge&lt;/code&gt;를, git graph 로그를 다듬어서 관리하기를 원한다면 &lt;code class=&quot;language-text&quot;&gt;rebase&lt;/code&gt;를 선택하면 될 것 같다.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Vim 사용법과 플러그인]]></title><description><![CDATA[ Vim주로 개발을 하다가 terminal 창에서 코드를 수정하거나 문서를 작성해야되는 경우가 종종 생긴다. 하지만  사용법도 너무 어렵고 코드 하이라이팅 및 단축키를 잘 몰라 항상 VS Code나 다른 IDE…]]></description><link>https://jason0853.github.io/vim/vim-usage/</link><guid isPermaLink="false">https://jason0853.github.io/vim/vim-usage/</guid><pubDate>Sat, 28 Sep 2019 13:09:38 GMT</pubDate><content:encoded>&lt;p&gt;&lt;a
     class=&quot;gatsby-resp-image-link&quot;
     href=&quot;/static/9a4cfe76fff39ee153d26edfb5995b3e/e95bd/vim-usage-1.png&quot;
     style=&quot;display: block&quot;
